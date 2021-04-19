@@ -36,7 +36,7 @@ class PressRelease extends HTMLElement {
     fetchArticles = async () => {
         
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=getEventPrestas&id_event=1635`)
-                .then(res = res.json())
+                .then(res => res.json())
                 .then(articleList => {
                     this.displayArticles({ articles : articleList });
                 })
