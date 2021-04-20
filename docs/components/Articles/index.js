@@ -22,7 +22,7 @@ class PressRelease extends HTMLElement {
 
     displayArticles = ({ articles }) => {
         console.log('ici');
-        articles.map((article, index) => this.Article({ article, index })).join('');
+        let res = articles.map((article, index) => this.Article({ article, index })).join('');
         document.getElementById("articleList").innerHTML = res;
     }
 
