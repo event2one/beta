@@ -41,7 +41,7 @@ class PressList extends HTMLElement {
                                         <td>${article.event_presta_nom}</td>
                                         <td>${article.event_presta_pays}</td>
                                         <td>${article.date_parution}</td>
-                                        <td>@<a href="${event_presta_url_externe}">Lire l'article'</a></td>   
+                                        <td>@<a href="${article.event_presta_url_externe}">Lire l'article'</a></td>   
                                     </tr>
                                 </div>
                             `;
