@@ -22,7 +22,7 @@ class PressList extends HTMLElement {
                     <tbody id="pressList"></tbody>
                 </table>
                 <img src="././Assets/France_flag.jpg"></img>
-                <img src="../../Assets/Canada_flag.png"></img>
+                <img src="././Assets/Canada_flag.png"></img>
                 <img src="Assets/Belgium_flag.png"></img>
             </div> 
         </section>`;
@@ -45,7 +45,7 @@ class PressList extends HTMLElement {
                                     <tr>
                                         <td scope="row">${article.media_nom}</td>
                                         <td>${article.event_presta_nom}</td>
-                                        <td><img src="../../Assets/${article.event_presta_pays}"></img></td>
+                                        <td><img src="*Assets/${article.event_presta_pays}"></img></td>
                                         <td>${article.date_parution}</td>
                                         <td><a href="${article.event_presta_url_externe}">Lire l'article</a></td>   
                                     </tr>
