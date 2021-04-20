@@ -10,7 +10,7 @@ class PressRelease extends HTMLElement {
                     <h2 class="text-secondary">Press releases</h2>
                     <div class="row" id="articleList"></div>
                     <hr/>
-                    <a class="link-dark" href="https://lienverstouslesarticles.html">Voir tous les articles</a>
+                    <a href="https://lienverstouslesarticles.html" style="float: right">Voir tous les articles</a>
             </div> 
         </section>`;
 
