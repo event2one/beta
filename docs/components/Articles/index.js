@@ -30,7 +30,7 @@ class PressRelease extends HTMLElement {
         if(index < 3) {
             const content = `<div class="col"><a class="link-dark" href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
             return content;
-        } else {
+        } else if(index == 4){
             const content = `<div class="col align-self-end"><a class="link-dark" href="https://lienverstouslesarticles.html">Voir tous les articles</a></div>`
             return content;
         }
