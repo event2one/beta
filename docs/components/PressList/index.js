@@ -21,9 +21,6 @@ class PressList extends HTMLElement {
                     </thead>
                     <tbody id="pressList"></tbody>
                 </table>
-                <img src="././Assets/France_flag.jpg"></img>
-                <img src="././Assets/Canada_flag.png"></img>
-                <img src="Assets/Belgium_flag.png"></img>
             </div> 
         </section>`;
 
@@ -37,14 +34,12 @@ class PressList extends HTMLElement {
     }
 
     Article = ({ article }) => {
-            let france_flag = article.event_pesta_pays == 'FRANCE' ? `France_flag.jpg` : `Canada_flag.png`;
-
             const content = `
                                 <div>
                                     <tr>
                                         <td scope="row">${article.media_nom}</td>
                                         <td>${article.event_presta_nom}</td>
-                                        <td><img src="Assets/${france_flag}" style="width=50%"></img></td>
+                                        <td>${article.event_presta_pays}</td>
                                         <td>${article.date_parution}</td>
                                         <td><a href="${article.event_presta_url_externe}">Lire l'article</a></td>   
                                     </tr>
