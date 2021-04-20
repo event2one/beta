@@ -25,7 +25,7 @@ class PressRelease extends HTMLElement {
 
     Article = ({ article, index }) => {
         if(index < 3) {
-            const content = `<div class="col"><a class="link-dark" href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom} Acrius vero ea salutis considerans ad mitigabat vero incertum ad impetu ingenii idque praesens augeri discrimina vexillum potius altius actus.</a></div>`
+            const content = `<div class="col"><a class="link-dark" href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom} Acrius vero ea salutis considerans ad mitigabat vero incertum ad impetu ingenii idque praesens augeri discrimina vexillum potius altius actus.</a></div>`;
             return content;
         } 
     }
