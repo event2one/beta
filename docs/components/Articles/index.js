@@ -6,13 +6,10 @@ class PressRelease extends HTMLElement {
 
         this.innerHTML = `
         <section>
-            <h2>Press releases</h2>
             <div class="container">
-                <div>
                     <h2>Press releases</h2>
                     <div class="row" id="articleList"></div>
-                    <div class="col">je suis une autre column</div>
-                </div>
+                    <a class="col align-self-end" href="https://lienverstouslesarticles.html">Voir tous les articles</a>
             </div>
                 
         </section>`;
