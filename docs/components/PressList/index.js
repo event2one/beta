@@ -32,7 +32,7 @@ class PressList extends HTMLElement {
 
 
     displayPressList = ({ articles }) => {
-        let res = articles.map((article, index) => this.Article({ article, index })).join('');
+        let res = articles.filter(article => article.etat != 'attente').map((article, index) => this.Article({ article, index })).join('');
         document.getElementById("pressList").innerHTML = res;
     }
 
