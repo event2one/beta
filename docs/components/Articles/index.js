@@ -8,7 +8,7 @@ class PressRelease extends HTMLElement {
         <section>
             <div class="container">
                     <h1 class="text-secondary">Press releases</h1>
-                    <div class="row" id="articleList"></div>
+                    <div class="row row-cols-lg-1" id="articleList"></div>
                     <hr/>
                     <a href="https://lienverstouslesarticles.html" style="float: right">Voir tous les articles</a>
             </div> 
@@ -25,7 +25,7 @@ class PressRelease extends HTMLElement {
 
     Article = ({ article, index }) => {
         if(index < 3) {
-            const content = `<div class="col"><a class="link-dark" href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom} kodkqz oqkdomzkodq odqk ldsjqmd jskqjdlqsjds kqjdqk jsq</a></div>`
+            const content = `<div class="col"><a class="link-dark" href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom} Acrius vero ea salutis considerans ad mitigabat vero incertum ad impetu ingenii idque praesens augeri discrimina vexillum potius altius actus.</a></div>`
             return content;
         } 
     }
