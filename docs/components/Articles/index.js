@@ -6,7 +6,7 @@ class PressRelease extends HTMLElement {
    
         this.innerHTML = `
         <section>
-            <div class="container">
+            <div class="container-fluid">
                     <h2 class="text-secondary">Press releases</h2>
                     <div class="row" id="articleList"></div>
                     <hr/>
