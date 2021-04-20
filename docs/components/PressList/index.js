@@ -37,9 +37,8 @@ class PressList extends HTMLElement {
     }
 
     Article = ({ article }) => {
-            if(article.event_presta_pays == 'FRANCE') {
-                article.event_pesta_pays = `France_flag.jpg`;
-            }
+            let france_flag = article.event_pesta_pays == 'FRANCE' ? `France_flag.jpg` : `Canada_flag.png`;
+
             const content = `
                                 <div>
                                     <tr>
