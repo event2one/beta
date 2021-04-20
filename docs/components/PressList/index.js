@@ -20,9 +20,10 @@ class PressList extends HTMLElement {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr id="pressList"></tr>
+                            <tr>haha</tr>
                         </tbody>
                     </table>
+                    <div id="pressList"></div>
             </div> 
         </section>`;
 
@@ -37,15 +38,15 @@ class PressList extends HTMLElement {
 
     Article = ({ article }) => {
             const content = `
-                            <div>
-                                <th scope="row">${article.media_nom}</th>
-                                <td>${article.event_presta_nom}</td>
-                                <td>${article.event_presta_pays}</td>
-                                <td>${article.date_parution}</td>
-                                <td>@<a href="${event_presta_url_externe}">Lire l'article'</a></td>
-                            </div>
+                            <div> ${article.event_presta_nom}</div>
                                 
                             `;
+
+                            // <th scope="row">${article.media_nom}</th>
+                            //     <td></td>
+                            //     <td>${article.event_presta_pays}</td>
+                            //     <td>${article.date_parution}</td>
+                            //     <td>@<a href="${event_presta_url_externe}">Lire l'article'</a></td>
             return content;
     }
  
