@@ -8,7 +8,7 @@ class PressRelease extends HTMLElement {
         <section>
             <h2>Press releases</h2>
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-end">
                     <div id="articleList"></div>
                 </div>
             </div>
