@@ -7,20 +7,20 @@ class PressList extends HTMLElement {
         this.innerHTML = `
         <section>
             <div class="container">
-                    <h1 class="text-secondary">On en parle dans la presse</h1>
-                    <hr/>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Média</th>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Pays</th>
-                                <th scope="col">Date de parution</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody id="pressList"></tbody>
-                    </table>
+                <h1 class="text-secondary">On en parle dans la presse</h1>
+                <hr/>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Média</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Pays</th>
+                            <th scope="col">Date de parution</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="pressList"></tbody>
+                </table>
             </div> 
         </section>`;
 
@@ -29,7 +29,7 @@ class PressList extends HTMLElement {
 
 
     displayPressList = ({ articles }) => {
-        let res = articles.filter(article => article.etat != 'attente' && article.media_nom != '').map((article, index) => this.Article({ article, index })).join('');
+        let res = articles.filter(article => article.etat != 'attente').map((article, index) => this.Article({ article, index })).join('');
         document.getElementById("pressList").innerHTML = res;
     }
 
@@ -41,7 +41,7 @@ class PressList extends HTMLElement {
                                         <td>${article.event_presta_nom}</td>
                                         <td>${article.event_presta_pays}</td>
                                         <td>${article.date_parution}</td>
-                                        <td><a href="${article.event_presta_url_externe}">Lire l'article'</a></td>   
+                                        <td><a href="${article.event_presta_url_externe}">Lire l'article</a></td>   
                                     </tr>
                                 </div>
                             `;
