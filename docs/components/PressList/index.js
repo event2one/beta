@@ -9,7 +9,7 @@ class PressList extends HTMLElement {
             <div class="container">
                     <h1 class="text-secondary">On en parle dans la presse</h1>
                     <hr/>
-                    <table class="table">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Média</th>
@@ -41,7 +41,7 @@ class PressList extends HTMLElement {
                                         <td>${article.event_presta_nom}</td>
                                         <td>${article.event_presta_pays}</td>
                                         <td>${article.date_parution}</td>
-                                        <td>@<a href="${article.event_presta_url_externe}">Lire l'article'</a></td>   
+                                        <td><a href="${article.event_presta_url_externe}">Lire l'article'</a></td>   
                                     </tr>
                                 </div>
                             `;
