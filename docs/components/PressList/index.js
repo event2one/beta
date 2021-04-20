@@ -44,7 +44,7 @@ class PressList extends HTMLElement {
                                     <tr>
                                         <td scope="row">${article.media_nom}</td>
                                         <td>${article.event_presta_nom}</td>
-                                        <td><img src="Assets/${article.event_presta_pays}" style="width=50%"></img></td>
+                                        <td><img src="Assets/${france_flag}" style="width=50%"></img></td>
                                         <td>${article.date_parution}</td>
                                         <td><a href="${article.event_presta_url_externe}">Lire l'article</a></td>   
                                     </tr>
