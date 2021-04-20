@@ -9,6 +9,7 @@ class PressRelease extends HTMLElement {
             <h2>Press releases</h2>
             <div class="container">
                 <div>
+                    <h2>Press releases</h2>
                     <div class="row" id="articleList"></div>
                     <div class="col">je suis une autre column</div>
                 </div>
@@ -27,7 +28,7 @@ class PressRelease extends HTMLElement {
 
     Article = ({ article, index }) => {
         if(index < 3) {
-            const content = `<div class="col"><a href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
+            const content = `<div class="col"><a class="link-dark" href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
 
             // const  res =  `<div>${content}</div>`;
             return content;
