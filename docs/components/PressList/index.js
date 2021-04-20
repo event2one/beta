@@ -19,8 +19,8 @@ class PressList extends HTMLElement {
                                 <th scope="col"></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr id="pressList"></tr>
+                        <tbody id="pressList">
+                            
                         </tbody>
                     </table>
             </div> 
@@ -38,10 +38,10 @@ class PressList extends HTMLElement {
     Article = ({ article }) => {
             const content = `
                             <div>
-                                <td>${article.media_nom}</td>
-                                <td>${article.event_presta_nom}</td>
-                                
-                             
+                                <tr>
+                                    <td scope="row">${article.media_nom}</td>
+                                    <td>${article.event_presta_nom}</td>
+                                </tr>
                             </div>
                                 
                             `;
