@@ -7,13 +7,12 @@ class PressRelease extends HTMLElement {
         this.innerHTML = `
         <section>
             <h2>Press releases</h2>
-            <div class="modal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-body" id="articleList"></div>
-                    </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm" id="articleList"></div>
                 </div>
             </div>
+                
         </section>`;
 
         this.fetchArticles();
