@@ -21,14 +21,13 @@ class PressRelease extends HTMLElement {
 
 
     displayArticles = ({ articles }) => {
+        console.log('ici');
         articles.map((article, index) => this.Article({ article, index })).join('');
         document.getElementById("articleList").innerHTML = this.content;
     }
 
     Article = ({ article }) => {
-        const content = `
-            <div><a href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>
-        `
+        const content = `<div><a href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
 
         return content;
     }
