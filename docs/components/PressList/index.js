@@ -7,7 +7,9 @@ class PressList extends HTMLElement {
         this.innerHTML = `
         <section>
             <div class="container">
-                <h1 class="text-secondary">On en parle dans la presse</h1>
+                <h1 class="text-secondary">Presse</h1>
+                <p>Vous souhaitez vous tenir informé de l'actualité du salon, consulter les communiqués ou dossier de presse, effectuer une demande d’accréditation ou encore entrer en contact avec nous ? Cet espace est fait pour vous.</p>
+                <h1 class="text-secondary">Press releases</h1>
                 <hr/>
                 <table class="table table-striped">
                     <thead>
