@@ -10,6 +10,7 @@ class PressRelease extends HTMLElement {
             <div class="container">
                 <div class="row justify-content-end">
                     <div id="articleList"></div>
+                    <div class="col-sm">je suis une autre column</div>
                 </div>
             </div>
                 
