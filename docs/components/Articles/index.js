@@ -25,11 +25,13 @@ class PressRelease extends HTMLElement {
         document.getElementById("articleList").innerHTML = res;
     }
 
-    Article = ({ article }) => {
-        const content = `<div class="col-sm"><a href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
+    Article = ({ article, index }) => {
+        if(index < 2) {
+            const content = `<div class="col-sm"><a href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
 
-        // const  res =  `<div>${content}</div>`;
-        return content;
+            // const  res =  `<div>${content}</div>`;
+            return content;
+        }
     }
  
     fetchArticles = async () => {
