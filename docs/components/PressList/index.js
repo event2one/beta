@@ -20,10 +20,9 @@ class PressList extends HTMLElement {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>haha</tr>
+                            <tr id="pressList"></tr>
                         </tbody>
                     </table>
-                    <div id="pressList"></div>
             </div> 
         </section>`;
 
