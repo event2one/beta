@@ -34,14 +34,14 @@ class PressList extends HTMLElement {
     }
 
     Article = ({ article }) => {
-            let flag = getFlag(article.event_presta_pays);
+            // let flag = getFlag(article.event_presta_pays);
 
             const content = `
                                 <div>
                                     <tr>
                                         <td scope="row">${article.media_nom}</td>
                                         <td>${article.event_presta_nom}</td>
-                                        <td>${flag}</td>
+                                        <td>${article.flag}</td>
                                         <td>${article.date_parution}</td>
                                         <td><a href="${article.event_presta_url_externe}">Lire l'article</a></td>   
                                     </tr>
