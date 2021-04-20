@@ -7,11 +7,9 @@ class PressRelease extends HTMLElement {
         this.innerHTML = `
         <section>
             <div class="container">
-                <div class="row">
-                    <h2>Press releases</h2>
+                    <h2 class="text-secondary">Press releases</h2>
                     <div class="row" id="articleList"></div>
-                    <a class="col-2 align-self-end link-dark" href="https://lienverstouslesarticles.html">Voir tous les articles</a>
-                </div> 
+                    <a class="link-dark" href="https://lienverstouslesarticles.html">Voir tous les articles</a>
             </div> 
         </section>`;
 
