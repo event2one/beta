@@ -29,8 +29,8 @@ class PressRelease extends HTMLElement {
     Article = ({ article }) => {
         const content = `<div><a href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
 
-        const  res =  `<div>${content}</div>`;
-        return res;
+        // const  res =  `<div>${content}</div>`;
+        return content;
     }
  
     fetchArticles = async () => {
