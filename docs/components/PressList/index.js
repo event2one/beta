@@ -32,18 +32,21 @@ class PressList extends HTMLElement {
 
 
     displayPressList = ({ articles }) => {
-        let res = articles.filter(article => article.etat != 'attente').map((article, index) => this.Article({ article, index })).join('');
+        let res = articles.filter(article => article.etat != 'attente' && article.media_nom != '').map((article, index) => this.Article({ article, index })).join('');
         document.getElementById("pressList").innerHTML = res;
     }
 
     Article = ({ article }) => {
             const content = `
-                            <div> ${article.event_presta_nom}</div>
+                            <div>
+                                <th scope="row">${article.media_nom}</th>
+                                <td>${article.event_presta_nom}</td>
+                            </div>
                                 
                             `;
 
-                            // <th scope="row">${article.media_nom}</th>
-                            //     <td></td>
+                            // 
+                            //     
                             //     <td>${article.event_presta_pays}</td>
                             //     <td>${article.date_parution}</td>
                             //     <td>@<a href="${event_presta_url_externe}">Lire l'article'</a></td>
