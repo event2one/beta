@@ -8,7 +8,7 @@ class PressRelease extends HTMLElement {
         <section>
             <div class="container">
                     <h1 class="text-secondary">Press releases</h1>
-                    <div class="row" id="articleList">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</div>
+                    <div class="row" id="articleList"></div>
                     <hr/>
                     <a href="https://lienverstouslesarticles.html" style="float: right">Voir tous les articles</a>
             </div> 
@@ -25,7 +25,7 @@ class PressRelease extends HTMLElement {
 
     Article = ({ article, index }) => {
         if(index < 3) {
-            const content = `<div class="col"><a class="link-dark" href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
+            const content = `<div class="col"><a class="link-dark" href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom} kodkqz oqkdomzkodq odqk ldsjqmd jskqjdlqsjds kqjdqk jsq</a></div>`
             return content;
         } 
     }
