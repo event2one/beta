@@ -21,7 +21,6 @@ class PressRelease extends HTMLElement {
 
 
     displayArticles = ({ articles }) => {
-        console.log('ici');
         let res = articles.map((article, index) => this.Article({ article, index })).join('');
         document.getElementById("articleList").innerHTML = res;
     }
