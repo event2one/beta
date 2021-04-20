@@ -10,7 +10,7 @@ class PressRelease extends HTMLElement {
             <div class="container">
                 <div class="row justify-content-end">
                     <div id="articleList"></div>
-                    <div class="col-sm">je suis une autre column</div>
+                    <div class="col">je suis une autre column</div>
                 </div>
             </div>
                 
@@ -26,8 +26,8 @@ class PressRelease extends HTMLElement {
     }
 
     Article = ({ article, index }) => {
-        if(index < 2) {
-            const content = `<div class="col-sm"><a href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
+        if(index < 3) {
+            const content = `<div class="col"><a href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom}</a></div>`
 
             // const  res =  `<div>${content}</div>`;
             return content;
