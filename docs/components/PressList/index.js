@@ -21,10 +21,12 @@ class PressList extends HTMLElement {
                     </thead>
                     <tbody id="pressList"></tbody>
                 </table>
-                <img src="../../Assets/France_flag.jpg"></img>
+                <img src="././Assets/France_flag.jpg"></img>
+                <img src="../../Assets/Canada_flag.png"></img>
+                <img src="Assets/Belgium_flag.png"></img>
             </div> 
         </section>`;
-        
+
         this.fetchPressList();
     }
 
