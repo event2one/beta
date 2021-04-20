@@ -10,7 +10,7 @@ class PressRelease extends HTMLElement {
             <div class="modal">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-body" id="articleList">dfq</div>
+                        <div class="modal-body" id="articleList"></div>
                     </div>
                 </div>
             </div>
