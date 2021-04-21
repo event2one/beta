@@ -18,7 +18,7 @@ class NextEvent extends HTMLElement {
 
 
     displayNextEvent = ({ infoEvents }) => {
-        let res = infoEvents.filter(infoEvent => infoEvent.afficher != 'n').map((infoEvent, index) => index < 2 ? this.infoEvent({ infoEvent, index })).join('');
+        let res = infoEvents.filter(infoEvent => infoEvent.afficher != 'n').map((infoEvent, index) => index < 2 ? this.infoEvent({ infoEvent, index }) : '').join('');
         document.getElementById("nextEvent").innerHTML = res;
     }
 
