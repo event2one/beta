@@ -18,23 +18,23 @@ class NextEvent extends HTMLElement {
 
 
     displayNextEvent = ({ infoEvents }) => {
-        let res = infoEvents.filter(infoEvent => infoEvent.afficher != 'n').map((infoEvent, index) => this.infoEvent({ infoEvent, index })).join('');
+        let res = infoEvents.filter(infoEvent => infoEvent.afficher != 'n').map((infoEvent, index) => index < 2 ? this.infoEvent({ infoEvent, index })).join('');
         document.getElementById("nextEvent").innerHTML = res;
     }
 
     infoEvent = ({ infoEvent, index }) => {
-        if(index < 2) {
+        if(index < 4) {
             const content = `
-                        <div class="row" style="border-bottom: 0.5px solid grey; padding-bottom: 50px">
+                        <div class="row" style="border-bottom: 0.5px solid grey; padding: 25px">
                             <div class="col-2">
-                                <p style="font-weight: bold">${infoEvent.precision_date}</p>
-                                <p style="font-weight: bold">${infoEvent.nom}</p>
+                                <p style="font-weight: bold">${infoEvent.precision_date} </br> ${infoEvent.nom}</p>
                                 <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 50%"></img>
                             </div>
                             <div class="col-10">
-                                <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs en ligne chaque jour. Le Village Francophone vous offre le dispositif le plus important d'intelligence
-                                collective jamais mis en oeuvre lors du South by SouthWest avec au programme : </br> </br> 2 après-midis marathon pour décrypter 15 tendances clés pour l'Entertainment
-                                de la fashiontech, beautyTech, foodTech </br> </br> Oportunum est, ut arbitror, explanare nunc causam, quae ad exitium praecipitem Aginatium inpulit iam inde a priscis maioribus nobilem, ut locuta est pertinacior fama. nec enim super hoc ulla documentorum rata est fides.</p>
+                                <p> 2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs en ligne chaque jour. Le Village Francophone vous offre le dispositif le plus important d'intelligence
+                                    collective jamais mis en oeuvre lors du South by SouthWest avec au programme : </br> </br> 2 après-midis marathon pour décrypter 15 tendances clés pour l'Entertainment
+                                    de la fashiontech, beautyTech, foodTech </br> </br> Oportunum est, ut arbitror, explanare nunc causam, quae ad exitium praecipitem Aginatium inpulit iam inde a priscis maioribus nobilem, ut locuta est pertinacior fama. nec enim super hoc ulla documentorum rata est fides.
+                                </p>
                                 <a classe="link-info" href="${infoEvent.web}">Découvrir le programme des journées de travail</a>
                             </div>
                         </div>
