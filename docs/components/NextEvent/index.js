@@ -33,7 +33,7 @@ class NextEvent extends HTMLElement {
                 <img src=""></img>
                 <div>${infoEvent.nom}</div>   
             </div>
-            <div class="col-8">
+            <div class="col">
                 <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs</p>
                 <a href="">Découvrir le programme des journées de travail</a>
             </div>
