@@ -25,7 +25,7 @@ class NextEvent extends HTMLElement {
     infoEvent = ({ infoEvent, index }) => {
         if(index < 2) {
             const content = `
-                        <div class="row" style="border-bottom: 0.5px solid grey" style="padding-bottom: 50px">
+                        <div class="row" style="border-bottom: 0.5px solid grey"; style="padding-bottom: 50px">
                             <div class="col-2">
                                 <p>${infoEvent.precision_date}</p>
                                 <p>${infoEvent.nom}</p>
