@@ -25,7 +25,7 @@ class NextEvent extends HTMLElement {
     }
 
     infoEvent = ({ infoEvent, index }) => {
-        if(index > 2) {
+        if(index < 2) {
             const content = `
             <div class="col-2">
                 <p>${infoEvent.precision_date}</p>
@@ -33,7 +33,9 @@ class NextEvent extends HTMLElement {
                 <img src="${infoEvent.logo}"></img>
             </div>
             <div class="col-10">
-                <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs</p>
+                <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs en ligne chaque jour. Le Village Francophone vous offre le dispositif le plus important d'intelligence
+                collective jamais mis en oeuvre lors du South by SouthWest avec au programme : </br> </br> 2 après-midis marathon pour décrypter 15 tendances clés pour l'Entertainment
+                de la fashiontech, beautyTech, foodTech</p>
                 <a href="">Découvrir le programme des journées de travail</a>
             </div>
         `;
