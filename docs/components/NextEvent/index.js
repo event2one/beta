@@ -50,7 +50,7 @@ class NextEvent extends HTMLElement {
 
 		await fetch(`//www.mlg-consulting.com/smart_territory/form/api.php?action=getEvents&${req_suite}`)
                 .then(res => res.json())
-                .then(infoEvents => {
+                .then(nextEvent => {
                     this.displayNextEvent({ infoEvents : nextEvent });
                 })
     }
