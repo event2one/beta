@@ -24,6 +24,7 @@ class PressRelease extends HTMLElement {
 
     Article = ({ article, index }) => {
         let text = article.texte_contextuel.replace(/(<([^>]+)>)/ig,"");
+        text.substring(0, 200);
 
         if(index < 3) {
             const content = `
