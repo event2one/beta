@@ -29,13 +29,12 @@ class PressRelease extends HTMLElement {
                                 <div class="card-body">
                                     <div class="card-title">${article.event_presta_nom}</div>
                                     <img src="" class="card-img"></card>
+                                    <p class="card-text">${article.date_parution}</p>
                                     <p class="card-text">${article.texte_contextuel}</p>
-                                    <p class="card-text">${}</p>
                                     <a href="https://lirelasuite" class="card-link text-end">Lire la suite</a>
                                 </div>
                             </div>
-            <div class="col"><a class="link-dark" href="http://www.mlg-consulting.com/Events/EventPrestas${article.id_event_presta}">${article.event_presta_nom} Acrius vero ea salutis considerans ad mitigabat vero incertum ad impetu ingenii idque praesens augeri discrimina vexillum potius altius actus.</a></div>
-            `;
+                        `;
             return content;
         } 
     }
