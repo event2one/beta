@@ -25,7 +25,7 @@ class NextEvent extends HTMLElement {
     infoEvent = ({ infoEvent, index }) => {
         if(index < 2) {
             const content = `
-                        <div class="row" style="border-bottom: 1px solid grey">
+                        <div class="row" style="border-bottom: 0.5px solid grey">
                             <div class="col-2">
                                 <p>${infoEvent.precision_date}</p>
                                 <p>${infoEvent.nom}</p>
@@ -34,8 +34,8 @@ class NextEvent extends HTMLElement {
                             <div class="col-10">
                                 <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs en ligne chaque jour. Le Village Francophone vous offre le dispositif le plus important d'intelligence
                                 collective jamais mis en oeuvre lors du South by SouthWest avec au programme : </br> </br> 2 après-midis marathon pour décrypter 15 tendances clés pour l'Entertainment
-                                de la fashiontech, beautyTech, foodTech</p>
-                                <a href="${infoEvent.web}">Découvrir le programme des journées de travail</a>
+                                de la fashiontech, beautyTech, foodTech </br> </br> Oportunum est, ut arbitror, explanare nunc causam, quae ad exitium praecipitem Aginatium inpulit iam inde a priscis maioribus nobilem, ut locuta est pertinacior fama. nec enim super hoc ulla documentorum rata est fides.</p>
+                                <a classe="link-info" href="${infoEvent.web}">Découvrir le programme des journées de travail</a>
                             </div>
                         </div>
             
