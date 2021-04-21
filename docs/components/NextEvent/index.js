@@ -27,12 +27,12 @@ class NextEvent extends HTMLElement {
     infoEvent = ({ infoEvent, index }) => {
         if(index > 2) {
             const content = `
-            <div class="col">
+            <div class="col-2">
                 <p>${infoEvent.precision_date}</p>
                 <p>${infoEvent.nom}</p>
                 <img src="${infoEvent.logo}"></img>
             </div>
-            <div class="col">
+            <div class="col-10">
                 <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs</p>
                 <a href="">Découvrir le programme des journées de travail</a>
             </div>
