@@ -1,4 +1,4 @@
-class NextEvent extends HTMLElement {
+class EventList extends HTMLElement {
    
     constructor() {
         
@@ -9,17 +9,17 @@ class NextEvent extends HTMLElement {
             <div class="container">
                 <h1 class="text-dark">Prochains évènement du Village Francophone</h1>
                 <h2 style="color: purple">Les prochains temps forts</h2>
-                <div class="container" id="nextEvent" style="box-shadow: 0px 0px 5px 1px grey"></div>
+                <div class="container" id="eventList" style="box-shadow: 0px 0px 5px 1px grey"></div>
             </div> 
         </section>`;
 
-        this.fetchNextEvent();
+        this.fetchEventList();
     }
 
 
-    displayNextEvent = ({ infoEvents }) => {
+    displayEventList = ({ infoEvents }) => {
         let res = infoEvents.filter(infoEvent => infoEvent.afficher != 'n').map((infoEvent, index) => index < 2 ? this.infoEvent({ infoEvent }) : '').join('');
-        document.getElementById("nextEvent").innerHTML = res;
+        document.getElementById("eventList").innerHTML = res;
     }
 
     infoEvent = ({ infoEvent }) => {
@@ -43,16 +43,16 @@ class NextEvent extends HTMLElement {
         return content;    
     }
  
-    fetchNextEvent = async () => {
+    fetchEventList = async () => {
         
         const req_suite = `params=where%20id_event!=399%20and`;
 
 		await fetch(`//www.mlg-consulting.com/smart_territory/form/api.php?action=getEvents&${req_suite}`)
                 .then(res => res.json())
-                .then(nextEvent => {
-                    this.displayNextEvent({ infoEvents : nextEvent });
+                .then(eventList => {
+                    this.displayEventList({ infoEvents : eventList });
                 })
     }
 }
 
-customElements.define('next-event', NextEvent);
+customElements.define('event-list', EventList);
