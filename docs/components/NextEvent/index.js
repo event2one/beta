@@ -24,24 +24,23 @@ class NextEvent extends HTMLElement {
         document.getElementById("nextEvent").innerHTML = res;
     }
 
-    infoEvent = ({ infoEvent }) => {
-
+    infoEvent = ({ infoEvent, index }) => {
+        if(index > 2) {
             const content = `
-                                <div class="col-2">
-                                    <p>15 au 16 MARS 2021</p>
-                                    <p>SOUTH BY SOUTHWEST PHYGITAL FORUM</p>
-                                    <img src=""></img>
-                                    <div>${infoEvent.nom}</div>
+            <div class="col-2">
+                <p>15 au 16 MARS 2021</p>
+                <p>SOUTH BY SOUTHWEST PHYGITAL FORUM</p>
+                <img src=""></img>
+                <div>${infoEvent.nom}</div>   
+            </div>
+            <div class="col-8">
+                <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs</p>
+                <a href="">Découvrir le programme des journées de travail</a>
+            </div>
+        `;
 
-                                    
-                                </div>
-                                <div class="col-10">
-                                    <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs</p>
-                                    <a href="">Découvrir le programme des journées de travail</a>
-                                </div>
-                            `;
-
-            return content;
+        return content;
+        }     
     }
  
     fetchNextEvent = async () => {
