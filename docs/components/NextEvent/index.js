@@ -7,8 +7,8 @@ class NextEvent extends HTMLElement {
         this.innerHTML = `
         <section>
             <div class="container">
-                <h1 class="dark">Prochains évènement du Village Francophone</h1>
-                <h2 class="indigo-700">Les prochains temps forts</h2>
+                <h1 class="text-dark">Prochains évènement du Village Francophone</h1>
+                <h2 class="text-indigo-700-color">Les prochains temps forts</h2>
                 <div class="container">
                     <div class="row" id="nextEvent"></div>
                 </div>
@@ -27,18 +27,21 @@ class NextEvent extends HTMLElement {
     infoEvent = ({ infoEvent, index }) => {
         if(index < 2) {
             const content = `
-            <div class="col-2">
-                <p>${infoEvent.precision_date}</p>
-                <p>${infoEvent.nom}</p>
-                <img src="${infoEvent.logo}"></img>
-            </div>
-            <div class="col-10">
-                <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs en ligne chaque jour. Le Village Francophone vous offre le dispositif le plus important d'intelligence
-                collective jamais mis en oeuvre lors du South by SouthWest avec au programme : </br> </br> 2 après-midis marathon pour décrypter 15 tendances clés pour l'Entertainment
-                de la fashiontech, beautyTech, foodTech</p>
-                <a href="">Découvrir le programme des journées de travail</a>
-            </div>
-        `;
+                        <div style="border: 1px solid black">
+                            <div class="col-2">
+                                <p>${infoEvent.precision_date}</p>
+                                <p>${infoEvent.nom}</p>
+                                <img src="${infoEvent.logo}"></img>
+                            </div>
+                            <div class="col-10">
+                                <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs en ligne chaque jour. Le Village Francophone vous offre le dispositif le plus important d'intelligence
+                                collective jamais mis en oeuvre lors du South by SouthWest avec au programme : </br> </br> 2 après-midis marathon pour décrypter 15 tendances clés pour l'Entertainment
+                                de la fashiontech, beautyTech, foodTech</p>
+                                <a href="${infoEvent.web}">Découvrir le programme des journées de travail</a>
+                            </div>
+                        </div>
+            
+                    `;
 
         return content;
         }     
