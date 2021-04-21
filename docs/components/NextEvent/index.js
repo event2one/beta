@@ -18,12 +18,12 @@ class NextEvent extends HTMLElement {
 
 
     displayNextEvent = ({ infoEvents }) => {
-        let res = infoEvents.filter(infoEvent => infoEvent.afficher != 'n').map((infoEvent, index) => index < 2 ? this.infoEvent({ infoEvent, index }) : '').join('');
+        let res = infoEvents.filter(infoEvent => infoEvent.afficher != 'n').map((infoEvent, index) => index < 2 ? this.infoEvent({ infoEvent }) : '').join('');
         document.getElementById("nextEvent").innerHTML = res;
     }
 
-    infoEvent = ({ infoEvent, index }) => {
-        if(index < 4) {
+    infoEvent = ({ infoEvent }) => {
+
             const content = `
                         <div class="row" style="border-bottom: 0.5px solid grey; padding: 25px">
                             <div class="col-2">
@@ -40,8 +40,7 @@ class NextEvent extends HTMLElement {
                         </div>
                     `;
 
-        return content;
-        }     
+        return content;    
     }
  
     fetchNextEvent = async () => {
