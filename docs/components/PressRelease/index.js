@@ -8,7 +8,7 @@ class PressRelease extends HTMLElement {
         <section>
             <div class="container">
                     <h1 class="text-secondary">Actus</h1>
-                    <div class="row row-cols-1 row-cols-md-3" id="articleList"></div>
+                    <div class="row row-cols-1 row-cols-md-3 justify-content-around" id="articleList"></div>
                     <button>Toutes les actus</button>
             </div> 
         </section>`;
@@ -24,7 +24,7 @@ class PressRelease extends HTMLElement {
 
     Article = ({ article, index }) => {
         let text = article.texte_contextuel.replace(/(<([^>]+)>)/ig,"");
-        text.substring(0, 200);
+        text.substring(0, 50);
 
         if(index < 3) {
             const content = `
