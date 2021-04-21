@@ -28,7 +28,7 @@ class NextEvent extends HTMLElement {
                         <div class="row" style="border-bottom: 0.5px solid grey; padding: 25px">
                             <div class="col-2">
                                 <p style="font-weight: bold">${infoEvent.precision_date} </br> </br> ${infoEvent.nom}</p>
-                                <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 70%"></img>
+                                <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 100%"></img>
                             </div>
                             <div class="col-10">
                                 <p> 2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs en ligne chaque jour. Le Village Francophone vous offre le dispositif le plus important d'intelligence
