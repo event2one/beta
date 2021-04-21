@@ -27,8 +27,8 @@ class NextEvent extends HTMLElement {
             const content = `
                         <div class="row" style="border-bottom: 0.5px solid grey; padding-bottom: 50px">
                             <div class="col-2">
-                                <p>${infoEvent.precision_date}</p>
-                                <p>${infoEvent.nom}</p>
+                                <p style="font-weight: bold">${infoEvent.precision_date}</p>
+                                <p style="font-weight: bold">${infoEvent.nom}</p>
                                 <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 50%"></img>
                             </div>
                             <div class="col-10">
