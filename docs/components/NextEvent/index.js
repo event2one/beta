@@ -9,7 +9,7 @@ class NextEvent extends HTMLElement {
             <div class="container">
                 <h1 class="dark">Prochains évènement du Village Francophone</h1>
                 <h2 class="indigo-700">Les prochains temps forts</h2>
-                <div class="container>
+                <div class="container">
                     <div class="row" id="nextEvent"></div>
                 </div>
             </div> 
@@ -28,10 +28,9 @@ class NextEvent extends HTMLElement {
         if(index > 2) {
             const content = `
             <div class="col">
-                <p>15 au 16 MARS 2021</p>
-                <p>SOUTH BY SOUTHWEST PHYGITAL FORUM</p>
-                <img src=""></img>
-                <div>${infoEvent.nom}</div>   
+                <p>${infoEvent.precision_date}</p>
+                <p>${infoEvent.nom}</p>
+                <img src="${infoEvent.logo}"></img>
             </div>
             <div class="col">
                 <p>2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs</p>
