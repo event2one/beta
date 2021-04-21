@@ -20,8 +20,8 @@ class NextEvent extends HTMLElement {
 
 
     displayNextEvent = ({ infoEvents }) => {
-        let res = infoEvents.filter(article => infoEvent.etat != 'n').map((infoEvent, index) => this.Article({ infoEvent, index })).join('');
-        document.getElementById("infoEvent").innerHTML = res;
+        let res = infoEvents.filter(infoEvent => infoEvent.afficher != 'n').map((infoEvent, index) => this.infoEvent({ infoEvent, index })).join('');
+        document.getElementById("nextEvent").innerHTML = res;
     }
 
     infoEvent = ({ infoEvent }) => {
@@ -31,6 +31,7 @@ class NextEvent extends HTMLElement {
                                     <p>15 au 16 MARS 2021</p>
                                     <p>SOUTH BY SOUTHWEST PHYGITAL FORUM</p>
                                     <img src=""></img>
+                                    <div>${infoEvent.nom}</div>
 
                                     
                                 </div>
@@ -48,8 +49,8 @@ class NextEvent extends HTMLElement {
 
 		await fetch(`//www.mlg-consulting.com/smart_territory/form/api.php?action=getEvents&${req_suite}`)
                 .then(res => res.json())
-                .then(pressList => {
-                    this.displayPressList({ infoEvents : nextEvent });
+                .then(infoEvents => {
+                    this.displayNextEvent({ infoEvents : nextEvent });
                 })
     }
 }
