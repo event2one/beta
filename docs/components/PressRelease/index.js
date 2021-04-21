@@ -18,13 +18,12 @@ class PressRelease extends HTMLElement {
 
 
     displayArticles = ({ articles }) => {
-        let res = articles.filter(articles => articles.event_presta_categorie != "").map((article, index) => this.Article({ article, index })).join('');
+        let res = articles.filter(articles => articles.event_presta_categorie == "article").map((article, index) => this.Article({ article, index })).join('');
         document.getElementById("articleList").innerHTML = res;
     }
 
     Article = ({ article, index }) => {
-        let text = article.texte_contextuel.replace(/(<([^>]+)>)/ig,"");
-        text.substring(0, 50);
+        let text = article.texte_contextuel.replace(/(<([^>]+)>)/ig,"").substring(0, 50);
 
         if(index < 3) {
             const content = `
