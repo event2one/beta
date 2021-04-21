@@ -23,7 +23,7 @@ class PressRelease extends HTMLElement {
     }
 
     Article = ({ article, index }) => {
-        if(index < 3) {
+        if(index > 3 && index < 7) {
             const content = `
                             <div class="card" style="width: 18rem;"> 
                                 <div class="card-body">
