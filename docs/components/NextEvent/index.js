@@ -9,7 +9,7 @@ class NextEvent extends HTMLElement {
             <div class="container">
                 <h1 class="text-dark">Prochains évènement du Village Francophone</h1>
                 <h2 style="color: purple">Les prochains temps forts</h2>
-                <div class="container" id="nextEvent"></div>
+                <div class="container" id="nextEvent" style="box-shadow: 0px 0px 5px 1px grey"></div>
             </div> 
         </section>`;
 
@@ -25,7 +25,7 @@ class NextEvent extends HTMLElement {
     infoEvent = ({ infoEvent, index }) => {
         if(index < 2) {
             const content = `
-                        <div class="row" style="border: 1px solid grey; box-shadow: 0px 0px 5px 1px grey">
+                        <div class="row" style="border: 1px solid grey">
                             <div class="col-2">
                                 <p>${infoEvent.precision_date}</p>
                                 <p>${infoEvent.nom}</p>
