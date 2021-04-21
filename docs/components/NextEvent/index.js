@@ -38,7 +38,6 @@ class NextEvent extends HTMLElement {
                                 <a classe="link-info" href="${infoEvent.web}">Découvrir le programme des journées de travail</a>
                             </div>
                         </div>
-            
                     `;
 
         return content;
