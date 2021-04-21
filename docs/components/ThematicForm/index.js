@@ -27,7 +27,7 @@ class ThematicForm extends HTMLElement {
                     const content = `
                                 <div class="row">
                                     <input class="btn-primary" type="checkbox" id="checkbox1"></input>
-                                    <label for="checkbox1">${thematicCheckbox.nom}</label>
+                                    <label for="checkbox1">${thematicCheckbox.nom_cycle_lang}</label>
                                 </div>
                             `;
 
@@ -35,10 +35,8 @@ class ThematicForm extends HTMLElement {
             }
 
             fetchThematicForm = async () => {
-                
-                const req_suite = `params=where%20id_event!=399%20and`;
 
-                await fetch(`//www.mlg-consulting.com/smart_territory/form/api.php?action=getEvents&${req_suite}`)
+                await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=getCycleLang&id_event=1635`)
                         .then(res => res.json())
                         .then(thematicForm => {
                             this.displayThematicForm({ thematicCheckboxs : thematicForm });
