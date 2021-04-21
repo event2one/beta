@@ -25,10 +25,10 @@ class PressRelease extends HTMLElement {
     Article = ({ article, index }) => {
         if(index < 3) {
             const content = `
-                            <div class="card">
+                            <div class="card" style="width: 18rem;"> 
                                 <div class="card-body">
                                     <div class="card-title">${article.event_presta_nom}</div>
-                                    <img src="" class="card-img"></card>
+                                    <img src="https://www.mlg-consulting.com/manager_cc/docs/archives/${article.event_presta_visuel}" class="card-img"></card>
                                     <p class="card-text">${article.date_parution}</p>
                                     <p class="card-text">${article.texte_contextuel}</p>
                                     <a href="https://lirelasuite" class="card-link text-end">Lire la suite</a>
