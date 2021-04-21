@@ -8,7 +8,7 @@ class NextEvent extends HTMLElement {
         <section>
             <div class="container">
                 <h1 class="dark">Prochains évènement du Village Francophone</h1>
-                <h2 class="indigo-700">Prochains évènement du Village Francophone</h2>
+                <h2 class="indigo-700">Les prochains temps forts</h2>
                 <div class="container>
                     <div class="row" id="nextEvent"></div>
                 </div>
@@ -27,7 +27,7 @@ class NextEvent extends HTMLElement {
     infoEvent = ({ infoEvent, index }) => {
         if(index > 2) {
             const content = `
-            <div class="col-2">
+            <div class="col">
                 <p>15 au 16 MARS 2021</p>
                 <p>SOUTH BY SOUTHWEST PHYGITAL FORUM</p>
                 <img src=""></img>
