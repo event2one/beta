@@ -34,7 +34,7 @@ class PressRelease extends HTMLElement {
                                     <p class="card-text">${article.date_parution}</p>
                                     <p class="card-text" style="padding: 5px">${text}</p>
                                 </div> 
-                                <div class="card-footer text-right">
+                                <div class="card-footer text-right" style="background-color: #fff;border-top: 0px solid">
                                     <a href="https://lirelasuite" class="card-link text-end">Lire la suite</a>
                                 </div> 
                                     
