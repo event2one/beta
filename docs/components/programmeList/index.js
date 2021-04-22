@@ -6,7 +6,7 @@ class ProgrammeList extends HTMLElement {
         this.innerHTML = `<div class="container">
                               <h2 class="mb-4">Sélectionner une thématique</h2>
                               </hr>
-                              <h4 class="mb-4">Je sélectionne dans la liste ci-dessous l besoin prioritaire auquel répond ma solution</h4>
+                              <h4 class="mb-4">Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</h4>
                               <div id="programmeList"></div>
                           </div>`
 
