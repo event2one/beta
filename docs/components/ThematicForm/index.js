@@ -17,7 +17,7 @@ class ThematicForm extends HTMLElement {
 
         const collectifList = thematicCheckbox.cycle_lang_type;
         let collectifListUnique = [...new Set(collectifList)];
-        console.log(collectifListUnique);
+        console.log('cet array a des valeurs uniques' + collectifListUnique);
 
         let res = thematicCheckboxs.filter(thematicCheckbox => thematicCheckbox.cycle_lang_type == 'collectif_technologique').map((thematicCheckbox) => this.thematicCheckbox({ thematicCheckbox })).join('');
         document.getElementById("thematicCheckbox").innerHTML = res;
