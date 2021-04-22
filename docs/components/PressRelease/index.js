@@ -29,7 +29,7 @@ class PressRelease extends HTMLElement {
                             <div class="card" style="width: 20rem;"> 
                                 <div class="card-body">
                                     <div class="card-title">${article.event_presta_nom}</div>
-                                    <img src="https://picsum.photos/id/326/200" class="card-img"></card>
+                                    <img src="https://picsum.photos/id/1041/200" class="card-img"></card>
                                     <p class="text-muted small">${article.date_parution}</p>
                                     <p class="card-text" style="padding: 5px">${text}</p>
                                 </div> 
