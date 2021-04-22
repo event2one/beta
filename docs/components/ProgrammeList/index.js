@@ -7,8 +7,10 @@ class ProgrammeList extends HTMLElement {
                               <h2 class="mb-4">Sélectionner une thématique</h2>
                               </hr>
                               <h4 class="mb-4">Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</h4>
-                              <div id="programmeList"></div>
-                          </div>`
+                              <table class="table table-sm">
+                                <tbody id="programmeList"></tbody>
+                              </table>
+                          </div>`;
 
         this.fetchProgrammeList();
     }
@@ -23,12 +25,13 @@ class ProgrammeList extends HTMLElement {
 
     programmeListCheckbox = ({ programmeListCheckbox }) => {
 
-        const content = `</hr>
-                         <div class="row" style="height: 10%">  
-                            <input name="eventDemandesReferencement" class="btn-primary col-2" type="checkbox" id="${programmeListCheckbox.id_cycle_lang}" value="${programmeListCheckbox.id_cycle_lang}"></input>
-                            <img src="https://www.mlg-consulting.com/manager_cc/docs/archives/${programmeListCheckbox.logo}" class="col-2" style="width: 70%"></img>
-                            <label for="eventDemandesReferencement}" class="col-8">${programmeListCheckbox.programm_title}</label>
-                         </div>`;
+        const content = `
+                         <tr>
+                            <td><input name="eventDemandesReferencement" class="btn-primary col-2" type="checkbox" id="${programmeListCheckbox.id_cycle_lang}" value="${programmeListCheckbox.id_cycle_lang}"></input></td>
+                            <td><img src="https://www.mlg-consulting.com/manager_cc/docs/archives/${programmeListCheckbox.logo}" class="col-2" style="width: 10%"></img></td>
+                            <td><label for="eventDemandesReferencement}" class="col-8">${programmeListCheckbox.programm_title}</label></td>
+                         </tr>   
+                        `;
 
         return content;
     }
