@@ -21,7 +21,7 @@ class ThematicForm extends HTMLElement {
     thematicCheckbox = ({ thematicCheckbox }) => {
 
         const content = `
-                                <div class="col-4">
+                                <div class="col-6">
                                     <input name="eventCycleLang" class="btn-primary" type="checkbox" id="checkbox1" value="${thematicCheckbox.id_cycle_lang}"></input>
                                     <label for="checkbox1">${thematicCheckbox.nom_cycle_lang}</label>
                                 </div>
