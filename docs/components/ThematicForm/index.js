@@ -2,12 +2,11 @@ class ThematicForm extends HTMLElement {
     constructor() {
         super();
 
-        this.innerHTML = `<div class="container">
-                                <h4 class="mb-4">Choix de mes collectifs technologiques</h4>
-            
-                                <p>Si ma solution s'inscrit dans une thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
-                                <div class="row" id="thematicCheckbox"></div>
-                            </div>`
+        this.innerHTML = `<div>
+                              <h4 class="mb-4">Choix de mes collectifs technologiques</h4>
+                              <p>Si ma solution s'inscrit dans une thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
+                              <div class="row" id="thematicCheckbox"></div>
+                          </div>`
 
         this.fetchThematicForm();
     }
