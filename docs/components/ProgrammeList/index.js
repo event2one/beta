@@ -19,16 +19,16 @@ class ProgrammeList extends HTMLElement {
 
         let res = programmeListCheckboxs.map((programmeListCheckbox) => this.programmeListCheckbox({ programmeListCheckbox })).join('');
         document.getElementById("programmeList").innerHTML = res;
-        
+
     }
 
     programmeListCheckbox = ({ programmeListCheckbox }) => {
 
         const content = `
                          <tr>
-                            <td><input name="eventDemandesReferencement" class="btn-primary col-2" type="checkbox" id="${programmeListCheckbox.id_cycle_lang}" value="${programmeListCheckbox.id_cycle_lang}"></input></td>
-                            <td><img src="https://www.mlg-consulting.com/manager_cc/docs/archives/${programmeListCheckbox.logo}" class="col-2"></img></td>
-                            <td><label for="eventDemandesReferencement}" class="col-8">${programmeListCheckbox.programm_title}</label></td>
+                            <td><input name="eventDemandesReferencement" class="btn-primary" type="checkbox" id="${programmeListCheckbox.id_cycle_lang}" value="${programmeListCheckbox.id_cycle_lang}"></input></td>
+                            <td><img src="https://www.mlg-consulting.com/manager_cc/docs/archives/${programmeListCheckbox.logo}"></img></td>
+                            <td><label for="eventDemandesReferencement}" >${programmeListCheckbox.programm_title}</label></td>
                          </tr>   
                         `;
 
