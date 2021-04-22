@@ -13,7 +13,7 @@ class ThematicForm extends HTMLElement {
 
     displayThematicForm = ({ thematicCheckboxs }) => {
 
-        const collectifList = ['collectif_technologique','collectif_sectoriel'];
+        const collectifList = ['collectif_technologique', 'collectif_sectoriel'];
 
         let res = thematicCheckboxs.filter(thematicCheckbox => thematicCheckbox.cycle_lang_type == collectifList[0]).map((thematicCheckbox) => this.thematicCheckbox({ thematicCheckbox })).join('');
         document.getElementById("thematicCheckbox").innerHTML = res;
@@ -23,10 +23,10 @@ class ThematicForm extends HTMLElement {
 
         const content = `
                                 <div class="col-6">
-                                    <input name="eventCycleLang" class="btn-primary" type="checkbox" id="checkbox1" value="${thematicCheckbox.id_cycle_lang}"></input>
-                                    <label for="checkbox1">${thematicCheckbox.nom_cycle_lang}</label>
+                                    <input name="eventCycleLang" class="btn-primary" type="checkbox" id="cl_${thematicCheckbox.id_cycle_lang}" value="${thematicCheckbox.id_cycle_lang}"></input>
+                                    <label for="cl_${thematicCheckbox.id_cycle_lang}">${thematicCheckbox.nom_cycle_lang}</label>
                                 </div>
-                        `; 
+                        `;
 
         return content;
     }
