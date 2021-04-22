@@ -17,7 +17,7 @@ class ThematicForm extends HTMLElement {
 
         // let collectifList = thematicCheckboxs.cycle_lang_type;
 
-        let res = thematicCheckboxs.filter(thematicCheckbox => thematicCheckbox.cycle_lang_trype == 'collectif_technologique').map((thematicCheckbox) => this.thematicCheckbox({ thematicCheckbox })).join('');
+        let res = thematicCheckboxs.filter(thematicCheckbox => thematicCheckbox.cycle_lang_type == 'collectif_technologique').map((thematicCheckbox) => this.thematicCheckbox({ thematicCheckbox })).join('');
         document.getElementById("thematicCheckbox").innerHTML = res;
     }
 
@@ -35,9 +35,9 @@ class ThematicForm extends HTMLElement {
 
     fetchThematicForm = async () => {
 
-        const req_ = `getCycleLang`;
+        const req = `getCycleLang`;
 
-        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_}`)
+        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
             .then(res => res.json())
             .then(thematicForm => {
                 this.displayThematicForm({ thematicCheckboxs: thematicForm });
