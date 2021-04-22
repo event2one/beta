@@ -7,7 +7,7 @@ class ProgrammeList extends HTMLElement {
                               <h2 class="mb-4">Sélectionner une thématique</h2>
                               </hr>
                               <p><b>Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</b></p>
-                              <table class="table table-sm">
+                              <table class="table">
                                 <tbody id="programmeList"></tbody>
                               </table>
                           </div>`;
