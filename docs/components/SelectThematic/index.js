@@ -3,7 +3,7 @@ class SelectThematic extends HTMLElement {
     constructor() {
         super();
 
-        this.innerHTML = `<div>
+        this.innerHTML = `<div class="container">
                               <h2 class="mb-4">Sélectionner une thématique</h2>
                               </hr>
                               <h4 class="mb-4">Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</h4>
