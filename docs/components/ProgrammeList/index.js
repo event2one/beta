@@ -6,7 +6,7 @@ class ProgrammeList extends HTMLElement {
         this.id_cycle_lang = this.getAttribute('id_cycle_lang');
 
         this.innerHTML = `<div>
-                              <h4 class="mb-4">Sélectionner une thématique </h4>
+                              <h4 class="mb-4">Choix de mes thématiques</h4>
                               </hr>
                               <p><b>Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</b></p>
                               <table class="table table-sm">
@@ -39,9 +39,9 @@ class ProgrammeList extends HTMLElement {
 
     fetchProgrammeList = async () => {
 
-        const req = `action=getDemandesReferencement&id_cycle_lang=${this.id_cycle_lang}`;
+        const req = this.id_cycle_lang ? `&id_cycle_lang=${this.id_cycle_lang}` : ``;
 
-        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?${req}`)
+        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=getDemandesReferencement${req}`)
             .then(res => res.json())
             .then(programmeList => {
                 this.displayProgrammeList({ programmeListCheckboxs: programmeList });
