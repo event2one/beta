@@ -15,7 +15,7 @@ class ThematicForm extends HTMLElement {
 
     displayThematicForm = ({ thematicCheckboxs }) => {
 
-        const collectifList = ['collectif_technologique'];
+        const collectifList = ['collectif_technologique','collectif_sectoriel'];
 
         let res = thematicCheckboxs.filter(thematicCheckbox => thematicCheckbox.cycle_lang_type == collectifList[0]).map((thematicCheckbox) => this.thematicCheckbox({ thematicCheckbox })).join('');
         document.getElementById("thematicCheckbox").innerHTML = res;
