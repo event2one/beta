@@ -1,9 +1,10 @@
 class ThematicForm extends HTMLElement {
+
     constructor() {
         super();
 
         this.innerHTML = `<div>
-                              <h4 class="mb-4">Choix de mes collectifs technologiques</h4>
+                              <h4 class="mb-4" id="testclick">Choix de mes collectifs technologiques</h4>
                               <p>Si ma solution s'inscrit dans une thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
                               <div class="row" id="thematicCheckbox"></div>
                           </div>`
@@ -21,12 +22,10 @@ class ThematicForm extends HTMLElement {
 
     thematicCheckbox = ({ thematicCheckbox }) => {
 
-        const content = `
-                                <div class="col-6">
-                                    <input name="eventCycleLang" class="btn-primary" type="checkbox" id="cl_${thematicCheckbox.id_cycle_lang}" value="${thematicCheckbox.id_cycle_lang}"></input>
-                                    <label for="cl_${thematicCheckbox.id_cycle_lang}">${thematicCheckbox.nom_cycle_lang}</label>
-                                </div>
-                        `;
+        const content = `<div class="col-6">
+                            <input name="eventCycleLang" class="btn-primary" type="checkbox" id="cl_${thematicCheckbox.id_cycle_lang}" value="${thematicCheckbox.id_cycle_lang}"></input>
+                            <label for="cl_${thematicCheckbox.id_cycle_lang}">${thematicCheckbox.nom_cycle_lang}</label>
+                        </div>`;
 
         return content;
     }
