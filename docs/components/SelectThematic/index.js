@@ -6,7 +6,7 @@ class SelectThematic extends HTMLElement {
         this.innerHTML = `<div>
                               <h2 class="mb-4">Sélectionner une thématique</h2>
                               </hr>
-                              <h4 class="mb-4">Je sélectionne dans la lisye ci-dessous le besoin prioritaire auquel répond ma solution</h4>
+                              <h4 class="mb-4">Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</h4>
                               <div id="selectThematicCheckbox"></div>
                           </div>`
 
@@ -17,7 +17,7 @@ class SelectThematic extends HTMLElement {
 
         // const collectifList = ['collectif_technologique', 'collectif_sectoriel'];
 
-        let res = selectThematicCheckboxs.filter(selectThematicCheckbox => selectThematicCheckbox.programm_title == '').map((selectThematicCheckbox) => this.selectThematicCheckbox({ selectThematicCheckbox })).join('');
+        let res = selectThematicCheckboxs.map((selectThematicCheckbox) => this.selectThematicCheckbox({ selectThematicCheckbox })).join('');
         document.getElementById("selectThematicCheckbox").innerHTML = res;
     }
 
