@@ -44,14 +44,14 @@ class PartenairesList extends HTMLElement {
 
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
             .then(res => res.json())
-            .then(contactList => {
-                this.fetchInfoContact({ infoContactList : contactList });
+            .then(contact => {
+                this.fetchInfoContact({ ContactList : contact});
             })
     }
 
-    fetchInfoContact = async ({ infoContactList }) => {
+    fetchInfoContact = async ({ ContactList }) => {
 
-        const req_id_contact = `${infoContactList.id_contact}`
+        const req_id_contact = `${ContactList.id_contact}`
 
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
             .then(res => res.json())
