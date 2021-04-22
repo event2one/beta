@@ -37,9 +37,9 @@ class ProgrammeList extends HTMLElement {
 
     fetchProgrammeList = async () => {
 
-        const req = `getDemandesReferencement&id_cycle_lang=${this.id_cycle_lang}`;
+        const req = `action=getDemandesReferencement&id_cycle_lang=${this.id_cycle_lang}`;
 
-        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
+        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?${req}`)
             .then(res => res.json())
             .then(programmeList => {
                 this.displayProgrammeList({ programmeListCheckboxs: programmeList });
