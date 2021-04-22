@@ -8,8 +8,8 @@ class PressRelease extends HTMLElement {
         <section>
             <div class="container">
                     <h1 class="text-secondary" style="color: #fff; text-align: center">Actus</h1>
-                    <div class="row row-cols-1 row-cols-md-3 justify-content-around" id="articleList"></div>
-                    <p class="text-center"><a class="btn btn-secndary" href="">Toutes les actus </a></p>
+                    <div class="row row-cols-1 row-cols-md-3 justify-content-around mb-3" id="articleList"></div>
+                    <p class="text-center"><a class="btn btn-secondary" href="">Toutes les actus </a></p>
             </div> 
         </section>`;
 
