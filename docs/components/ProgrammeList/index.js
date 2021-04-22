@@ -25,7 +25,7 @@ class ProgrammeList extends HTMLElement {
     programmeListCheckbox = ({ programmeListCheckbox }) => {
 
         const content = `
-                         <tr>
+                         <tr style="display:flex; flex-direction: row; justify-content: center">
                             <td><input name="eventDemandesReferencement" class="btn-primary" type="checkbox" id="${programmeListCheckbox.id_cycle_lang}" value="${programmeListCheckbox.id_cycle_lang}"></input></td>
                             <td><img src="https://www.mlg-consulting.com/manager_cc/docs/archives/${programmeListCheckbox.logo}" style="width:5vh"></img></td>
                             <td><label for="eventDemandesReferencement}" >${programmeListCheckbox.programm_title}</label></td>
