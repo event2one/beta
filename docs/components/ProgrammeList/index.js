@@ -41,6 +41,8 @@ class ProgrammeList extends HTMLElement {
 
         const req = this.id_cycle_lang ? `&id_cycle_lang=${this.id_cycle_lang}` : ``;
 
+        console.log(this.id_cycle_lang);
+
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=getDemandesReferencement${req}`)
             .then(res => res.json())
             .then(programmeList => {
