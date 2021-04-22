@@ -18,14 +18,13 @@ class PressRelease extends HTMLElement {
 
 
     displayArticles = ({ articles }) => {
-        let res = articles.filter(articles => articles.event_presta_categorie == "article").map((article, index) => this.Article({ article, index })).join('');
+        let res = articles.filter(articles => articles.event_presta_categorie == "article").map((article, index) => index < 3 ? this.Article({ article }) : '').join('');
         document.getElementById("articleList").innerHTML = res;
     }
 
-    Article = ({ article, index }) => {
+    Article = ({ article }) => {
         let text = article.texte_contextuel.replace(/(<([^>]+)>)/ig,"").substring(0, 200);
 
-        if(index < 3) {
             const content = `
                             <div class="card" style="width: 20rem;"> 
                                 <div class="card-body">
@@ -37,12 +36,9 @@ class PressRelease extends HTMLElement {
                                 <div class="card-footer text-right" style="background-color: #fff;border-top: 0px solid">
                                     <a href="https://lirelasuite" class="card-link text-end">Lire la suite</a>
                                 </div> 
-                                    
-                                
                             </div>
                         `;
             return content;
-        } 
     }
  
     fetchArticles = async () => {

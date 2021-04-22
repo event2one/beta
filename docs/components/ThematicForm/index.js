@@ -14,7 +14,7 @@ class ThematicForm extends HTMLElement {
     }
 
     displayThematicForm = ({ thematicCheckboxs }) => {
-        let res = thematicCheckboxs.filter(thematicCheckbox => thematicCheckbox.afficher != 'n').map((thematicCheckbox, index) => this.thematicCheckbox({ thematicCheckbox })).join('');
+        let res = thematicCheckboxs.filter(thematicCheckbox => thematicCheckbox.afficher != 'n').map((thematicCheckbox) => this.thematicCheckbox({ thematicCheckbox })).join('');
         document.getElementById("thematicCheckbox").innerHTML = res;
     }
 
