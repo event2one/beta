@@ -4,7 +4,7 @@ class ProgrammeList extends HTMLElement {
         super();
 
         this.innerHTML = `<div class="container">
-                              <h2 class="mb-4">Sélectionner une thématique</h2>
+                              <h4 class="mb-4">Sélectionner une thématique</h4>
                               </hr>
                               <p><b>Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</b></p>
                               <table class="table">
@@ -13,6 +13,8 @@ class ProgrammeList extends HTMLElement {
                           </div>`;
 
         this.fetchProgrammeList();
+
+        this.id_cycle_lang = this.getAttribute('id_cycle_lang');
     }
 
     displayProgrammeList = ({ programmeListCheckboxs }) => {
@@ -24,25 +26,23 @@ class ProgrammeList extends HTMLElement {
 
     programmeListCheckbox = ({ programmeListCheckbox }) => {
 
-        const content = `
-                         <tr>
+        const content = `<tr>
                             <td><input name="eventDemandesReferencement" class="btn-primary" type="checkbox" id="${programmeListCheckbox.id_cycle_lang}" value="${programmeListCheckbox.id_cycle_lang}"></input></td>
                             <td><img src="https://www.mlg-consulting.com/manager_cc/docs/archives/${programmeListCheckbox.logo}" style="width:5vh"></img></td>
                             <td><label for="eventDemandesReferencement}" >${programmeListCheckbox.programm_title}</label></td>
-                         </tr>   
-                        `;
+                         </tr>`;
 
         return content;
     }
 
     fetchProgrammeList = async () => {
 
-        const req = `getDemandesReferencement`;
+        const req = `getDemandesReferencement&id_cycle_lang=${this.id_cycle_lang}`;
 
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
             .then(res => res.json())
             .then(programmeList => {
-                this.displayProgrammeList({ programmeListCheckboxs : programmeList });
+                this.displayProgrammeList({ programmeListCheckboxs: programmeList });
             })
     }
 }
