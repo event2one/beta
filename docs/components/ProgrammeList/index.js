@@ -5,11 +5,11 @@ class ProgrammeList extends HTMLElement {
 
         this.id_cycle_lang = this.getAttribute('id_cycle_lang');
 
-        this.innerHTML = `<div class="container">
+        this.innerHTML = `<div>
                               <h4 class="mb-4">Sélectionner une thématique </h4>
                               </hr>
                               <p><b>Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</b></p>
-                              <table class="table">
+                              <table class="table table-sm">
                                 <tbody id="programmeList"></tbody>
                               </table>
                           </div>`;
