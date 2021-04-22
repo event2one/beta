@@ -6,7 +6,7 @@ class ProgrammeList extends HTMLElement {
         this.innerHTML = `<div class="container">
                               <h2 class="mb-4">Sélectionner une thématique</h2>
                               </hr>
-                              <h4 class="mb-4">Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</h4>
+                              <p><b>Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</b></p>
                               <table class="table table-sm">
                                 <tbody id="programmeList"></tbody>
                               </table>
@@ -27,7 +27,7 @@ class ProgrammeList extends HTMLElement {
         const content = `
                          <tr>
                             <td><input name="eventDemandesReferencement" class="btn-primary" type="checkbox" id="${programmeListCheckbox.id_cycle_lang}" value="${programmeListCheckbox.id_cycle_lang}"></input></td>
-                            <td><img src="https://www.mlg-consulting.com/manager_cc/docs/archives/${programmeListCheckbox.logo}" style="width:30px"></img></td>
+                            <td><img src="https://www.mlg-consulting.com/manager_cc/docs/archives/${programmeListCheckbox.logo}" style="width:5vh"></img></td>
                             <td><label for="eventDemandesReferencement}" >${programmeListCheckbox.programm_title}</label></td>
                          </tr>   
                         `;
