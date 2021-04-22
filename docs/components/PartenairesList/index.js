@@ -51,8 +51,7 @@ class PartenairesList extends HTMLElement {
 
     fetchInfoContact = async ({ ContactList }) => {
 
-        const req_id_contact = `${ContactList.id_contact}`
-
+        const req_id_contact = `getContact&id_contact=${ContactList.id_contact}`
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
             .then(res => res.json())
             .then(infoContactList => {
