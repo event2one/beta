@@ -4,9 +4,9 @@ class ThematicForm extends HTMLElement {
 
         this.innerHTML = `<section>
                             <div class="container">
-                                <h1 class="" style="color: white; background-color: #25555c; padding: 5px;">Choix de mes collectifs technologiques</h1>
+                                <h1 class="" style="color: white; background-color: #25555c; padding: 10px;">Choix de mes collectifs technologiques</h1>
                                 <p>Si ma solution s'inscrit dans uen thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
-                                <div class="container" id="thematicCheckbox"><div class="row"></div></div>
+                                <div class="row" id="thematicCheckbox"></div>
                             </div> 
                         </section>`
 
