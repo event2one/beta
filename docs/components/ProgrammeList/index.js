@@ -3,8 +3,10 @@ class ProgrammeList extends HTMLElement {
     constructor() {
         super();
 
+        this.id_cycle_lang = this.getAttribute('id_cycle_lang');
+
         this.innerHTML = `<div class="container">
-                              <h4 class="mb-4">Sélectionner une thématique</h4>
+                              <h4 class="mb-4">Sélectionner une thématique ${this.id_cycle_lang}</h4>
                               </hr>
                               <p><b>Je sélectionne dans la liste ci-dessous le besoin prioritaire auquel répond ma solution</b></p>
                               <table class="table">
@@ -14,7 +16,6 @@ class ProgrammeList extends HTMLElement {
 
         this.fetchProgrammeList();
 
-        this.id_cycle_lang = this.getAttribute('id_cycle_lang');
     }
 
     displayProgrammeList = ({ programmeListCheckboxs }) => {
