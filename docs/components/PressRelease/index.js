@@ -7,9 +7,9 @@ class PressRelease extends HTMLElement {
         this.innerHTML = `
         <section>
             <div class="container">
-                    <h1 class="text-secondary">Actus</h1>
+                    <h1 class="text-secondary" style="color: #fff; text-align: center">Actus</h1>
                     <div class="row row-cols-1 row-cols-md-3 justify-content-around" id="articleList"></div>
-                    <button>Toutes les actus</button>
+                    <p class="text-center"><a class="btn btn-secndary" href="">Toutes les actus </a></p>
             </div> 
         </section>`;
 
