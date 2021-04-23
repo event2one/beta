@@ -5,13 +5,16 @@ class PartenairesList extends HTMLElement {
 
         this.innerHTML = `<div class="container">
                             <h2 class="mb-4">Les partenaires et solutions</h2>
-                              <div class="carouselslider">
-                                <input class="carousel-control previous carousel-previous" type="button" value=""></input>
-                                <div class="carousel-wrap">
-                                    <div class="margin-fixer">
-                                        <ul class="item_list" id="partenairesList"></ul>
-                                    </div>
-                                </div>
+                              <div class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" id="partenairesList"></div>
+                                    <a class="carousel-control-prev" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
                               </div>
                           </div>`;
 
@@ -20,13 +23,12 @@ class PartenairesList extends HTMLElement {
 
     displayInfoContacts = ({ infoContact }) => {
 
-        // console.log(infoContacts)
         const content = `
-                         <li style="height: 200px;">
-                            <a href="infoContact">
-                                <img src="${infoContact.logos.medium}" style="width: 20%"></img>
-                            </a>
-                         </li>
+                            <div class="carousel-item">
+                                <a href="${infoContact.web}">
+                                    <img src="${infoContact.logos.medium}" class="d-block w-100"></img>
+                                </a>
+                            </div>
                         `;
         
         document.getElementById("partenairesList").insertAdjacentHTML('afterbegin', content);
