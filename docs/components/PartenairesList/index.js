@@ -29,7 +29,6 @@ class PartenairesList extends HTMLElement {
                          </li>
                         `;
         document.getElementById("partenairesList").innerHTML = content;
-        console.log('oui')
 
     }
 
