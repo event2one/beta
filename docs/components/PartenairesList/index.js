@@ -3,6 +3,8 @@ class PartenairesList extends HTMLElement {
     constructor() {
         super();
 
+        this.id_event = this.getAttribute('id_event'),
+
         this.innerHTML = `
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
                         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
@@ -57,7 +59,7 @@ class PartenairesList extends HTMLElement {
         const content = `
                         <li class="splide__slide">
                                 <a href="${infoContact.web}" target="_blank">
-                                        <img src="${infoContact.logos.medium}" style="width: 20%"></img>
+                                        <img src="${infoContact.logos.medium}" style="width:100%"/>
                                 </a>
                         </li>
                         `;
@@ -68,7 +70,7 @@ class PartenairesList extends HTMLElement {
 
     fetchContactList = async () => {
 
-        const req = `getContactConferencierList&filter=%20and%20id_event=1635`;
+        const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event}`;
 
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
             .then(res => res.json())
