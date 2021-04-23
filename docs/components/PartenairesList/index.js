@@ -32,9 +32,12 @@ class PartenairesList extends HTMLElement {
                                     new Splide('.splide', {
                                         perPage: 10,
                                         type: 'loop',
+                                        autoWidth: true,
                                         autoplay: true
                                     }).mount();
                                 });
+
+                                console.log('je passe par le script à ce moment là)
                         </script>
 
                         <section>
