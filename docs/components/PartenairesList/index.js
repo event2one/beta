@@ -43,6 +43,9 @@ class PartenairesList extends HTMLElement {
         this.fetchContactList();
 
         document.addEventListener('DOMContentLoaded', () => {
+
+            alert("p");
+
             new Splide('.splide', {
                 perPage: 10,
                 type: 'loop',
@@ -54,13 +57,11 @@ class PartenairesList extends HTMLElement {
 
     displayInfoContacts = ({ infoContact }) => {
 
-        const content = `
-                        <li class="splide__slide">
+        const content = `<li class="splide__slide">
                                 <a href="${infoContact.web}" target="_blank">
                                         <img src="${infoContact.logos.medium}" style="width:100%"/>
                                 </a>
-                        </li>
-                        `;
+                        </li>`;
 
         document.getElementById("partenairesList").insertAdjacentHTML('afterbegin', content);
 
@@ -73,14 +74,15 @@ class PartenairesList extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
             .then(res => res.json())
             .then(contactEvent => {
-                this.researchInfoContact({ infoContactEvents : contactEvent});
+                this.researchInfoContact({ infoContactEvents: contactEvent });
             })
     }
 
-    researchInfoContact = ({infoContactEvents}) => {
+    researchInfoContact = ({ infoContactEvents }) => {
 
         let uniqueIdInfoContactEvents = [...new Set(infoContactEvents.map(infoConctactEvent => infoConctactEvent.id_contact))];
-        console.log(uniqueIdInfoContactEvents);
+
+        //console.log(uniqueIdInfoContactEvents);
 
         uniqueIdInfoContactEvents.filter(uniqueIdInfoContactEvent => uniqueIdInfoContactEvent != '').map((uniqueIdInfoContactEvent, index) => this.fetchInfoContact({ uniqueIdInfoContactEvent, index })).join('');
 
@@ -94,9 +96,8 @@ class PartenairesList extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
             .then(res => res.json())
             .then(infoContactList => {
-                this.displayInfoContacts({ infoContact : infoContactList });
+                this.displayInfoContacts({ infoContact: infoContactList });
             })
-            .then()
     }
 }
 
