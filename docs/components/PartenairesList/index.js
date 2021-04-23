@@ -18,17 +18,18 @@ class PartenairesList extends HTMLElement {
         this.fetchContactList();
     }
 
-    displayInfoContacts = ({ infoContacts }) => {
+    displayInfoContacts = ({ infoContact }) => {
 
         // console.log(infoContacts)
         const content = `
                          <li style="height: 200px;">
                             <a href="infoContact">
-                                <img src="https://www.event2one.com/screen_manager/content/logos/${infoContacts.logo}"></img>
+                                <img src="https://www.event2one.com/screen_manager/content/logos/${infoContact.logo}"></img>
                             </a>
                          </li>
                         `;
         document.getElementById("partenairesList").innerHTML = content;
+        console.log('oui')
 
     }
 
@@ -63,7 +64,7 @@ class PartenairesList extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
             .then(res => res.json())
             .then(infoContactList => {
-                this.displayInfoContacts({ infoContacts : infoContactList });
+                this.displayInfoContacts({ infoContact : infoContactList });
             })
     }
 }
