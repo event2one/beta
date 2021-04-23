@@ -3,20 +3,21 @@ class PartenairesList extends HTMLElement {
     constructor() {
         super();
 
-        this.innerHTML = `
 
+        document.addEventListener( 'DOMContentLoaded', function () {
+            new Splide( '.splide',{
+                perPage :10,
+                type    : 'loop',
+                    autoplay: true} ).mount();
+        } );
+
+        this.innerHTML = `
+                    <head>
                         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
                         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-
-                        <script>
-                            document.addEventListener( 'DOMContentLoaded', function () {
-                                new Splide( '.splide',{
-                                    perPage :10,
-                                    type    : 'loop',
-                                        autoplay: true} ).mount();
-                            } );
-                        </script>
+                    </head>
+                        
         
                         <style>
                             body{
