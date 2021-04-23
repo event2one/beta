@@ -68,7 +68,7 @@ class PartenairesList extends HTMLElement {
             }).then(res => {
 
 
-                alert("d");
+                alert("f");
 
                 new Splide('.splide', {
                     perPage: 10,
