@@ -65,11 +65,13 @@ class PartenairesList extends HTMLElement {
                 this.researchInfoContact({ infoContactEvents: contactEvent });
             }).then(res => {
 
+                console.log(document.querySelector(".partenairesList"));
+
                 new Splide('.splide', {
                     perPage: 10,
                     type: 'loop',
                     autoplay: true
-                });
+                }).mount();
 
 
             })
