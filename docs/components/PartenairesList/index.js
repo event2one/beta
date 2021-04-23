@@ -47,18 +47,17 @@ class PartenairesList extends HTMLElement {
     researchInfoContact = ({infoContactEvents}) => {
 
         // console.log(infoContactEvents);
+        let uniqueIdInfoContactEvents = [...new Set(infoContactEvents.id_contact)];
+        console.log(uniqueIdInfoContactEvents);
 
-        infoContactEvents.filter(infoContactEvent => infoContactEvent.id_contact != '').map((infoContactEvent) => this.fetchInfoContact({ infoContactEvent })).join('');
+        // uniqueIdInfoContactEvents.filter(uniqueIdInfoContactEvent => uniqueIdInfoContactEvent.id_contact != '').map((uniqueIdInfoContactEvent) => this.fetchInfoContact({ uniqueIdInfoContactEvent })).join('');
 
     }
 
-    fetchInfoContact = async ({ infoContactEvent }) => {
+    fetchInfoContact = async ({ uniqueIdInfoContactEvent }) => {
 
-        let uniqueInfoContactId = [...new Set(infoContactEvent.id_contact)];
 
-        console.log(uniqueInfoContactId)
-
-        const req_id_contact = `getContact&id_contact=${uniqueInfoContactId}`;
+        const req_id_contact = `getContact&id_contact=${uniqueIdInfoContactEvent.id_contact}`;
 
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
             .then(res => res.json())
