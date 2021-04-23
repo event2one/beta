@@ -22,7 +22,7 @@ class PartenairesList extends HTMLElement {
 
         console.log(infoContacts)
         // let res = infoContacts.map((infoContact) => this.infoContact({ infoContact })).join('');
-        document.getElementById("partenairesList").innerHTML = res;
+        // document.getElementById("partenairesList").innerHTML = res;
 
     }
 
