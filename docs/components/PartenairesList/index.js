@@ -39,7 +39,7 @@ class PartenairesList extends HTMLElement {
 
         this.fetchContactList();
 
-        document.addEventListener('load', function () {
+        document.addEventListener('DOMContentLoaded', function () {
             new Splide('.splide', {
                 perPage: 10,
                 type: 'loop',
