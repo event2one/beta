@@ -154,6 +154,12 @@ class PartenairesList extends HTMLElement {
             .then(res => res.json())
             .then(contactEvent => {
                 this.researchInfoContact({ infoContactEvents: contactEvent });
+            }).then(res => {
+                new Splide('.splide', {
+                    perPage: 10,
+                    type: 'loop',
+                    autoplay: true
+                }).mount();
             })
     }
 
