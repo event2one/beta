@@ -44,12 +44,9 @@ class PartenairesList extends HTMLElement {
 
         document.addEventListener('DOMContentLoaded', () => {
 
-            alert("p");
-
             new Splide('.splide', {
                 perPage: 10,
                 type: 'loop',
-                autoWidth: true,
                 autoplay: true
             }).mount();
         });
