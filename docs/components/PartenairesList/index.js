@@ -54,7 +54,9 @@ class PartenairesList extends HTMLElement {
 
     fetchInfoContact = async ({ infoContactEvent }) => {
 
-        const req_id_contact = `getContact&id_contact=${infoContactEvent.id_contact}`
+        let uniqueInfoContactId = [...new Set(infoContactEvent.id_contact)];
+
+        const req_id_contact = `getContact&id_contact=${uniqueInfoContactId}`;
 
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
             .then(res => res.json())
