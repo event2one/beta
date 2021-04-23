@@ -3,7 +3,7 @@ class PartenairesList extends HTMLElement {
     constructor() {
         super();
 
-        this.id_event = this.getAttribute('id_event'),
+        this.id_event = this.getAttribute('id_event');
 
         this.innerHTML = `
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
