@@ -20,9 +20,9 @@ class PartenairesList extends HTMLElement {
 
     displayInfoContacts = ({ infoContacts }) => {
 
-        console.log(infoContacts)
-        // let res = infoContacts.map((infoContact) => this.infoContact({ infoContact })).join('');
-        // document.getElementById("partenairesList").innerHTML = res;
+        // console.log(infoContacts)
+        let res = infoContacts.map((infoContact) => this.infoContact({ infoContact })).join('');
+        document.getElementById("partenairesList").innerHTML = res;
 
     }
 
@@ -52,7 +52,7 @@ class PartenairesList extends HTMLElement {
 
     researchInfoContact = ({infoContactEvents}) => {
 
-        infoContactEvents.map((infoContactEvent) => this.fetchInfoContact({ infoContactEvent })).join('');
+        infoContactEvents.filter(infoContactEvent => infoContactEvent.id_contact != '').map((infoContactEvent) => this.fetchInfoContact({ infoContactEvent })).join('');
 
     }
 
