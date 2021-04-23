@@ -5,13 +5,13 @@ class PartenairesList extends HTMLElement {
 
         this.innerHTML = `<div class="container">
                             <h2 class="mb-4">Les partenaires et solutions</h2>
-                              <div class="carousel slide" data-ride="carousel">
+                              <div id="carousel" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner" id="partenairesList"></div>
-                                    <a class="carousel-control-prev" role="button" data-slide="prev">
+                                    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
-                                    <a class="carousel-control-next" role="button" data-slide="next">
+                                    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
@@ -23,8 +23,10 @@ class PartenairesList extends HTMLElement {
 
     displayInfoContacts = ({ infoContact }) => {
 
+        const isActive = infoContact[0] ? 'active' : '';
+
         const content = `
-                            <div class="carousel-item">
+                            <div class="carousel-item ${isActive}">
                                 <a href="${infoContact.web}">
                                     <img src="${infoContact.logos.medium}" class="d-block w-100"></img>
                                 </a>
@@ -51,7 +53,7 @@ class PartenairesList extends HTMLElement {
         let uniqueIdInfoContactEvents = [...new Set(infoContactEvents.map(infoConctactEvent => infoConctactEvent.id_contact))];
         console.log(uniqueIdInfoContactEvents);
 
-        uniqueIdInfoContactEvents.filter(uniqueIdInfoContactEvent => uniqueIdInfoContactEvent != '').map((uniqueIdInfoContactEvent) => this.fetchInfoContact({ uniqueIdInfoContactEvent })).join('');
+        uniqueIdInfoContactEvents.filter(uniqueIdInfoContactEvent => uniqueIdInfoContactEvent != '').map((uniqueIdInfoContactEvent, index) => this.fetchInfoContact({ uniqueIdInfoContactEvent, index })).join('');
 
     }
 
