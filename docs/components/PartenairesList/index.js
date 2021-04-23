@@ -3,36 +3,30 @@ class PartenairesList extends HTMLElement {
     constructor() {
         super();
 
-        this.innerHTML = `<div class="container">
-                            <h2 class="mb-4">Les partenaires et solutions</h2>
-                              <div id="carousel" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner" id="partenairesList"></div>
-                                    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                              </div>
-                          </div>`;
+        this.innerHTML = `<section>
+                            <h2 class="text-center">Les partenaires et solutions</h2>
+                                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner container" id="partenairesList"></div>
+                                </div>
+                          </section>`;
 
         this.fetchContactList();
     }
 
     displayInfoContacts = ({ infoContact }) => {
 
-        const isActive = infoContact[0] ? 'active' : '';
+        // const isActive = infoContact[0] ? 'active' : '';
 
         const content = `
-                            <div class="carousel-item ${isActive}">
-                                <a href="${infoContact.web}">
-                                    <img src="${infoContact.logos.medium}" class="d-block w-100"></img>
-                                </a>
-                            </div>
+                        <div class="active">
+                            <a href="${infoContact.web}" target="_blank">
+                                <div class="card mb-3">
+                                    <img src="${infoContact.logos.medium}" class="card-img-top"></img>
+                                </div>
+                            </a>
+                        </div>
                         `;
-        
+
         document.getElementById("partenairesList").insertAdjacentHTML('afterbegin', content);
 
     }
