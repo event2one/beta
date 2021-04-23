@@ -15,17 +15,7 @@ class EventList extends HTMLElement {
 
         this.fetchEventList();
 
-        document.addEventListener('DOMContentLoaded', () => {
 
-            new Splide('.splide', {
-                perPage: 10,
-                type: 'loop',
-                autoplay: true
-            }).mount();
-
-            console.log(document.querySelector(".splide"));
-
-        });
     }
 
 
