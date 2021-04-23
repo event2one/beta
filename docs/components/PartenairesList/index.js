@@ -46,11 +46,10 @@ class PartenairesList extends HTMLElement {
 
     researchInfoContact = ({infoContactEvents}) => {
 
-        // console.log(infoContactEvents);
         let uniqueIdInfoContactEvents = [...new Set(infoContactEvents.map(infoConctactEvent => infoConctactEvent.id_contact))];
         console.log(uniqueIdInfoContactEvents);
 
-        // uniqueIdInfoContactEvents.filter(uniqueIdInfoContactEvent => uniqueIdInfoContactEvent.id_contact != '').map((uniqueIdInfoContactEvent) => this.fetchInfoContact({ uniqueIdInfoContactEvent })).join('');
+        uniqueIdInfoContactEvents.filter(uniqueIdInfoContactEvent => uniqueIdInfoContactEvent.id_contact != '').map((uniqueIdInfoContactEvent) => this.fetchInfoContact({ uniqueIdInfoContactEvent })).join('');
 
     }
 
