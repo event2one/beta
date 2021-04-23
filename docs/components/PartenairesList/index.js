@@ -67,6 +67,9 @@ class PartenairesList extends HTMLElement {
                 this.researchInfoContact({ infoContactEvents: contactEvent });
             }).then(res => {
 
+
+                alert("d");
+
                 document.addEventListener('DOMContentLoaded', () => {
 
                     new Splide('.splide', {
