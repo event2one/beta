@@ -59,7 +59,7 @@ class PartenairesList extends HTMLElement {
         const content = `
                         <li class="splide_slide">
                             <a href="${infoContact.web}" target="_blank">
-                                    <img src="${infoContact.logos.medium}" style="width=20%"></img>
+                                    <img src="${infoContact.logos.medium}"></img>
                             </a>
                         </li>
                         `;
