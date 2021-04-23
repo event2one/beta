@@ -35,16 +35,12 @@ class PartenairesList extends HTMLElement {
                                 <div class="splide">
                                     <div class="splide__track">
                                         <ul class="splide__list partenairesList">
- 
-     
                                         </ul>
                                     </div>
                                 </div>
                         </section>`;
 
         this.fetchContactList();
-
-
     }
 
     displayInfoContacts = ({ infoContact }) => {
@@ -68,11 +64,14 @@ class PartenairesList extends HTMLElement {
             .then(contactEvent => {
                 this.researchInfoContact({ infoContactEvents: contactEvent });
             }).then(res => {
+
                 new Splide('.splide', {
                     perPage: 10,
                     type: 'loop',
                     autoplay: true
-                }).mount();
+                });
+
+
             })
     }
 
