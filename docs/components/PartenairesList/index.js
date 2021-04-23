@@ -4,10 +4,9 @@ class PartenairesList extends HTMLElement {
         super();
 
         this.innerHTML = `
-                        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
                         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-                        
+
                         <style>
                             body {
                                 background: #f7f8fa;
@@ -48,21 +47,18 @@ class PartenairesList extends HTMLElement {
                 perPage: 10,
                 type: 'loop',
                 autoWidth: true,
-                autoplay: true
+                autoplay: true,
             }).mount();
-            console.log('je passe par le script à ce moment là')
         });
     }
 
     displayInfoContacts = ({ infoContact }) => {
 
         const content = `
-                        <li class="splide_slide">
-                            <div class="splide_slide_container">
+                        <li class="splide__slide">
                                 <a href="${infoContact.web}" target="_blank">
                                         <img src="${infoContact.logos.medium}" style="width: 20%"></img>
                                 </a>
-                            </div>
                         </li>
                         `;
 
