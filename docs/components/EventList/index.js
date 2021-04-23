@@ -1,9 +1,9 @@
 class EventList extends HTMLElement {
-   
+
     constructor() {
-        
+
         super();
-   
+
         this.innerHTML = `
         <section>
             <div class="container">
@@ -14,6 +14,18 @@ class EventList extends HTMLElement {
         </section>`;
 
         this.fetchEventList();
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            new Splide('.splide', {
+                perPage: 10,
+                type: 'loop',
+                autoplay: true
+            }).mount();
+
+            console.log(document.querySelector(".splide"));
+
+        });
     }
 
 
@@ -24,7 +36,7 @@ class EventList extends HTMLElement {
 
     infoEvent = ({ infoEvent }) => {
 
-            const content = `
+        const content = `
                         <div class="row" style="border-bottom: 0.5px solid grey; padding: 25px">
                             <div class="col-2">
                                 <p style="font-weight: bold">${infoEvent.precision_date} </br> </br> ${infoEvent.nom}</p>
@@ -40,18 +52,18 @@ class EventList extends HTMLElement {
                         </div>
                     `;
 
-        return content;    
+        return content;
     }
- 
+
     fetchEventList = async () => {
-        
+
         const req_suite = `params=where%20id_event!=399%20and`;
 
-		await fetch(`//www.mlg-consulting.com/smart_territory/form/api.php?action=getEvents&${req_suite}`)
-                .then(res => res.json())
-                .then(eventList => {
-                    this.displayEventList({ infoEvents : eventList });
-                })
+        await fetch(`//www.mlg-consulting.com/smart_territory/form/api.php?action=getEvents&${req_suite}`)
+            .then(res => res.json())
+            .then(eventList => {
+                this.displayEventList({ infoEvents: eventList });
+            })
     }
 }
 
