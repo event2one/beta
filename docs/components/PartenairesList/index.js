@@ -39,15 +39,7 @@ class PartenairesList extends HTMLElement {
 
         this.fetchContactList();
 
-        document.addEventListener('DOMContentLoaded', function () {
-            new Splide('.splide', {
-                perPage: 10,
-                type: 'loop',
-                autoWidth: true,
-                autoplay: true
-            }).mount();
-            console.log('je passe par le script à ce moment là')
-        });
+        
     }
 
     displayInfoContacts = ({ infoContact }) => {
@@ -94,8 +86,17 @@ class PartenairesList extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
             .then(res => res.json())
             .then(infoContactList => {
-                this.displayInfoContacts({ infoContact : infoContactList });
+                this.displayInfoContacts({ infoContact : infoContactList })
             })
+            .then(document.addEventListener('DOMContentLoaded', function () {
+                new Splide('.splide', {
+                    perPage: 10,
+                    type: 'loop',
+                    autoWidth: true,
+                    autoplay: true
+                }).mount();
+                console.log('je passe par le script à ce moment là')
+            }));
     }
 }
 
