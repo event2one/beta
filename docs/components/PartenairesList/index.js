@@ -70,17 +70,15 @@ class PartenairesList extends HTMLElement {
 
                 alert("d");
 
-                document.addEventListener('DOMContentLoaded', () => {
+                new Splide('.splide', {
+                    perPage: 10,
+                    type: 'loop',
+                    autoplay: true
+                }).mount();
 
-                    new Splide('.splide', {
-                        perPage: 10,
-                        type: 'loop',
-                        autoplay: true
-                    }).mount();
+                console.log(document.querySelector(".splide"));
 
-                    console.log(document.querySelector(".splide"));
 
-                });
             })
     }
 
