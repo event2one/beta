@@ -35,16 +35,7 @@ class PartenairesList extends HTMLElement {
                                 <div class="splide">
                                     <div class="splide__track">
                                         <ul class="splide__list partenairesList">
-                                        <li class="splide__slide">
-            <div class="">
-             <img src="//www.mlg-consulting.com/manager_cc/contacts/img_uploaded/thumbs/170616121214_neo_300x0.jpg" alt="Archimed" style="width: 100%;" />
-             </div></li>
-              
-            <li class="splide__slide">
-            <div class="">
-             <img src="//www.mlg-consulting.com/manager_cc/contacts/img_uploaded/thumbs/201221190645_k1t31qa0-400x400_300x0.jpg" alt="Agglo du Saint-Quentinois" style="width: 100%;" />
-             </div></li>
-              
+ 
      
                                         </ul>
                                     </div>
