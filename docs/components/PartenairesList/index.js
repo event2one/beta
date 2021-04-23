@@ -4,6 +4,10 @@ class PartenairesList extends HTMLElement {
         super();
 
         this.innerHTML = `
+                        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+                        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+                        
                         <style>
                             body {
                                 background: #f7f8fa;
