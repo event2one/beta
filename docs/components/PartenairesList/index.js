@@ -3,36 +3,65 @@ class PartenairesList extends HTMLElement {
     constructor() {
         super();
 
-        this.innerHTML = `<section>
+        this.innerHTML = `
+
+                        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+                        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+                        <script>
+                            document.addEventListener( 'DOMContentLoaded', function () {
+                                new Splide( '.splide',{
+                                    perPage :10,
+                                    type    : 'loop',
+                                        autoplay: true} ).mount();
+                            } );
+                        </script>
+        
+                        <style>
+                            body{
+                                background: #f7f8fa;
+                                font-family: 'Bebas Neue', cursive;
+                            }
+                            .splide__slide {   
+                                width:300px;
+                                margin: 10px;
+                                flex-direction: column;
+                                display: flex;
+                                justify-content: space-around;
+                                background: #fff;
+                                padding: 10px;
+                                box-shadow: 0 0 20px rgba(75,75,75,0.1);
+                                border-radius: .5rem;
+                                align-items: center;
+                            }
+
+                            *{
+                                font-size:30px;
+                            }
+                        </style>
+        
+        
+                        <section>
                             <h2 class="text-center">Les partenaires et solutions</h2>
-                                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                                    <div class="carousel-inner container" id="partenairesList">
-                                        <div class="active">
-                                            <a href="jevaiskdq" target="_blank">
-                                                <div class="card mb-3">
-                                                    <img src="http://www.mlg-consulting.com/manager_cc/contacts/img_uploaded/thumbs/210313143648_logo-bbs-couleur-small-petit_500x0.png" class="card-img-top"></img>
-                                                </div>
-                                            </a>
-                                        </div>
+                                <div class="splide">
+                                    <div class="splide__track">
+                                        <ul class="splide__list" id="partenairesList"></ul>
                                     </div>
                                 </div>
-                          </section>`;
+                        </section>`;
 
         this.fetchContactList();
     }
 
     displayInfoContacts = ({ infoContact }) => {
 
-        // const isActive = infoContact[0] ? 'active' : '';
-
         const content = `
-                        <div>
+                        <li class="splide_slide">
                             <a href="${infoContact.web}" target="_blank">
-                                <div class="card mb-3">
-                                    <img src="${infoContact.logos.medium}" class="card-img-top" width="20%"></img>
-                                </div>
+                                    <img src="${infoContact.logos.medium}" style="width=20%"></img>
                             </a>
-                        </div>
+                        </li>
                         `;
 
         document.getElementById("partenairesList").insertAdjacentHTML('afterbegin', content);
