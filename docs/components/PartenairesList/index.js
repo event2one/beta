@@ -13,7 +13,7 @@ class PartenairesList extends HTMLElement {
                             }
 
                             .splide__slide {
-                                width: 300px;
+                                width: 192px;
                                 margin: 10px;
                                 flex-direction: column;
                                 display: flex;
@@ -42,12 +42,12 @@ class PartenairesList extends HTMLElement {
 
         this.fetchContactList();
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', () => {
             new Splide('.splide', {
                 perPage: 10,
                 type: 'loop',
                 autoWidth: true,
-                autoplay: true,
+                autoplay: true
             }).mount();
         });
     }
