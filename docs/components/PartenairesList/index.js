@@ -49,6 +49,9 @@ class PartenairesList extends HTMLElement {
                 type: 'loop',
                 autoplay: true
             }).mount();
+
+            console.log(document.querySelector(".splide"));
+
         });
     }
 
