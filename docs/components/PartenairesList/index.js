@@ -46,7 +46,9 @@ class PartenairesList extends HTMLElement {
 
     researchInfoContact = ({infoContactEvents}) => {
 
-        infoContactEvents.filter(infoContactEvent => infoContactEvent.id_contact != '' && ele, pos => infoContactEvent.id_contact.indexOf(ele) == pos).map((infoContactEvent) => this.fetchInfoContact({ infoContactEvent })).join('');
+        console.log(infoContactEvents);
+
+        infoContactEvents.filter(infoContactEvent => infoContactEvent.id_contact != '').map((infoContactEvent) => this.fetchInfoContact({ infoContactEvent })).join('');
 
     }
 
