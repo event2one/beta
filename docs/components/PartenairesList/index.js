@@ -24,7 +24,7 @@ class PartenairesList extends HTMLElement {
         const content = `
                          <li style="height: 200px;">
                             <a href="infoContact">
-                                <img src="https://www.event2one.com/screen_manager/content/logos/${infoContact.logos.medium}"></img>
+                                <img src="${infoContact.logos.medium}"></img>
                             </a>
                          </li>
                         `;
