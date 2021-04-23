@@ -87,19 +87,7 @@ class PartenairesList extends HTMLElement {
             .then(res => res.json())
             .then(infoContactList => {
                 this.displayInfoContacts({ infoContact: infoContactList });
-            }).then(res => {
-                document.addEventListener('DOMContentLoaded', () => {
-
-                    new Splide('.splide', {
-                        perPage: 10,
-                        type: 'loop',
-                        autoplay: true
-                    }).mount();
-
-                    console.log(document.querySelector(".splide"));
-
-                });
-            })
+            }).then(res => console.log('end'))
     }
 }
 
