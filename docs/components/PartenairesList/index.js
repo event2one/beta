@@ -9,6 +9,7 @@ class PartenairesList extends HTMLElement {
       
                         <style>
                             body {
+                                font-family: 'Bebas Neue', cursive;
                                 background: #f7f8fa;
                             }
 
@@ -25,13 +26,17 @@ class PartenairesList extends HTMLElement {
                                 align-items: center;
                             }
 
+                            .splide__track {
+                                height: 200px;
+                            }
+
                             * {
                                 font-size: 30px;
                             }
                         </style>
 
                         <section>
-                            <h2 class="text-center">Les partenaires et solutions</h2>
+                            <h2 class="text-center my-5">Les partenaires et solutions</h2>
                                 <div class="splide">
                                     <div class="splide__track">
                                         <ul class="splide__list" id="partenairesList">
