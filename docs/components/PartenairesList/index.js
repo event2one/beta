@@ -3,15 +3,40 @@ class PartenairesList extends HTMLElement {
     constructor() {
         super();
 
-
-        document.addEventListener( 'DOMContentLoaded', function () {
-            new Splide( '.splide',{
-                perPage :10,
-                type    : 'loop',
-                    autoplay: true} ).mount();
-        } );
-
         this.innerHTML = `
+                        <style>
+                            body {
+                                background: #f7f8fa;
+                                font-family: 'Bebas Neue', cursive;
+                            }
+
+                            .splide__slide {
+                                width: 300px;
+                                margin: 10px;
+                                flex-direction: column;
+                                display: flex;
+                                justify-content: space-around;
+                                background: #fff;
+                                padding: 10px;
+                                box-shadow: 0 0 20px rgba(75, 75, 75, 0.1);
+                                border-radius: .5rem;
+                                align-items: center;
+                            }
+
+                            * {
+                                font-size: 30px;
+                            }
+                        </style>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                    new Splide('.splide', {
+                                        perPage: 10,
+                                        type: 'loop',
+                                        autoplay: true
+                                    }).mount();
+                                });
+                        </script>
+
                         <section>
                             <h2 class="text-center">Les partenaires et solutions</h2>
                                 <div class="splide">
@@ -31,7 +56,7 @@ class PartenairesList extends HTMLElement {
                         <li class="splide_slide">
                             <div class="splide_slide_container">
                                 <a href="${infoContact.web}" target="_blank">
-                                        <img src="${infoContact.logos.medium}"></img>
+                                        <img src="${infoContact.logos.medium}" style="width: 20%"></img>
                                 </a>
                             </div>
                         </li>
