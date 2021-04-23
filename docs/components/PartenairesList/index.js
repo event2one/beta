@@ -70,7 +70,7 @@ class PartenairesList extends HTMLElement {
 
     fetchContactList = async () => {
 
-        const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event}`;
+        const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event} LIMIT 10`;
 
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
             .then(res => res.json())
