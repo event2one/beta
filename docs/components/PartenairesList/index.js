@@ -3,18 +3,6 @@ class PartenairesList extends HTMLElement {
     constructor() {
         super();
 
-        document.addEventListener('DOMContentLoaded', function () {
-            new Splide('.splide', {
-                perPage: 10,
-                type: 'loop',
-                autoWidth: true,
-                autoplay: true
-            }).mount();
-            console.log('je passe par le script à ce moment là')
-        });
-
-        
-
         this.innerHTML = `
                         <style>
                             body {
@@ -50,6 +38,16 @@ class PartenairesList extends HTMLElement {
                         </section>`;
 
         this.fetchContactList();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('.splide', {
+                perPage: 10,
+                type: 'loop',
+                autoWidth: true,
+                autoplay: true
+            }).mount();
+            console.log('je passe par le script à ce moment là')
+        });
     }
 
     displayInfoContacts = ({ infoContact }) => {
