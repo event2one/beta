@@ -29,6 +29,7 @@ class PartenairesList extends HTMLElement {
 
     infoContact = ({ infoContact }) => {
 
+        console.log('je suis dans content')
         const content = `
                          <li style="height: 200px;">
                             <a href="infoContact">
