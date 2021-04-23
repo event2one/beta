@@ -24,7 +24,7 @@ class PartenairesList extends HTMLElement {
         const content = `
                          <li style="height: 200px;">
                             <a href="infoContact">
-                                <img src="${infoContact.logos.medium}"></img>
+                                <img src="${infoContact.logos.medium}" style="width: 20%"></img>
                             </a>
                          </li>
                         `;
