@@ -12,32 +12,6 @@ class PartenairesList extends HTMLElement {
         } );
 
         this.innerHTML = `
-                        
-        
-                        <style>
-                            body{
-                                background: #f7f8fa;
-                                font-family: 'Bebas Neue', cursive;
-                            }
-                            .splide__slide {   
-                                width:300px;
-                                margin: 10px;
-                                flex-direction: column;
-                                display: flex;
-                                justify-content: space-around;
-                                background: #fff;
-                                padding: 10px;
-                                box-shadow: 0 0 20px rgba(75,75,75,0.1);
-                                border-radius: .5rem;
-                                align-items: center;
-                            }
-
-                            *{
-                                font-size:30px;
-                            }
-                        </style>
-        
-        
                         <section>
                             <h2 class="text-center">Les partenaires et solutions</h2>
                                 <div class="splide">

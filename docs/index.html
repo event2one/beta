@@ -7,9 +7,34 @@
 <script type="module" src="./components/ThematicForm/index.js"></script>
 <script type="module" src="./components/PressRelease/index.js"></script>
 <script type="module" src="./components/ProgrammeList/index.js"></script> -->
+
+<!-- style et lien vers la lib pour carousel -->
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-                        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<style>
+    body{
+        background: #f7f8fa;
+        font-family: 'Bebas Neue', cursive;
+    }
+    .splide__slide {   
+        width:300px;
+        margin: 10px;
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+        background: #fff;
+        padding: 10px;
+        box-shadow: 0 0 20px rgba(75,75,75,0.1);
+        border-radius: .5rem;
+        align-items: center;
+    }
+
+    *{
+        font-size:30px;
+    }
+</style>
+
 <script type="module" src="./components/PartenairesList/index.js"></script>
 <partenaires-list></partenaires-list>
 <!-- <programme-list></programme-list>
