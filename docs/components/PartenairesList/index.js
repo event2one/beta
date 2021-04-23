@@ -34,7 +34,7 @@ class PartenairesList extends HTMLElement {
                             <h2 class="text-center">Les partenaires et solutions</h2>
                                 <div class="splide">
                                     <div class="splide__track">
-                                        <ul class="splide__list" id="partenairesList">
+                                        <ul class="splide__list partenairesList">
                                         </ul>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@ class PartenairesList extends HTMLElement {
                                 </a>
                         </li>`;
 
-        document.getElementById("partenairesList").insertAdjacentHTML('afterbegin', content);
+        document.getElementById(".partenairesList").insertAdjacentHTML('afterbegin', content);
 
     }
 
