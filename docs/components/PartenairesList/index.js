@@ -42,17 +42,7 @@ class PartenairesList extends HTMLElement {
 
         this.fetchContactList();
 
-        document.addEventListener('DOMContentLoaded', () => {
 
-            new Splide('.splide', {
-                perPage: 10,
-                type: 'loop',
-                autoplay: true
-            }).mount();
-
-            console.log(document.querySelector(".splide"));
-
-        });
     }
 
     displayInfoContacts = ({ infoContact }) => {
