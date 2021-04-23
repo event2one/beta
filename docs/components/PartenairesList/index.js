@@ -47,6 +47,8 @@ class PartenairesList extends HTMLElement {
     researchInfoContact = ({infoContactEvents}) => {
 
         console.log(infoContactEvents);
+        let array = infoContactEvents.map(infoContactEvent.id_contact);
+        console.log(array)
         let uniqueIdInfoContactEvents = [...new Set(infoContactEvents.id_contact)];
         console.log(uniqueIdInfoContactEvents);
 
