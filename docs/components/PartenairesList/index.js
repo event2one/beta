@@ -46,7 +46,7 @@ class PartenairesList extends HTMLElement {
 
     researchInfoContact = ({infoContactEvents}) => {
 
-        console.log(infoContactEvents);
+        // console.log(infoContactEvents);
 
         infoContactEvents.filter(infoContactEvent => infoContactEvent.id_contact != '').map((infoContactEvent) => this.fetchInfoContact({ infoContactEvent })).join('');
 
@@ -55,6 +55,8 @@ class PartenairesList extends HTMLElement {
     fetchInfoContact = async ({ infoContactEvent }) => {
 
         let uniqueInfoContactId = [...new Set(infoContactEvent.id_contact)];
+
+        console.log(uniqueInfoContactId)
 
         const req_id_contact = `getContact&id_contact=${uniqueInfoContactId}`;
 
