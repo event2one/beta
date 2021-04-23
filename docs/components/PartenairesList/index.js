@@ -32,13 +32,6 @@ class PartenairesList extends HTMLElement {
 
     }
 
-    // infoContact = ({ infoContact }) => {
-
-        
-
-    //     return content;
-    // }
-
     fetchContactList = async () => {
 
         const req = `getContactConferencierList&filter=%20and%20id_event=1635`;
@@ -56,11 +49,11 @@ class PartenairesList extends HTMLElement {
 
     }
 
-    fetchInfoContact = async ({ infoContactEvent }) => {
+    fetchInfoContact = ({ infoContactEvent }) => {
 
         const req_id_contact = `getContact&id_contact=${infoContactEvent.id_contact}`
 
-        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
+        fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
             .then(res => res.json())
             .then(infoContactList => {
                 this.displayInfoContacts({ infoContact : infoContactList });
