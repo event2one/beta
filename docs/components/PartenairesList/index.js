@@ -6,7 +6,15 @@ class PartenairesList extends HTMLElement {
         this.innerHTML = `<section>
                             <h2 class="text-center">Les partenaires et solutions</h2>
                                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                                    <div class="carousel-inner container" id="partenairesList"></div>
+                                    <div class="carousel-inner container" id="partenairesList">
+                                        <div class="active">
+                                            <a href="jevaiskdq" target="_blank">
+                                                <div class="card mb-3">
+                                                    <img src="http://www.mlg-consulting.com/manager_cc/contacts/img_uploaded/thumbs/210313143648_logo-bbs-couleur-small-petit_500x0.png" class="card-img-top"></img>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                           </section>`;
 
@@ -18,10 +26,10 @@ class PartenairesList extends HTMLElement {
         // const isActive = infoContact[0] ? 'active' : '';
 
         const content = `
-                        <div class="active">
+                        <div>
                             <a href="${infoContact.web}" target="_blank">
                                 <div class="card mb-3">
-                                    <img src="${infoContact.logos.medium}" class="card-img-top"></img>
+                                    <img src="${infoContact.logos.medium}" class="card-img-top" width="20%"></img>
                                 </div>
                             </a>
                         </div>
