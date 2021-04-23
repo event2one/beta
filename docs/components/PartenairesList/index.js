@@ -6,9 +6,7 @@ class PartenairesList extends HTMLElement {
         this.id_event = this.getAttribute('id_event');
 
         this.innerHTML = `
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-                        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-
+      
                         <style>
                             body {
                                 background: #f7f8fa;
