@@ -21,6 +21,14 @@ class PartenairesList extends HTMLElement {
     displayInfoContacts = ({ infoContact }) => {
 
         // console.log(infoContacts)
+        let res = this.infoContact({ infoContact })
+        
+        document.getElementById("partenairesList").innerHTML = res;
+
+    }
+
+    infoContact = ({ infoContact }) => {
+
         const content = `
                          <li style="height: 200px;">
                             <a href="infoContact">
@@ -28,8 +36,8 @@ class PartenairesList extends HTMLElement {
                             </a>
                          </li>
                         `;
-        document.getElementById("partenairesList").innerHTML = content;
 
+        return content;
     }
 
     fetchContactList = async () => {
