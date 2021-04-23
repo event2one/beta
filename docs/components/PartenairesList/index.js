@@ -21,15 +21,6 @@ class PartenairesList extends HTMLElement {
     displayInfoContacts = ({ infoContact }) => {
 
         // console.log(infoContacts)
-        let res = this.infoContact({ infoContact })
-        
-        document.getElementById("partenairesList").innerHTML = res;
-
-    }
-
-    infoContact = ({ infoContact }) => {
-
-        console.log('je suis dans content')
         const content = `
                          <li style="height: 200px;">
                             <a href="infoContact">
@@ -37,8 +28,9 @@ class PartenairesList extends HTMLElement {
                             </a>
                          </li>
                         `;
+        
+        document.getElementById("partenairesList").insertAdjacentHTML(afterend, content);
 
-        return content;
     }
 
     fetchContactList = async () => {
@@ -58,11 +50,11 @@ class PartenairesList extends HTMLElement {
 
     }
 
-    fetchInfoContact = ({ infoContactEvent }) => {
+    fetchInfoContact = async ({ infoContactEvent }) => {
 
         const req_id_contact = `getContact&id_contact=${infoContactEvent.id_contact}`
 
-        fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
+        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
             .then(res => res.json())
             .then(infoContactList => {
                 this.displayInfoContacts({ infoContact : infoContactList });
