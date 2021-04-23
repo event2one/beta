@@ -3,11 +3,22 @@ class PartenairesList extends HTMLElement {
     constructor() {
         super();
 
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('.splide', {
+                perPage: 10,
+                type: 'loop',
+                autoWidth: true,
+                autoplay: true
+            }).mount();
+            console.log('je passe par le script à ce moment là')
+        });
+
+        
+
         this.innerHTML = `
                         <style>
                             body {
                                 background: #f7f8fa;
-                                font-family: 'Bebas Neue', cursive;
                             }
 
                             .splide__slide {
@@ -27,18 +38,6 @@ class PartenairesList extends HTMLElement {
                                 font-size: 30px;
                             }
                         </style>
-                        <script>
-                            document.addEventListener('DOMContentLoaded', function () {
-                                    new Splide('.splide', {
-                                        perPage: 10,
-                                        type: 'loop',
-                                        autoWidth: true,
-                                        autoplay: true
-                                    }).mount();
-                                });
-
-                                console.log('je passe par le script à ce moment là)
-                        </script>
 
                         <section>
                             <h2 class="text-center">Les partenaires et solutions</h2>
