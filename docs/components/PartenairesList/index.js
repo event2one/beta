@@ -29,7 +29,7 @@ class PartenairesList extends HTMLElement {
                          </li>
                         `;
         
-        document.getElementById("partenairesList").insertAdjacentHTML(afterbegin, content);
+        document.getElementById("partenairesList").insertAdjacentHTML('afterbegin', content);
 
     }
 
