@@ -21,23 +21,23 @@ class PartenairesList extends HTMLElement {
     displayInfoContacts = ({ infoContacts }) => {
 
         // console.log(infoContacts)
-        let res = infoContacts.map((infoContact) => this.infoContact({ infoContact })).join('');
-        document.getElementById("partenairesList").innerHTML = res;
-
-    }
-
-    infoContact = ({ infoContact }) => {
-
         const content = `
                          <li style="height: 200px;">
                             <a href="infoContact">
-                                <img src="https://www.event2one.com/screen_manager/content/logos/${infoContact.logo}"></img>
+                                <img src="https://www.event2one.com/screen_manager/content/logos/${infoContacts.logo}"></img>
                             </a>
                          </li>
                         `;
+        document.getElementById("partenairesList").innerHTML = content;
 
-        return content;
     }
+
+    // infoContact = ({ infoContact }) => {
+
+        
+
+    //     return content;
+    // }
 
     fetchContactList = async () => {
 
