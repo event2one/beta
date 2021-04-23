@@ -47,7 +47,8 @@ class PartenairesList extends HTMLElement {
                             <h2 class="text-center">Les partenaires et solutions</h2>
                                 <div class="splide">
                                     <div class="splide__track">
-                                        <ul class="splide__list" id="partenairesList"></ul>
+                                        <ul class="splide__list" id="partenairesList">
+                                        </ul>
                                     </div>
                                 </div>
                         </section>`;
@@ -59,9 +60,11 @@ class PartenairesList extends HTMLElement {
 
         const content = `
                         <li class="splide_slide">
-                            <a href="${infoContact.web}" target="_blank">
-                                    <img src="${infoContact.logos.medium}"></img>
-                            </a>
+                            <div class="splide_slide_container">
+                                <a href="${infoContact.web}" target="_blank">
+                                        <img src="${infoContact.logos.medium}"></img>
+                                </a>
+                            </div>
                         </li>
                         `;
 
