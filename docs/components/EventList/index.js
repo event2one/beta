@@ -5,11 +5,27 @@ class EventList extends HTMLElement {
         super();
 
         this.innerHTML = `
+        <style>
+            .container:first-child {
+                text-align: center;
+            }
+
+            #eventList {
+                box-shadow: 0px 0px 20px rgba(0,0,0, .1);
+                width: 80%;
+                text-align: center;
+            }
+
+            #event h3 {
+                font-size: 30px;
+                font-weight: bold;
+            }
+        </style>
         <section>
-            <div class="container">
+            <div class="container" style="text-align: center">
                 <h1 class="text-dark">Prochains évènement du Village Francophone</h1>
                 <h2 style="color: purple">Les prochains temps forts</h2>
-                <div class="container" id="eventList" style="box-shadow: 0px 0px 5px 1px grey"></div>
+                <div class="container" id="eventList"></div>
             </div> 
         </section>`;
 
@@ -27,18 +43,12 @@ class EventList extends HTMLElement {
     infoEvent = ({ infoEvent }) => {
 
         const content = `
-                        <div class="row" style="border-bottom: 0.5px solid grey; padding: 25px">
-                            <div class="col-2">
-                                <p style="font-weight: bold">${infoEvent.precision_date} </br> </br> ${infoEvent.nom}</p>
-                                <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 100%"></img>
-                            </div>
-                            <div class="col-10">
-                                <p> 2 continents, 7 pays, 10 médias, 12 territoires et +3000 décideurs en ligne chaque jour. Le Village Francophone vous offre le dispositif le plus important d'intelligence
-                                    collective jamais mis en oeuvre lors du South by SouthWest avec au programme : </br> </br> 2 après-midis marathon pour décrypter 15 tendances clés pour l'Entertainment
-                                    de la fashiontech, beautyTech, foodTech </br> </br> Oportunum est, ut arbitror, explanare nunc causam, quae ad exitium praecipitem Aginatium inpulit iam inde a priscis maioribus nobilem, ut locuta est pertinacior fama. nec enim super hoc ulla documentorum rata est fides.
-                                </p>
-                                <a classe="link-info" href="${infoEvent.web}">Découvrir le programme des journées de travail</a>
-                            </div>
+                        <div class="event">
+                            <h3>${infoEvent.nom}</h3>
+                            <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 100%" />
+                            <p>${infoEvent.precision_date}</p>
+                            <a class="link-info" href="${infoEvent.web}">Découvrir le programme des journées de travail</a>
+                            </hr>
                         </div>
                     `;
 
