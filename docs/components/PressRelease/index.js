@@ -26,15 +26,17 @@ class PressRelease extends HTMLElement {
         let text = article.texte_contextuel.replace(/(<([^>]+)>)/ig,"").substring(0, 200);
 
             const content = `
-                            <div class="card" style="width: 20rem; border-radius: 25px; box-shadow: 0px 0px 20px rgba(0,0,0, .1);" > 
+                            <div class="card" style="width: 20rem; border-radius: 25px; box-shadow: 0px 0px 20px rgba(0,0,0, .1); border: 0px solid;" > 
                                 <div class="card-body">
-                                    <div class="card-title">${article.event_presta_nom}</div>
-                                    <img src="https://picsum.photos/id/1041/200" class="card-img"></card>
+                                    <img src="https://picsum.photos/id/1041/200" class="card-img-top"/>
+                                    <div class="card-title" style="font-weight: bold; ">${article.event_presta_nom}</div>
+                                    <p class="card-text" style="padding: 5px; font-size: 20px;">${text}</p>
                                     <p class="text-muted small">${article.date_parution}</p>
-                                    <p class="card-text" style="padding: 5px">${text}</p>
                                 </div> 
-                                <div class="card-footer text-right" style="background-color: #fff;border-top: 0px solid">
-                                    <a href="https://lirelasuite" class="card-link text-end">Lire la suite</a>
+                                <div class="card-footer" style="background-color: #fff;border-top: 0px solid">
+                                    <div style="height: 3rem; border-radius: 50%; width: 50%;">
+                                        <a href="https://lirelasuite" style="color: black; font-size: 20px;">Lire la suite</a>
+                                    </div>  
                                 </div> 
                             </div>
                         `;
