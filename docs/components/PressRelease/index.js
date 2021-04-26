@@ -26,7 +26,7 @@ class PressRelease extends HTMLElement {
         let text = article.texte_contextuel.replace(/(<([^>]+)>)/ig,"").substring(0, 200);
 
             const content = `
-                            <div class="card" style="width: 20rem;"> 
+                            <div class="card" style="width: 20rem; border-radius: 25px; box-shadow: 0px 0px 20px rgba(0,0,0, .1);" > 
                                 <div class="card-body">
                                     <div class="card-title">${article.event_presta_nom}</div>
                                     <img src="https://picsum.photos/id/1041/200" class="card-img"></card>
