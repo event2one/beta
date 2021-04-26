@@ -28,14 +28,14 @@ class PressRelease extends HTMLElement {
             const content = `
                             <div class="card" style="width: 20rem; border-radius: 25px; box-shadow: 0px 0px 20px rgba(0,0,0, .1); border: 0px solid;" > 
                                 <div class="card-body">
-                                    <img src="https://picsum.photos/id/1041/200" class="card-img-top"/>
-                                    <div class="card-title" style="font-weight: bold; ">${article.event_presta_nom}</div>
+                                    <img src="https://picsum.photos/id/1041/200" style="padding: -1rem; border-radius: 25px 25px 0px 0px;"/>
+                                    <div class="card-title" style="font-weight: bold; padding-top: 10px;">${article.event_presta_nom}</div>
                                     <p class="card-text" style="padding: 5px; font-size: 20px;">${text}</p>
                                     <p class="text-muted small">${article.date_parution}</p>
                                 </div> 
                                 <div class="card-footer" style="background-color: #fff;border-top: 0px solid">
-                                    <div style="height: 3rem; border-radius: 50%; width: 50%;">
-                                        <a href="https://lirelasuite" style="color: black; font-size: 20px;">Lire la suite</a>
+                                    <div style="height: 1.5rem; border-radius: 50%; width: 50%;">
+                                        <a href="https://lirelasuite" style="color: black; font-size: 20px; text-align: center; text-decoration: none; box-shadow: 0px 0px 20px rgba(0,0,0, .1)">Lire la suite</a>
                                     </div>  
                                 </div> 
                             </div>
