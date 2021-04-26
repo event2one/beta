@@ -25,6 +25,10 @@ class PartenairesList extends HTMLElement {
                                 align-items: center;
                             }
 
+                            .splide__track {
+                                height: 300px;
+                            }
+
                             * {
                                 font-size: 30px;
                             }
