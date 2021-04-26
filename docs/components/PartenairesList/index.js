@@ -50,7 +50,9 @@ class PartenairesList extends HTMLElement {
     displayInfoContacts = ({ infoContact }) => {
 
         const content = `<li class="splide__slide">
+                                <a href="${infoContact.web}" target="_blank" style="display: block">
                                         <img src="${infoContact.logos.medium}" style="width:100%"/>
+                                </a>
                         </li>`;
 
         document.querySelector(".partenairesList").insertAdjacentHTML('afterbegin', content);
