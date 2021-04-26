@@ -29,13 +29,13 @@ class PressRelease extends HTMLElement {
                             <div class="card" style="width: 20rem; border-radius: 25px; box-shadow: 0px 0px 20px rgba(0,0,0, .1); border: 0px solid; padding: 0px;" > 
                                 <div class="card-body" style="padding: 0px;">
                                     <img src="https://picsum.photos/id/1041/200" style="padding: -1rem; border-radius: 25px 25px 0px 0px; width: 100%;"/>
-                                    <div class="card-title" style="font-weight: bold; padding: 10px;">${article.event_presta_nom}</div>
-                                    <p class="card-text" style="padding: 10px; font-size: 20px;">${text}</p>
+                                    <div class="card-title" style="font-weight: bold; padding: 10 10 10 20;">${article.event_presta_nom}</div>
+                                    <p class="card-text" style="padding: 10 10 10 20; font-size: 20px;">${text}</p>
                                     <p class="text-muted small">${article.date_parution}</p>
                                 </div> 
                                 <div class="card-footer" style="background-color: #fff;border-top: 0px solid">
-                                    <div style="height: 1.5rem; border-radius: 50%; width: 50%;text-align: center;">
-                                        <a href="https://lirelasuite" style="color: black; font-size: 20px;margin: auto; vertical-align: center; text-align: center; text-decoration: none; box-shadow: 0px 0px 20px rgba(0,0,0, .1)">Lire la suite</a>
+                                    <div style="height: 1.5rem; width: 50%;text-align: center; margin: auto;">
+                                        <a href="https://lirelasuite" style="color: black; font-size: 20px; border-radius: 50%; padding: 10px; vertical-align: center; text-decoration: none; box-shadow: 0px 0px 20px rgba(0,0,0, .1)">Lire la suite</a>
                                     </div>  
                                 </div> 
                             </div>
