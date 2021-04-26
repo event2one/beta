@@ -21,7 +21,7 @@ class EventList extends HTMLElement {
                 font-size: 40px;
                 font-weight: bold;
                 padding: 10px;
-                margin-top: 1rem;
+                margin-top: 3rem;
             }
 
             .event a {
@@ -77,7 +77,6 @@ class EventList extends HTMLElement {
                             <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}"/>
                             <p>${infoEvent.precision_date}</p>
                             <a class="link-info" href="${infoEvent.web}">Découvrez le programme des journées de travail</a>
-                            </br></br></hr>
                         </div>
                     `;
 
