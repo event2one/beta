@@ -25,7 +25,7 @@ class PartenairesList extends HTMLElement {
                                 align-items: center;
                             }
 
-                            .splide__track {
+                            .splide__list {
                                 height: 300px;
                             }
 
