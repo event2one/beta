@@ -14,16 +14,25 @@ class EventList extends HTMLElement {
                 box-shadow: 0px 0px 20px rgba(0,0,0, .1);
                 width: 80%;
                 text-align: center;
+                padding: 1.5rem;
             }
 
             .event h3 {
-                font-size: 30px;
+                font-size: 40px;
                 font-weight: bold;
+                padding: 10px;
             }
 
             .event a {
                 box-shadow: 0px 0px 20px rgba(0,0,0, .1);
                 padding: 5px;
+                text-decoration: none;
+                color: black;
+                border-radius: 3rem;
+            }
+
+            .event p {
+                font-size: 20px;
             }
         </style>
         <section>
@@ -50,10 +59,10 @@ class EventList extends HTMLElement {
         const content = `
                         <div class="event">
                             <h3>${infoEvent.nom}</h3>
-                            <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 20%"/>
+                            <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 25%"/>
                             <p>${infoEvent.precision_date}</p>
                             <a class="link-info" href="${infoEvent.web}">Découvrez le programme des journées de travail</a>
-                            </hr>
+                            <hr/>
                         </div>
                     `;
 
