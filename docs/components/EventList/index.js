@@ -16,9 +16,14 @@ class EventList extends HTMLElement {
                 text-align: center;
             }
 
-            #event h3 {
+            .event h3 {
                 font-size: 30px;
                 font-weight: bold;
+            }
+
+            .event a {
+                box-shadow: 0px 0px 20px rgba(0,0,0, .1);
+                padding: 5px;
             }
         </style>
         <section>
@@ -45,9 +50,9 @@ class EventList extends HTMLElement {
         const content = `
                         <div class="event">
                             <h3>${infoEvent.nom}</h3>
-                            <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 100%" />
+                            <img src="https://www.mlg-consulting.com/manager_cc/events/img_uploaded/${infoEvent.logo}" style="width: 20%"/>
                             <p>${infoEvent.precision_date}</p>
-                            <a class="link-info" href="${infoEvent.web}">Découvrir le programme des journées de travail</a>
+                            <a class="link-info" href="${infoEvent.web}">Découvrez le programme des journées de travail</a>
                             </hr>
                         </div>
                     `;
