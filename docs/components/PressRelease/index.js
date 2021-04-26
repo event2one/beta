@@ -35,7 +35,7 @@ class PressRelease extends HTMLElement {
                                 </div> 
                                 <div class="card-footer" style="background-color: #fff;border-top: 0px solid; border-radius: 25px;">
                                     <div style="height: 1.5rem; width: 50%;text-align: center; margin: auto;">
-                                        <a href="https://lirelasuite" style="color: black; width: 50%; font-size: 20px; border-radius: 50%; padding: 10px; vertical-align: center; text-decoration: none; box-shadow: 0px 0px 20px rgba(0,0,0, .1)">Lire la suite</a>
+                                        <a href="https://lirelasuite" style="color: black; width: 50%; font-size: 20px; border-radius: 3rem; padding: 10px; vertical-align: center; text-decoration: none; box-shadow: 0px 0px 20px rgba(0,0,0, .1)">Lire la suite</a>
                                     </div>  
                                 </div> 
                             </div>
