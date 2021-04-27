@@ -14,7 +14,7 @@ class EventList extends HTMLElement {
                 box-shadow: 0px 0px 20px rgba(0,0,0, .1);
                 width: 100%;
                 text-align: center;
-                padding: 1.5rem;
+                padding: 3rem;
             }
 
             .event h3 {

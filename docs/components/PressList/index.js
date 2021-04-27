@@ -11,18 +11,7 @@ class PressList extends HTMLElement {
                 <p>Vous souhaitez vous tenir informé de l'actualité du salon, consulter les communiqués ou dossier de presse, effectuer une demande d’accréditation ou encore entrer en contact avec nous ? Cet espace est fait pour vous.</p>
                 <h1 class="text-secondary">On en parle dans la presse</h1>
                 <hr/>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Média</th>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Pays</th>
-                            <th scope="col">Date de parution</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody id="pressList"></tbody>
-                </table>
+                <div id="pressList"></div>
             </div> 
         </section>`;
 
@@ -38,15 +27,17 @@ class PressList extends HTMLElement {
     Article = ({ article }) => {
 
             const content = `
-                                <div>
-                                    <tr>
-                                        <td scope="row">${article.media_nom}</td>
-                                        <td>${article.event_presta_nom}</td>
-                                        <td><img src="${article.flag}" style="width:35%"></img></td>
-                                        <td>${article.date_parution}</td>
-                                        <td><a href="${article.event_presta_url_externe}">Lire l'article</a></td>   
-                                    </tr>
-                                </div>
+                                    <div>
+                                        ${article.media_nom}
+                                        ${article.date_parution}
+                                        ${article.event_presta_nom}
+                                    </div>
+                                    <div>
+                                        <img src="${article.flag}" style="width:35%" />
+                                    </div>
+                                    <div>
+                                        <a href="${article.event_presta_url_externe}">Découvrir</a>
+                                    </div>
                             `;
 
             return content;
