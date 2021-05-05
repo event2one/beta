@@ -52,7 +52,7 @@ class EventList2 extends HTMLElement {
 							    </div>
 							    <div class="col-md-2"> 
 							      <h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5>
-							      ${DisplayLieu()}</div>
+							      ${DisplayLieu(event)}</div>
 							  </div>
 					      </div>
 					`;
@@ -67,10 +67,14 @@ class EventList2 extends HTMLElement {
 
 	}
 
-	DisplayLieu = () => {
+	DisplayLieu = (event) => {
 		console.log('on est dans display lieu !')
+		console.log('le nom de l event est :' + event.nom)
+		if(event.lieu.visuel_principal != '' || event.lieu.visuel_principal != '\/\/www.mlg-consulting.com\/manager_cc\/events\/lieux\/img_uploaded\/210322203353_sticker-region-sud-18.png') {
+			console.log('c/est le visuel bien' + event.lieu.visuel_principal)
+		} else {console.log('c est le visuel de base ! ' + event.lieu.visuel_principal)}
 	}
-	
+
 	fetchEvents = async () => {
 
 		const req_suite = `params=where%20id_event!=399%20and`;
