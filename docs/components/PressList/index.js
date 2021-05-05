@@ -35,6 +35,9 @@ class PressList extends HTMLElement {
                 font-weight: regular;
             }
 
+            .infoArticle {
+                
+            }
         </style>
         <section>
             <div class="container">
