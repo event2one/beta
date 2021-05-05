@@ -1,41 +1,43 @@
 class EventList2 extends HTMLElement {
+  constructor() {
+    super();
 
-	constructor() {
+    this.isCarousel = this.getAttribute("isCarousel");
 
-		super();
+    this.content = this.getAttribute("content");
 
-		this.isCarousel = this.getAttribute('isCarousel');
-		
-		this.content = this.getAttribute('content');
-	 
-		this.innerHTML = `
+    this.innerHTML = `
 		<section class="bg-light py-4">
 		    <h2 class="text-center" style="">Les prochains &eacute;v&eacute;nements</h2> 
 		    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner container" id="eventList"></div>
             </div>
         </section>`;
-		
 
-		this.fetchEvents();
-	}
+    this.fetchEvents();
+  }
 
-	displayEvents = ({ events }) => {
+  displayEvents = ({ events }) => {
+    let res = events
+      .filter((event) => event.afficher != "n")
+      .map((event, index) => this.Event({ event, index }))
+      .join("");
 
-		let res = events.filter(event => event.afficher != 'n').map((event, index) => this.Event({ event, index })).join('');
-		
-		let leadingEvents = events.filter(event => event.afficher != 'n' && event.id_event_format == 1).map((event, index) => this.Event({ event, index })).join('');
-				
-		document.getElementById("eventList").innerHTML = this.content == 'leading-events' ? leadingEvents : res;
-	}
+    let leadingEvents = events
+      .filter((event) => event.afficher != "n" && event.id_event_format == 1)
+      .map((event, index) => this.Event({ event, index }))
+      .join("");
 
-	Event = ({ event, index }) => {
-		
-		const isActive = index == 0 ? 'active' : '';
-		
-		const visuel = event.lieu.visuel_principal != ''  ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : '';
+    document.getElementById("eventList").innerHTML =
+      this.content == "leading-events" ? leadingEvents : res;
+  };
 
-		const content = `
+  Event = ({ event, index }) => {
+    const isActive = index == 0 ? "active" : "";
+
+    const visuel = event.lieu.visuel_principal != "" ? DisplayLieu(event) : "";
+
+    const content = `
 						    <div class="card mb-3" style="max-width:100%">
 					        <div class="row no-gutters p-3">
 					            <div class="col-md-2">
@@ -52,39 +54,49 @@ class EventList2 extends HTMLElement {
 							    </div>
 							    <div class="col-md-2"> 
 							      <h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5>
-							      ${DisplayLieu(event)}</div>
+							    </div>
 							  </div>
 					      </div>
 					`;
-		
-		
-	const classItem  =  this.isCarousel =='true' ? `carousel-item ${isActive}` : ``;
-	
-	const  res =  event.web != "" ? `<div class="${classItem}"><a href="${event.web}" target="_blank">${content}</a></div>` : `<div class="${classItem}">${content}</div>`;
-	 
-		
-		return res;
 
-	}
+    const classItem =
+      this.isCarousel == "true" ? `carousel-item ${isActive}` : ``;
 
-	DisplayLieu = (event) => {
-		console.log('on est dans display lieu !')
-		console.log('le nom de l event est :' + event.nom)
-		if(event.lieu.visuel_principal != '' || event.lieu.visuel_principal != '\/\/www.mlg-consulting.com\/manager_cc\/events\/lieux\/img_uploaded\/210322203353_sticker-region-sud-18.png') {
-			console.log('c/est le visuel bien' + event.lieu.visuel_principal)
-		} else {console.log('c est le visuel de base ! ' + event.lieu.visuel_principal)}
-	}
+    const res =
+      event.web != ""
+        ? `<div class="${classItem}"><a href="${event.web}" target="_blank">${content}</a></div>`
+        : `<div class="${classItem}">${content}</div>`;
 
-	fetchEvents = async () => {
+    return res;
+  };
 
-		const req_suite = `params=where%20id_event!=399%20and`;
+  DisplayLieu = (event) => {
+    console.log("on est dans display lieu !");
+    console.log("le nom de l event est :" + event.nom);
+    if (
+      event.lieu.visuel_principal != "" ||
+      event.lieu.visuel_principal !=
+        "//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png"
+    ) {
+      console.log("c/est le visuel bien" + event.lieu.visuel_principal);
+    } else {
+      console.log("c est le visuel de base ! " + event.lieu.visuel_principal);
+    }
 
-		await fetch(`//www.mlg-consulting.com/smart_territory/form/api.php?action=getEvents&${req_suite}`)
-			.then(res => res.json())
-			.then(eventList => {
-				this.displayEvents({ events: eventList });
-			})
-	}
+    // `<img src="${event.lieu.visuel_principal}" style="width:100%">`
+  };
+
+  fetchEvents = async () => {
+    const req_suite = `params=where%20id_event!=399%20and`;
+
+    await fetch(
+      `//www.mlg-consulting.com/smart_territory/form/api.php?action=getEvents&${req_suite}`
+    )
+      .then((res) => res.json())
+      .then((eventList) => {
+        this.displayEvents({ events: eventList });
+      });
+  };
 }
 
-customElements.define('event-list-2', EventList2);
+customElements.define("event-list-2", EventList2);
