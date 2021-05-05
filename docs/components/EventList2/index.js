@@ -1,4 +1,4 @@
-class EventList extends HTMLElement {
+class EventList2 extends HTMLElement {
 
 	constructor() {
 
@@ -33,7 +33,7 @@ class EventList extends HTMLElement {
 		
 		const isActive = index == 0 ? 'active' : '';
 		
-		const visuel = event.lieu.visuel_principal !='' ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : '';
+		const visuel = event.lieu.visuel_principal != ''  ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : '';
 
 		const content = `
 						    <div class="card mb-3" style="max-width:100%">
@@ -79,4 +79,4 @@ class EventList extends HTMLElement {
 	}
 }
 
-customElements.define('event-list', EventList);
+customElements.define('event-list-2', EventList2);
