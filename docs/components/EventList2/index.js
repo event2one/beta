@@ -82,7 +82,6 @@ class EventList2 extends HTMLElement {
   };
 
     // `<img src="${event.lieu.visuel_principal}" style="width:100%">`
-  };
 
   fetchEvents = async () => {
     const req_suite = `params=where%20id_event!=399%20and`;
