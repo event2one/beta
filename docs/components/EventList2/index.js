@@ -52,7 +52,7 @@ class EventList2 extends HTMLElement {
 							    </div>
 							    <div class="col-md-2"> 
 							      <h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5>
-							      ${visuel}</div>
+							      ${DisplayLieu()}</div>
 							  </div>
 					      </div>
 					`;
@@ -67,6 +67,10 @@ class EventList2 extends HTMLElement {
 
 	}
 
+	DisplayLieu = () => {
+		console.log('on est dans display lieu !')
+	}
+	
 	fetchEvents = async () => {
 
 		const req_suite = `params=where%20id_event!=399%20and`;
