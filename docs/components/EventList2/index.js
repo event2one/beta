@@ -39,7 +39,7 @@ class EventList2 extends HTMLElement {
 
     const isLieuVille =
       event.lieu.lieu_ville != ""
-        ? `<li><img src="" /><a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}</a></li>`
+        ? `<li><img src="" /><a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}></a></li>`
         : "";
     // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
     visuel =
