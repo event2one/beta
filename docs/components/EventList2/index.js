@@ -42,7 +42,7 @@ class EventList2 extends HTMLElement {
 
     const visuel =
       event.lieu.visuel_principal != ""
-        ? `<p>Le village francophone vous y amène :</p>
+        ? `<p><b>Le village francophone vous y amène :</b></p>
         <ul>
              ${isLieuVille}
             <li className="text-decoration-none">  Connectez votre territoire ou entreprise </br><i class="fas fa-camera"></i>&emsp;<a href="#">Liste des 8 studios connectés</a></li>
