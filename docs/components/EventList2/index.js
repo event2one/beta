@@ -37,9 +37,9 @@ class EventList2 extends HTMLElement {
 
     const isLieuVille =
       event.lieu.lieu_ville != ""
-        ? `<li><img src="" /><a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}></a></li>`
+        ? `<li><i class="fas fa-plane"></i><a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}></a></li>`
         : "";
-    // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
+
     const visuel =
       event.lieu.visuel_principal != ""
         ? `<p>Le village francophone vous y amène :</p>
@@ -75,7 +75,7 @@ class EventList2 extends HTMLElement {
     const classItem =
       this.isCarousel == "true" ? `carousel-item ${isActive}` : ``;
 
-   /* const res =
+    /* const res =
       event.web != ""
         ? `<div class="${classItem}"><a href="${event.web}" target="_blank">${content}</a></div>`
         : `<div class="${classItem}">${content}</div>`;
