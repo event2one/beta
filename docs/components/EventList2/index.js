@@ -35,18 +35,12 @@ class EventList2 extends HTMLElement {
   Event = ({ event, index }) => {
     const isActive = index == 0 ? "active" : "";
 
-    const visuel = event.lieu.visuel_principal != "" ? DisplayLieu = (event) => {
-		console.log("on est dans display lieu !");
-		console.log("le nom de l event est :" + event.nom);
-		if (
-		  event.lieu.visuel_principal != "" ||
-		  event.lieu.visuel_principal !=
-			"//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png"
-		) {
-		  console.log("c/est le visuel bien" + event.lieu.visuel_principal);
-		} else {
-		  console.log("c est le visuel de base ! " + event.lieu.visuel_principal);
-		}} : "";
+    let visuelComplet;
+
+    // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
+    const visuel = event.lieu.visuel_principal != "" ? visuelComplet == "//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" ? visuelComplet = `<img src="${event.lieu.visuel_principal}" style="width:100%">` : visuelComplet = `<p>ça c'est le visuel avec le village francophone</p>` : '';
+
+    console.log(visuel);
 
     const content = `
 						    <div class="card mb-3" style="max-width:100%">
@@ -81,7 +75,18 @@ class EventList2 extends HTMLElement {
     return res;
   };
 
-    // `<img src="${event.lieu.visuel_principal}" style="width:100%">`
+  // DisplayLieu = (event) => {
+	// console.log("on est dans display lieu !");
+	// console.log("le nom de l event est :" + event.nom);
+	// if (
+	//   event.lieu.visuel_principal != "" ||
+	//   event.lieu.visuel_principal !=
+	// 	"//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png"
+	// ) {
+	//   console.log("c/est le visuel bien" + event.lieu.visuel_principal);
+	// } else {
+	//   console.log("c est le visuel de base ! " + event.lieu.visuel_principal);
+	// }}
 
   fetchEvents = async () => {
     const req_suite = `params=where%20id_event!=399%20and`;
