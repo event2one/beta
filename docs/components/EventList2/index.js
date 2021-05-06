@@ -48,7 +48,7 @@ class EventList2 extends HTMLElement {
     const visuel =
       event.lieu.visuel_principal != ""
         ? `<p><b>Le village francophone vous y amène :</b></p>
-        <ul className="event-list__list__decoration-none">
+        <ul class="event-list__list__decoration-none">
              ${isLieuVille}
             <li><i class="fas fa-camera"></i><a href="#">&emsp;Liste des 8 studios connectés</a></li>
             <li><i class="fas fa-file-signature"></i><a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">&emsp;inscriptions gratuits ouvertes</a></li>
