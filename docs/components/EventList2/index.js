@@ -37,22 +37,26 @@ class EventList2 extends HTMLElement {
 
     let visuel;
 
+    const isLieuVille =
+      event.lieu.lieu_ville != ""
+        ? `<li><img src="" /><a href="#">Découvrez le village de ${event.lieu.lieu_ville}</a></li>`
+        : "";
     // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
     visuel =
       event.lieu.visuel_principal != ""
         ? `<p>Le village francophone vous y amène :</p>
         <ul>
-            <li><img src="" /><a href="#">Découvrez le village de ${event.lieu.lieu_ville}</a></li>
+             ${isLieuVille}
             <li><img src="" />Connectez votre territoire ou entreprise <a href="#">Liste des 8 studios connectés</a></li>
             <li><img src="" />Connectez vous à distance <a href="#">inscriptions gratuits ouvertes</a></li>
         </ul>
         `
-        : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:100%"/> `;
+        : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:70%"/> `;
 
     console.log("visuel :" + visuel);
 
     const content = `
-						    <div class="card mb-3" style="max-width:100%">
+						    <div class="card mb-3">
 					        <div class="row no-gutters p-3">
 					            <div class="col-md-2">
 					                <img src="http://www.mlg-consulting.com/manager_cc/events/img_uploaded/${event.logo}" class="card-img" alt="..." style="width:100%">
@@ -70,7 +74,7 @@ class EventList2 extends HTMLElement {
 							      ${visuel}
 							    </div>
 							  </div>
-					      </div>
+					    </div>
 					`;
     const classItem =
       this.isCarousel == "true" ? `carousel-item ${isActive}` : ``;
