@@ -38,10 +38,15 @@ class EventList2 extends HTMLElement {
     let visuel;
 
     // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
-    visuel = event.lieu.visuel_principal != "" ? event.lieu.visuel_principal == "//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" ? visuel = `image du sud` : visuel = `<p>ça c'est le visuel avec le village francophone</p>` : 'il n y a pas d image';
+    visuel =
+      event.lieu.visuel_principal != ""
+        ? event.lieu.visuel_principal ==
+          "//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png"
+          ? `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" `
+          : (visuel = `<p>Le village francophone vous y amène : <ul><li><img src="" /><a href="#">Découvrez le village de ${event.lieu.lieu_ville}</a></li><li><img src="" />Connectez vptre territoire ou entreprise <a>Liste des 8 studios connectés</a></li><li><img src="" />Connectez vous à distance <a href="#">inscriptions gratuits ouvertes</a></li></ul></p>`)
+        : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" `;
 
-    console.log('visuel :' + visuel);
-    // console.log('visuelcomplet : ' + visuelComplet);
+    console.log("visuel :" + visuel);
 
     const content = `
 						    <div class="card mb-3" style="max-width:100%">
@@ -59,12 +64,11 @@ class EventList2 extends HTMLElement {
 							        </div>
 							    </div>
 							    <div class="col-md-2"> 
-							      <h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5>
+							      ${visuel}
 							    </div>
 							  </div>
 					      </div>
 					`;
-
     const classItem =
       this.isCarousel == "true" ? `carousel-item ${isActive}` : ``;
 
@@ -77,17 +81,17 @@ class EventList2 extends HTMLElement {
   };
 
   // DisplayLieu = (event) => {
-	// console.log("on est dans display lieu !");
-	// console.log("le nom de l event est :" + event.nom);
-	// if (
-	//   event.lieu.visuel_principal != "" ||
-	//   event.lieu.visuel_principal !=
-	// 	"//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png"
-	// ) {
-	//   console.log("c/est le visuel bien" + event.lieu.visuel_principal);
-	// } else {
-	//   console.log("c est le visuel de base ! " + event.lieu.visuel_principal);
-	// }}
+  // console.log("on est dans display lieu !");
+  // console.log("le nom de l event est :" + event.nom);
+  // if (
+  //   event.lieu.visuel_principal != "" ||
+  //   event.lieu.visuel_principal !=
+  // 	"//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png"
+  // ) {
+  //   console.log("c/est le visuel bien" + event.lieu.visuel_principal);
+  // } else {
+  //   console.log("c est le visuel de base ! " + event.lieu.visuel_principal);
+  // }}
 
   fetchEvents = async () => {
     const req_suite = `params=where%20id_event!=399%20and`;
