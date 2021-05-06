@@ -35,12 +35,12 @@ class EventList2 extends HTMLElement {
   Event = ({ event, index }) => {
     const isActive = index == 0 ? "active" : "";
 
-    // let visuelComplet;
+    let visuel;
 
     // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
-    const visuel = event.lieu.visuel_principal != "" ? event.lieu.visuel_principal == "//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" ? visuel = `image du sud` : visuel = `<p>ça c'est le visuel avec le village francophone</p>` : 'il n y a pas d image';
+    visuel = event.lieu.visuel_principal != "" ? event.lieu.visuel_principal == "//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" ? visuel = `image du sud` : visuel = `<p>ça c'est le visuel avec le village francophone</p>` : 'il n y a pas d image';
 
-    console.log(visuel);
+    console.log('visuel :' + visuel);
     // console.log('visuelcomplet : ' + visuelComplet);
 
     const content = `
