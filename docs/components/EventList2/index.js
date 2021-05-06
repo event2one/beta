@@ -50,8 +50,8 @@ class EventList2 extends HTMLElement {
         ? `<p><b>Le village francophone vous y amène :</b></p>
         <ul class="event-list__list__decoration-none">
              ${isLieuVille}
-            <li><i class="fas fa-camera"></i><a href="${event.web}/${event.mega_demonstrateur_id}/connected_studios">&emsp;Liste des studios connectés</a></li>
-            <li><i class="fas fa-file-signature"></i><a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">&emsp;inscriptions gratuits ouvertes</a></li>
+            <li><i class="fas fa-camera"></i><a href="${event.web}/${event.mega_demonstrateur_id}/connected_studios/">&emsp;Liste des studios connectés</a></li>
+            <li><i class="fas fa-file-signature"></i><a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">&emsp;Inscriptions gratuites ouvertes</a></li>
         </ul>
         `
         : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:70%"/> `;
