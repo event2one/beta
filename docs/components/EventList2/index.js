@@ -35,14 +35,12 @@ class EventList2 extends HTMLElement {
   Event = ({ event, index }) => {
     const isActive = index == 0 ? "active" : "";
 
-    let visuel;
-
     const isLieuVille =
       event.lieu.lieu_ville != ""
         ? `<li><img src="" /><a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}></a></li>`
         : "";
     // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
-    visuel =
+    const visuel =
       event.lieu.visuel_principal != ""
         ? `<p>Le village francophone vous y amène :</p>
         <ul>
@@ -52,8 +50,6 @@ class EventList2 extends HTMLElement {
         </ul>
         `
         : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:70%"/> `;
-
-    console.log("visuel :" + visuel);
 
     const content = `
 						    <div class="card mb-3">
@@ -67,7 +63,7 @@ class EventList2 extends HTMLElement {
 							            <h5 class="card-text"><i class="far fa-calendar-check"></i> ${event.precision_date}</h5>
 							          
 							            <p class="card-text"><small class="text-muted"></small></p>
-							            <p> En savoir plus >  </p>
+							            <p> <a href="${event.web}">En savoir plus ></a>  </p>
 							        </div>
 							    </div>
 							    <div class="col-md-4"> 
@@ -84,7 +80,7 @@ class EventList2 extends HTMLElement {
         ? `<div class="${classItem}"><a href="${event.web}" target="_blank">${content}</a></div>`
         : `<div class="${classItem}">${content}</div>`;
  */
-    return res;
+    return content;
   };
 
   fetchEvents = async () => {
