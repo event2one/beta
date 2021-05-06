@@ -37,7 +37,7 @@ class EventList2 extends HTMLElement {
 
     const isLieuVille =
       event.lieu.lieu_ville != ""
-        ? `<li><i class="fas fa-plane"></i><a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}></a></li>`
+        ? `<li className="text-decoration-none"><i className="fas fa-plane" style="width: 100%"></i><a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}></a></li>`
         : "";
 
     const visuel =
@@ -45,8 +45,8 @@ class EventList2 extends HTMLElement {
         ? `<p>Le village francophone vous y amène :</p>
         <ul>
              ${isLieuVille}
-            <li><img src="" />Connectez votre territoire ou entreprise <a href="#">Liste des 8 studios connectés</a></li>
-            <li><img src="" />Connectez vous à distance <a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">inscriptions gratuits ouvertes</a></li>
+            <li className="text-decoration-none"><img src="" />Connectez votre territoire ou entreprise <a href="#">Liste des 8 studios connectés</a></li>
+            <li className="text-decoration-none"><img src="" />Connectez vous à distance <a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">inscriptions gratuits ouvertes</a></li>
         </ul>
         `
         : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:70%"/> `;
@@ -66,7 +66,7 @@ class EventList2 extends HTMLElement {
 							            <p> <a href="${event.web}">En savoir plus ></a>  </p>
 							        </div>
 							    </div>
-							    <div class="col-md-4"> 
+							    <div class="col-md-4 bg-light p-3 rounded"> 
 							      ${visuel}
 							    </div>
 							  </div>
