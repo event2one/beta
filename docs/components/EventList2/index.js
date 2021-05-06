@@ -8,7 +8,7 @@ class EventList2 extends HTMLElement {
 
     this.innerHTML = `
     <style>
-           .event-list__list {
+           .event-list__list__decoration-none {
              text-decoration: none;
            } 
     </style>
@@ -42,16 +42,16 @@ class EventList2 extends HTMLElement {
 
     const isLieuVille =
       event.lieu.lieu_ville != ""
-        ? `<li><i class="fas fa-plane"></i>&emsp;<a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}</a></li>`
+        ? `<li className="event-list__list__decoration-none"><i class="fas fa-plane"></i>&emsp;<a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}</a></li>`
         : "";
 
     const visuel =
       event.lieu.visuel_principal != ""
         ? `<p><b>Le village francophone vous y amène :</b></p>
-        <ul className="event-list__list">
+        <ul>
              ${isLieuVille}
-            <li><i class="fas fa-camera"></i><a href="#">&emsp;Connectez votre territoire ou entreprise : Liste des 8 studios connectés</a></li>
-            <li><i class="fas fa-file-signature"></i><a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">&emsp;Connectez vous à distance inscriptions gratuits ouvertes</a></li>
+            <li className="event-list__list__decoration-none"><i class="fas fa-camera"></i><a href="#">&emsp;Liste des 8 studios connectés</a></li>
+            <li className="event-list__list__decoration-none"><i class="fas fa-file-signature"></i><a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">&emsp;inscriptions gratuits ouvertes</a></li>
         </ul>
         `
         : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:70%"/> `;
