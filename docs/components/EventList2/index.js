@@ -38,9 +38,10 @@ class EventList2 extends HTMLElement {
     let visuelComplet;
 
     // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
-    const visuel = event.lieu.visuel_principal != "" ? visuelComplet == "//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" ? visuelComplet = `<img src="${event.lieu.visuel_principal}" style="width:100%">` : visuelComplet = `<p>ça c'est le visuel avec le village francophone</p>` : 'il n y a pas d image';
+    const visuel = event.lieu.visuel_principal != "" ? event.lieu.visuel_principal == "//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" ? visuelComplet = `image du sud` : visuelComplet = `<p>ça c'est le visuel avec le village francophone</p>` : 'il n y a pas d image';
 
     console.log(visuel);
+    console.log('visuelcomplet : ' + visuelComplet);
 
     const content = `
 						    <div class="card mb-3" style="max-width:100%">
