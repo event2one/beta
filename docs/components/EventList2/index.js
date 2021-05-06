@@ -79,11 +79,11 @@ class EventList2 extends HTMLElement {
     const classItem =
       this.isCarousel == "true" ? `carousel-item ${isActive}` : ``;
 
-    const res =
+   /* const res =
       event.web != ""
         ? `<div class="${classItem}"><a href="${event.web}" target="_blank">${content}</a></div>`
         : `<div class="${classItem}">${content}</div>`;
-
+ */
     return res;
   };
 
