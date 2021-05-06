@@ -7,6 +7,11 @@ class EventList2 extends HTMLElement {
     this.content = this.getAttribute("content");
 
     this.innerHTML = `
+    <style>
+           .event-list__list {
+             text-decoration: none;
+           } 
+    </style>
 		<section class="bg-light py-4">
 		    <h2 class="text-center" style="">Les prochains &eacute;v&eacute;nements</h2> 
 		    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -37,16 +42,16 @@ class EventList2 extends HTMLElement {
 
     const isLieuVille =
       event.lieu.lieu_ville != ""
-        ? `<li className="text-decoration-none"><i class="fas fa-plane"></i>&emsp;<a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}></a></li>`
+        ? `<li><i class="fas fa-plane"></i>&emsp;<a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}</a></li>`
         : "";
 
     const visuel =
       event.lieu.visuel_principal != ""
         ? `<p><b>Le village francophone vous y amène :</b></p>
-        <ul>
+        <ul className="event-list__list">
              ${isLieuVille}
-            <li className="text-decoration-none">  Connectez votre territoire ou entreprise </br><i class="fas fa-camera"></i>&emsp;<a href="#">Liste des 8 studios connectés</a></li>
-            <li className="text-decoration-none"><img src="" />  Connectez vous à distance </br> <i class="fas fa-file-signature"></i>&emsp;<a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">inscriptions gratuits ouvertes</a></li>
+            <li><i class="fas fa-camera"></i><a href="#">&emsp;Connectez votre territoire ou entreprise : Liste des 8 studios connectés</a></li>
+            <li><i class="fas fa-file-signature"></i><a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">&emsp;Connectez vous à distance inscriptions gratuits ouvertes</a></li>
         </ul>
         `
         : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:70%"/> `;
