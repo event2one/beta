@@ -39,12 +39,15 @@ class EventList2 extends HTMLElement {
 
     // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
     visuel =
-      event.lieu.visuel_principal != "" ? `<p>Le village francophone vous y amène : <ul><li><img src="" /><a href="#">Découvrez le village de ${event.lieu.lieu_ville}</a></li><li><img src="" />Connectez vptre territoire ou entreprise <a>Liste des 8 studios connectés</a></li><li><img src="" />Connectez vous à distance <a href="#">inscriptions gratuits ouvertes</a></li></ul></p>` : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:100%"/> `
-        // ? event.lieu.visuel_principal ==
-        //   "//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png"
-        //   ? `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" `
-        //   : (visuel = `<p>Le village francophone vous y amène : <ul><li><img src="" /><a href="#">Découvrez le village de ${event.lieu.lieu_ville}</a></li><li><img src="" />Connectez vptre territoire ou entreprise <a>Liste des 8 studios connectés</a></li><li><img src="" />Connectez vous à distance <a href="#">inscriptions gratuits ouvertes</a></li></ul></p>`)
-        // : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5> `;
+      event.lieu.visuel_principal != ""
+        ? `<p>Le village francophone vous y amène :</p>
+        <ul>
+            <li><img src="" /><a href="#">Découvrez le village de ${event.lieu.lieu_ville}</a></li>
+            <li><img src="" />Connectez votre territoire ou entreprise <a href="#">Liste des 8 studios connectés</a></li>
+            <li><img src="" />Connectez vous à distance <a href="#">inscriptions gratuits ouvertes</a></li>
+        </ul>
+        `
+        : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:100%"/> `;
 
     console.log("visuel :" + visuel);
 
@@ -63,7 +66,7 @@ class EventList2 extends HTMLElement {
 							            <p> En savoir plus >  </p>
 							        </div>
 							    </div>
-							    <div class="col-md-2"> 
+							    <div class="col-md-4"> 
 							      ${visuel}
 							    </div>
 							  </div>
@@ -79,19 +82,6 @@ class EventList2 extends HTMLElement {
 
     return res;
   };
-
-  // DisplayLieu = (event) => {
-  // console.log("on est dans display lieu !");
-  // console.log("le nom de l event est :" + event.nom);
-  // if (
-  //   event.lieu.visuel_principal != "" ||
-  //   event.lieu.visuel_principal !=
-  // 	"//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png"
-  // ) {
-  //   console.log("c/est le visuel bien" + event.lieu.visuel_principal);
-  // } else {
-  //   console.log("c est le visuel de base ! " + event.lieu.visuel_principal);
-  // }}
 
   fetchEvents = async () => {
     const req_suite = `params=where%20id_event!=399%20and`;
