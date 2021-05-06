@@ -39,7 +39,7 @@ class EventList2 extends HTMLElement {
 
     const isLieuVille =
       event.lieu.lieu_ville != ""
-        ? `<li><img src="" /><a href="#">Découvrez le village de ${event.lieu.lieu_ville}</a></li>`
+        ? `<li><img src="" /><a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}</a></li>`
         : "";
     // const visuel = event.lieu.visuel_principal != "" ? `<img src="${event.lieu.visuel_principal}" style="width:100%">` : "";
     visuel =
@@ -48,7 +48,7 @@ class EventList2 extends HTMLElement {
         <ul>
              ${isLieuVille}
             <li><img src="" />Connectez votre territoire ou entreprise <a href="#">Liste des 8 studios connectés</a></li>
-            <li><img src="" />Connectez vous à distance <a href="#">inscriptions gratuits ouvertes</a></li>
+            <li><img src="" />Connectez vous à distance <a href="myglobalvillage.com/${event.nom}/${event.mega_demonstrateur_id}/pitch_registration/">inscriptions gratuits ouvertes</a></li>
         </ul>
         `
         : `<h5 class="card-text"><i class="fas fa-map-marker-alt"></i> ${event.lieu.lieu_nom} - ${event.lieu.lieu_ville}</h5><img src="//www.mlg-consulting.com/manager_cc/events/lieux/img_uploaded/210322203353_sticker-region-sud-18.png" style="width:70%"/> `;
