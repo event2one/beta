@@ -46,10 +46,10 @@ class EventList extends HTMLElement {
           : "";
   
       const visuel = `
-                      <p><b>Le village francophone vous y amène :</b></p>
+                      <p><b>Le village francophone vous y am&egrave;ne :</b></p>
                       <ul class="event-list__list__decoration-none">
                           ${isLieuVille}
-                          <li><i class="fas fa-camera"></i><a href="${event.web}/${event.mega_demonstrateur_id}/connected_studios/">&emsp;Liste des studios connectés</a></li>
+                          <li><i class="fas fa-camera"></i><a href="${event.web}/${event.mega_demonstrateur_id}/connected_studios/">&emsp;Liste des studios connect&eacute;s</a></li>
                           <li><i class="fas fa-file-signature"></i><a href="${event.web}/${event.mega_demonstrateur_id}/pitch_registration/">&emsp;Inscriptions gratuites ouvertes</a></li>
                       </ul>
                     `;
@@ -58,7 +58,7 @@ class EventList extends HTMLElement {
                               <div class="card mb-3">
                               <div class="row no-gutters p-3">
                                   <div class="col-md-2">
-                                      <img src="http://www.mlg-consulting.com/manager_cc/events/img_uploaded/${event.logo}" class="card-img" alt="..." style="width:100%">
+                                      <a href="${event.web}"><img src="http://www.mlg-consulting.com/manager_cc/events/img_uploaded/${event.logo}" class="card-img" alt="..." style="width:100%"></a>
                                   </div>
                                   <div class="col-md-6">
                                       <div class="card-body">
