@@ -42,7 +42,7 @@ class EventList extends HTMLElement {
   
       const isLieuVille =
         event.lieu.lieu_ville != ""
-          ? `<li><i class="fas fa-plane"></i>&emsp;<a href="${event.web}">Découvrez le village de ${event.lieu.lieu_ville}</a></li>`
+          ? `<li><i class="fas fa-plane"></i>&emsp;<a href="${event.web}">D&eacute;couvrez le village de ${event.lieu.lieu_ville}</a></li>`
           : "";
   
       const visuel = `
@@ -66,7 +66,7 @@ class EventList extends HTMLElement {
                                           <h5 class="card-text"><i class="far fa-calendar-check"></i> ${event.precision_date}</h5>
                                         
                                           <p class="card-text"><small class="text-muted"></small></p>
-                                          <p> <a href="${event.web}">En savoir plus ></a>  </p>
+                                          <p> <a href="${event.web}" class="btn btn-primary">En savoir plus &gt;</a>  </p>
                                       </div>
                                   </div>
                                   <div class="col-md-4 bg-light p-3 rounded"> 
