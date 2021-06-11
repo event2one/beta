@@ -37,4 +37,4 @@ class Studio extends HTMLElement {
   }
 }
 
-customElements.define("studio", Studio);
+customElements.define("studio-list", Studio);
