@@ -3,9 +3,9 @@ class StudioList extends HTMLElement {
     super();
 
     this.innerHTML = `
-    <script type="module" src="https://event2one.github.io/beta/components/StudioList/CollectifGeographique/index.js"></script>
-    <script type="module" src="https://event2one.github.io/beta/components/StudioList/EventLieu/index.js"></script>
-    <script type="module" src="https://event2one.github.io/beta/components/StudioList/EventList/index.js"></script>
+    <script type="" src="https://event2one.github.io/beta/components/StudioList/CollectifGeographique/index.js"></script>
+    <script type="" src="https://event2one.github.io/beta/components/StudioList/EventLieu/index.js"></script>
+    <script type="" src="https://event2one.github.io/beta/components/StudioList/EventList/index.js"></script>
 
       <div class="container">
       <div class="d-flex bg-dark text-white">
