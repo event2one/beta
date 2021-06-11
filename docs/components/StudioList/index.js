@@ -31,7 +31,7 @@ class StudioList extends HTMLElement {
                         <p class="card-text">Tour Zamasky</p>
                     </div>
                 </div>
-                <p>Le quartier général : Lieu du studio central, quelques mots sur le lieu, adresse</p>
+                <p>Le quartier général :<br> Lieu du studio central<br> quelques mots sur le lieu <br>adresse</p>
             </div>
             <div class="d-flex flex-row align-item-center">
                 <div class="card m-2" style="width: 12rem;">
@@ -40,7 +40,7 @@ class StudioList extends HTMLElement {
                         <p class="card-text">Salon vivatech</p>
                     </div>
                 </div>
-                <p>L'EVENEMENT : Quelques mots sur l'évènement</p>
+                <p>L'EVENEMENT :<br> Quelques mots sur l'évènement</p>
             </div>
 
         </div>
