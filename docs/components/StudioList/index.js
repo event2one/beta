@@ -4,7 +4,7 @@ class StudioList extends HTMLElement {
 
     this.innerHTML = `
     <div class="container mt-2">
-    <div class="d-flex text-white" style="background-color: black;">
+    <div class="d-flex text-white align-items-center justify-content-around" style="background-color: black;">
         <img class='m-2' src='https://picsum.photos/id/1041/150' />
         <p class='mt-3' style="text-align: center">
            <b>Le quartier général de la présence francophone sur l'évènement</b>
