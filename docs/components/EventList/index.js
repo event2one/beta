@@ -78,7 +78,7 @@ class EventList extends HTMLElement {
 
     const classItem = this.isCarousel == "true" ? `carousel-item ${isActive}` : ``;
 
-    const res = `<div class=${classItem}>${content}</div>`
+    const res = `<div class="${classItem}">${content}</div>`
 
     return res;
   };
