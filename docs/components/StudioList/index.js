@@ -4,13 +4,12 @@ class StudioList extends HTMLElement {
 
     this.innerHTML = `
     <div class="container mt-2">
-    <div class="d-flex bg-dark text-white">
-        <img class='m-2' src='https://picsum.photos/id/1041/200' />
-        <p>
-            Le village accueille les francophones sur tous les plus grands évènements
-            mondiaux de la techno
-            et si vous ne pouvez vous y déplacer vous connecte depuis un réseau
-            mondial de salles/studios connectés ou simplement en ligne depuis votre PC
+    <div class="d-flex text-white" style="background-color: black;">
+        <img class='m-2' src='https://picsum.photos/id/1041/150' />
+        <p style="text-align: center">
+           <b>Le quartier général de la présence francophone sur l'évènement</b>
+           <br>Participez aux temps forts de la journée, rassemblez vous aux points de départ des parcours de visité et 
+           rencontrez les décideurs francophones de l'évènements lors des soirées et sessions de pitch
         </p>
     </div>
 
@@ -32,7 +31,7 @@ class StudioList extends HTMLElement {
                         <p class="card-text">Tour Zamasky</p>
                     </div>
                 </div>
-                <p>Le quartier général : Quelques mots sur le lieu, adresse</p>
+                <p>Le quartier général : Lieu du studio central, quelques mots sur le lieu, adresse</p>
             </div>
             <div class="d-flex flex-row">
                 <div class="card m-2" style="width: 12rem;">
