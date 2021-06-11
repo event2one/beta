@@ -1,4 +1,4 @@
-class Event extends HTMLElement {
+class EventList extends HTMLElement {
   constructor() {
     super();
 
@@ -16,4 +16,4 @@ class Event extends HTMLElement {
   }
 }
 
-customElements.define("event", Event);
+customElements.define("event-list", EventList);

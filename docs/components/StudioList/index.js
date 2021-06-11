@@ -3,9 +3,9 @@ class StudioList extends HTMLElement {
     super();
 
     this.innerHTML = `
-    <script type="module" src="./components/Studio/CollectifGeographique/index.js"></script>
-    <script type="module" src="./components/Studio/EventLieu/index.js"></script>
-    <script type="module" src="./components/Studio/Event/index.js"></script>
+    <script type="module" src="./components/StudioList/CollectifGeographique/index.js"></script>
+    <script type="module" src="./components/StudioList/EventLieu/index.js"></script>
+    <script type="module" src="./components/StudioList/EventList/index.js"></script>
 
       <div class="container">
       <div class="d-flex bg-dark text-white">
@@ -26,7 +26,7 @@ class StudioList extends HTMLElement {
 
               <event-lieu></event-lieu>
              
-              <event></event>
+              <event-list></event-list>
               
           </div>
   
