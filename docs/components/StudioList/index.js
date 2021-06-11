@@ -26,7 +26,7 @@ class StudioList extends HTMLElement {
 
             <div class="d-flex flex-row align-items-center">
                 <div class="card m-2" style="width: 12rem;">
-                    <img src="https://picsum.photos/id/1043/200" class="card-img-top" alt="...">
+                    <img src="https://picsum.photos/id/1031/200" class="card-img-top" alt="...">
                     <div class="card-footer" style="width: 100%; background-color: black; color: white;">
                         <p class="card-text">Tour Zamasky</p>
                     </div>
@@ -35,7 +35,7 @@ class StudioList extends HTMLElement {
             </div>
             <div class="d-flex flex-row align-items-center">
                 <div class="card m-2" style="width: 12rem;">
-                    <img src="https://picsum.photos/id/1044/200" class="card-img-top" alt="...">
+                    <img src="https://picsum.photos/id/1033/200" class="card-img-top" alt="...">
                     <div class="card-footer" style="width: 100%;  background-color: black; color: white;">
                         <p class="card-text">Salon vivatech</p>
                     </div>
