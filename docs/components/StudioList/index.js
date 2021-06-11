@@ -1,4 +1,4 @@
-class Studio extends HTMLElement {
+class StudioList extends HTMLElement {
   constructor() {
     super();
 
@@ -33,8 +33,8 @@ class Studio extends HTMLElement {
       </div>
   </div>`;
 
-    this.fetchEvents();
+    // this.fetchEvents();
   }
 }
 
-customElements.define("studio-list", Studio);
+customElements.define("studio-list", StudioList);
