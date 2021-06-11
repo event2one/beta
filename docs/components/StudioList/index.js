@@ -24,7 +24,7 @@ class StudioList extends HTMLElement {
 
         <div class="d-flex flex-column">
 
-            <div class="d-flex flex-row justify-content-center">
+            <div class="d-flex flex-row align-item-center">
                 <div class="card m-2" style="width: 12rem;">
                     <img src="https://picsum.photos/id/1043/200" class="card-img-top" alt="...">
                     <div class="card-footer" style="width: 100%; background-color: black; color: white;">
@@ -33,7 +33,7 @@ class StudioList extends HTMLElement {
                 </div>
                 <p>Le quartier général : Lieu du studio central, quelques mots sur le lieu, adresse</p>
             </div>
-            <div class="d-flex flex-row justify-content-center">
+            <div class="d-flex flex-row align-item-center">
                 <div class="card m-2" style="width: 12rem;">
                     <img src="https://picsum.photos/id/1044/200" class="card-img-top" alt="...">
                     <div class="card-footer" style="width: 100%;  background-color: black; color: white;">
