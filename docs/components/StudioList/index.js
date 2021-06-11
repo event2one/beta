@@ -3,10 +3,6 @@ class StudioList extends HTMLElement {
     super();
 
     this.innerHTML = `
-    <script type="" src="https://event2one.github.io/beta/components/StudioList/CollectifGeographique/index.js"></script>
-    <script type="" src="https://event2one.github.io/beta/components/StudioList/EventLieu/index.js"></script>
-    <script type="" src="https://event2one.github.io/beta/components/StudioList/EventList/index.js"></script>
-
       <div class="container">
       <div class="d-flex bg-dark text-white">
           <img class='m-2' src='https://picsum.photos/id/1041/200' />
@@ -20,13 +16,28 @@ class StudioList extends HTMLElement {
   
       <div class='d-flex flex-row'>
 
-          <collectif-geographique></collectif-geographique>
+          <div class="m-2"
+              style="background-image: url('https://picsum.photos/id/1042/200'); height: 40vh; width: 40vw;background-size: cover;">
+              <span class="bg-dark text-white fs-1">Paris</span>
+          </div>
           
           <div class="d-flex flex-column">
 
-              <event-lieu></event-lieu>
+          <div class="d-flex flex-row">
+          <div class="m-2"
+              style="background-image: url('https://picsum.photos/id/1043/200'); background-image: cover; height: 20vh; width: 20vw; background-size: cover;">
+              <span class="bg-dark text-white" style="width: 100%;">Tour zamasky</span>
+          </div>
+          <p><b>Le Quartier général : </b>lorem ipsum, adresse</p>
+      </div>
              
-              <event-list></event-list>
+            <div class="d-flex flex-row">
+                  <div class="m-2"
+                      style="background-image: url('https://picsum.photos/id/1044/200'); background-image: cover; height: 20vh; width: 20vw; background-size: cover;">
+                      <span class="bg-dark text-white">Salon vivatech</span>
+                  </div>
+                  <p>L'EVENEMENT : Quelques mots sur l'évènement</p>
+            </div>
               
           </div>
   
