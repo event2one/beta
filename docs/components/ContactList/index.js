@@ -9,13 +9,16 @@ class ContactList extends HTMLElement {
     // document.body.appendChild(js);
     // console.log(document.body.appendChild(js));
 
-    this.contactList = JSON.parse(this.getAttribute("contactList"));
+    this.contactList = this.getAttribute("contactList");
+
 
     console.log(this.contactList);
 
     const displayContactList = () => {
 
-     return  this.contactList.map(item => {
+        const formatedData = JSON.parse(this.contactList);
+        
+     return  formatedData.map(item => {
         `<li class="splide__slide">
           <img src=${item.photo}></img>
           <div>
