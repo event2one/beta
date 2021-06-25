@@ -9,15 +9,30 @@ class ContactList extends HTMLElement {
     // document.body.appendChild(js);
     // console.log(document.body.appendChild(js));
 
+    this.contactList = this.getAttribute("contactList");
+
+    const displayContactList = () => {
+      this.contactList.map((item) => (
+        <li class="splide__slide">
+          <img src="">{item.photo}</img>
+          <div>
+            <h3>
+              {item.prenom} {item.nom}
+            </h3>
+            <br />
+            {item.societe}
+          </div>
+        </li>
+      ));
+    };
+
     this.innerHTML = `
         <section>
             <div class="container">
                 <div class="splide">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            <li class="splide__slide">Slide 01</li>
-                            <li class="splide__slide">Slide 02</li>
-                            <li class="splide__slide">Slide 03</li>
+                            ${displayContactList()}
                         </ul>
                     </div>
                 
@@ -33,7 +48,6 @@ class ContactList extends HTMLElement {
   }
 
   displaySplide = () => {
-
     var splide = new Splide(".splide");
 
     splide.on("autoplay:playing", function (rate) {
@@ -41,13 +55,6 @@ class ContactList extends HTMLElement {
     });
 
     splide.mount();
-    
-   /*
-    document.addEventListener( 'DOMContentLoaded', function () {
-		new Splide( '#splide' ).mount();
-	} );
-    */
-
   };
 }
 
