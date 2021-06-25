@@ -29,10 +29,14 @@ class ContactList extends HTMLElement {
   }
 
   displaySplide = () => {
-    console.log("je suis dans splide");
-    new Splide("#splide", {
-      autoplay: true,
-    }).mount();
+      console.log("object")
+    var splide = new Splide("#splide");
+
+    splide.on("autoplay:playing", function (rate) {
+      console.log(rate); // 0-1
+    });
+
+    splide.mount();
   };
 }
 
