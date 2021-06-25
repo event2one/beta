@@ -17,7 +17,7 @@ class ContactList extends HTMLElement {
     const displayContactList = () => {
 
         //const formatedData = JSON.parse(this.contactList);
-        const formatedData =   [{'prenom':'e','nom':'e','societe':'e'},{'prenom':'elwtfan65yQT','nom':'wvqybmu78p','societe':''}];
+        const formatedData =   [{prenom:'e',nom:'e',societe:'e'},{prenom:'elwtfan65yQT',nom:'wvqybmu78p',societe:'qjmdlkqs'}];
        
      return  formatedData.map(item => {
         `<li class="splide__slide">
