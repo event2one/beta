@@ -3,7 +3,6 @@ class ContactList extends HTMLElement {
     super();
 
     console.log("oui");
-    this.displaySplide();
 
     this.innerHTML = `
         <section>
@@ -26,13 +25,13 @@ class ContactList extends HTMLElement {
             </div>
         </section>`;
 
-    
+    this.displaySplide();
   }
 
   displaySplide = () => {
-      console.log('je suis dans splide')
+    console.log("je suis dans splide");
     new Splide("#splide", {
-        autoplay: true
+      autoplay: true,
     }).mount();
   };
 }
