@@ -20,7 +20,7 @@ class ContactList extends HTMLElement {
         const formatedData =   [{prenom:'e',nom:'e',societe:'e'},{prenom:'elwtfan65yQT',nom:'wvqybmu78p',societe:'qjmdlkqs'}];
        
      return  formatedData.map(item => {
-        `<li class="splide__slide">
+       return  `<li class="splide__slide">
           <img src=${item.photo}></img>
           <div>
             <h3>
@@ -30,7 +30,7 @@ class ContactList extends HTMLElement {
             ${item.societe}
           </div>
         </li>`
-      });
+      }).join("");
     };
 
     this.innerHTML = `
