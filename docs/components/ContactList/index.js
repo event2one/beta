@@ -3,7 +3,7 @@ class ContactList extends HTMLElement {
     super();
 
     var js = document.createElement('script');
-    // js.type = 'text' / 'javascript';
+    js.type = text/javascript;
     js.src = `https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js;`
     //Ajout de la balise dans la page
     document.body.appendChild(js);
