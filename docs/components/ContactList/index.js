@@ -3,7 +3,7 @@ class ContactList extends HTMLElement {
     super();
 
     this.innerHTML = `
-        
+        <script>console.log('non')</script>
         <section>
             <div class="container">
                 <div class="splide">
