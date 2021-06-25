@@ -34,14 +34,20 @@ class ContactList extends HTMLElement {
 
   displaySplide = () => {
 
-    alert("done");
-    var splide = new Splide("#splide");
+    var splide = new Splide(".splide");
 
     splide.on("autoplay:playing", function (rate) {
       console.log(rate); // 0-1
     });
 
     splide.mount();
+    
+   /*
+    document.addEventListener( 'DOMContentLoaded', function () {
+		new Splide( '#splide' ).mount();
+	} );
+    */
+
   };
 }
 
