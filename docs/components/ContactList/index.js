@@ -6,13 +6,13 @@ class ContactList extends HTMLElement {
 
     console.log("oui");
 
-    var splide = new Splide("#splide");
+    // var splide = new Splide("#splide");
 
-    splide.on("autoplay:playing", function (rate) {
-      console.log(rate); // 0-1
-    });
+    // splide.on("autoplay:playing", function (rate) {
+    //   console.log(rate); // 0-1
+    // });
 
-    splide.mount();
+    // splide.mount();
 
     this.innerHTML = `
         <section>
