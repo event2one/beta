@@ -2,11 +2,14 @@ class ContactList extends HTMLElement {
   constructor() {
     super();
 
-    console.log("oui");
+    var js = document.createElement(script);
+    js.type = text / javascript;
+    js.src = `https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js;`
+    //Ajout de la balise dans la page
+    document.body.appendChild(js);
 
     this.innerHTML = `
         <section>
-        test
             <div class="container">
                 <div class="splide">
                     <div class="splide__track">
@@ -29,7 +32,6 @@ class ContactList extends HTMLElement {
   }
 
   displaySplide = () => {
-      console.log("object")
     var splide = new Splide("#splide");
 
     splide.on("autoplay:playing", function (rate) {
