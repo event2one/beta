@@ -2,21 +2,18 @@ class ContactList extends HTMLElement {
   constructor() {
     super();
 
-    // <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>;
-
     console.log("oui");
 
-    // var splide = new Splide("#splide");
+    var splide = new Splide("#splide");
 
-    // splide.on("autoplay:playing", function (rate) {
-    //   console.log(rate); // 0-1
-    // });
+    splide.on("autoplay:playing", function (rate) {
+      console.log(rate); // 0-1
+    });
 
-    // splide.mount();
+    splide.mount();
 
     this.innerHTML = `
         <section>
-        <script>console.log("ouidsq");</script>
         test
             <div class="container">
                 <div class="splide">
