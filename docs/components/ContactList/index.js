@@ -11,6 +11,8 @@ class ContactList extends HTMLElement {
 
     this.contactList = this.getAttribute("contactList");
 
+    console.log(this.contactList);
+
     const displayContactList = () => {
       this.contactList.map((item) => (
         <li class="splide__slide">
@@ -19,7 +21,7 @@ class ContactList extends HTMLElement {
             <h3>
               {item.prenom} {item.nom}
             </h3>
-            <br />
+            <br /> <br />
             {item.societe}
           </div>
         </li>
