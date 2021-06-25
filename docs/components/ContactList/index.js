@@ -14,18 +14,19 @@ class ContactList extends HTMLElement {
     console.log(this.contactList);
 
     const displayContactList = () => {
-      this.contactList.map((item) => (
-        <li class="splide__slide">
-          <img src={item.photo}></img>
+
+     return  this.contactList.map(item => {
+        `<li class="splide__slide">
+          <img src=${item.photo}></img>
           <div>
             <h3>
-              {item.prenom} {item.nom}
+              ${item.prenom} ${item.nom}
             </h3>
             <br /> <br />
-            {item.societe}
+            ${item.societe}
           </div>
-        </li>
-      ));
+        </li>`
+      });
     };
 
     this.innerHTML = `
