@@ -16,6 +16,7 @@ class ContactList extends HTMLElement {
 
     this.innerHTML = `
         <section>
+        <script>console.log("ouidsq");</script>
         test
             <div class="container">
                 <div class="splide">
