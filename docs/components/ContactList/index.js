@@ -2,6 +2,8 @@ class ContactList extends HTMLElement {
   constructor() {
     super();
 
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    
     var splide = new Splide('#splide');
 
         splide.on('autoplay:playing', function (rate) {
