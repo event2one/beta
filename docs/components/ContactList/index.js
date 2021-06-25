@@ -55,7 +55,9 @@ class ContactList extends HTMLElement {
   }
 
   displaySplide = () => {
-    var splide = new Splide(".splide");
+    var splide = new Splide(".splide", {
+        perPage: 5,
+    });
 
     splide.on("autoplay:playing", function (rate) {
       console.log(rate); // 0-1
