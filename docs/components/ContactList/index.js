@@ -9,7 +9,7 @@ class ContactList extends HTMLElement {
     // document.body.appendChild(js);
     // console.log(document.body.appendChild(js));
 
-    this.contactList = this.getAttribute("contactList");
+    this.contactList = JSON.parse(this.getAttribute("contactList"));
 
     console.log(this.contactList);
 
