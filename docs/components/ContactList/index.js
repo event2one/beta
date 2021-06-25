@@ -3,15 +3,7 @@ class ContactList extends HTMLElement {
     super();
 
     this.innerHTML = `
-        <script>
-            var splide = new Splide( '#splide' );
-
-            splide.on( 'autoplay:playing', function ( rate ) {
-                console.log( rate ); // 0-1
-            } );
-            
-            splide.mount();
-        </script>
+        
         <section>
             <div class="container">
                 <div class="splide">
