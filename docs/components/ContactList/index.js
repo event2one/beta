@@ -16,6 +16,7 @@ class ContactList extends HTMLElement {
 
     this.innerHTML = `
         <section>
+        test
             <div class="container">
                 <div class="splide">
                     <div class="splide__track">
