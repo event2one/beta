@@ -14,7 +14,7 @@ class ContactList extends HTMLElement {
     const displayContactList = () => {
       this.contactList.map((item) => (
         <li class="splide__slide">
-          <img src="">{item.photo}</img>
+          <img src={item.photo}></img>
           <div>
             <h3>
               {item.prenom} {item.nom}
