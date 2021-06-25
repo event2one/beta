@@ -29,7 +29,7 @@ class ContactList extends HTMLElement {
             </div>
         </section>`;
 
-    this.displaySplide();
+    // this.displaySplide();
   }
 
   displaySplide = () => {
