@@ -4,14 +4,6 @@ class ContactList extends HTMLElement {
 
     console.log("oui");
 
-    var splide = new Splide("#splide");
-
-    splide.on("autoplay:playing", function (rate) {
-      console.log(rate); // 0-1
-    });
-
-    splide.mount();
-
     this.innerHTML = `
         <section>
         test
@@ -32,7 +24,15 @@ class ContactList extends HTMLElement {
                 </div>
             </div>
         </section>`;
+
+    this.displaySplide();
   }
+
+  displaySplide = () => {
+    new Splide("#splide", {
+        autoplay: true
+    }).mount();
+  };
 }
 
 customElements.define("contact-list", ContactList);
