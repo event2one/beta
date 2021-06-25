@@ -2,6 +2,8 @@ class ContactList extends HTMLElement {
   constructor() {
     super();
 
+    console.log('ouiui')
+    
     this.innerHTML = `
         <script>console.log('non')</script>
         <section>
