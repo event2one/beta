@@ -2,7 +2,7 @@ class ContactList extends HTMLElement {
   constructor() {
     super();
 
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>;
+    // <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>;
 
     console.log("oui");
 
