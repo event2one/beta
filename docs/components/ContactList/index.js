@@ -2,8 +2,16 @@ class ContactList extends HTMLElement {
   constructor() {
     super();
 
-    console.log('ouiui')
-    
+    var splide = new Splide('#splide');
+
+        splide.on('autoplay:playing', function (rate) {
+            console.log(rate); // 0-1
+        });
+
+        splide.mount();
+
+        console.log('oui')
+
     this.innerHTML = `
         <script>console.log('non')</script>
         <section>
