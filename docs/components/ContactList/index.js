@@ -33,6 +33,8 @@ class ContactList extends HTMLElement {
   }
 
   displaySplide = () => {
+
+    alert("done");
     var splide = new Splide("#splide");
 
     splide.on("autoplay:playing", function (rate) {
