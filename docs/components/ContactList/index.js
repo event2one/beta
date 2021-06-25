@@ -4,7 +4,7 @@ class ContactList extends HTMLElement {
 
     var js = document.createElement('script');
     js.type = `text`;
-    js.src = `https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js;`
+    js.src = `https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js`
     //Ajout de la balise dans la page
     document.body.appendChild(js);
     console.log(document.body.appendChild(js));
