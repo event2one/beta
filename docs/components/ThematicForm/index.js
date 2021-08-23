@@ -34,7 +34,7 @@ class ThematicForm extends HTMLElement {
 
         const req = `getCycleLang`;
 
-        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
+        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}&filter=cycle_lang_type IN('collectif_technologique', 'collectif_sectoriel') AND `)
             .then(res => res.json())
             .then(thematicForm => {
                 this.displayThematicForm({ thematicCheckboxs: thematicForm });
