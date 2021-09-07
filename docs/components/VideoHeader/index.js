@@ -10,7 +10,7 @@ class VideoHeader extends HTMLElement {
                     type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
             </video>
-            <h1 style="font-size: 3vh; font-weight: 800;color: white !important; margin: -50vh auto 0 auto; width: 85vw;">Bienvenue au point de convergence des solutions, des territoires et des décideurs francophones de l’innovation</h1>
+            <h1 style="font-size: 6vh; color: white !important; margin: -50vh auto 0 auto; width: 85vw;">Bienvenue au point de convergence des solutions, des territoires et des décideurs francophones de l’innovation</h1>
         </section>`;
   }
 }
