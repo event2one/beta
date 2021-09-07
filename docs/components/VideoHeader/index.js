@@ -3,6 +3,13 @@ class VideoHeader extends HTMLElement {
     super();
 
     this.innerHTML = `
+    <style>
+    @media all and (max-device-width: 480px) {
+        #video-header-title {
+            font-size= 6vw;
+        }
+    }
+    </style>
         <section style="height: 70vh; text-align: center">
             <video loop="" muted="" autoplay="" style="width: 100%;height: 70vh;object-fit: cover;">
 
@@ -10,7 +17,7 @@ class VideoHeader extends HTMLElement {
                     type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
             </video>
-            <h1 style="font-size: 6vh; color: white !important; margin: -50vh auto 0 auto; width: 85vw;">Bienvenue au point de convergence des solutions, des territoires et des décideurs francophones de l’innovation</h1>
+            <h1 id="video-header-title" style="font-size: 6vh; color: white !important; margin: -50vh auto 0 auto; width: 85vw;">Bienvenue au point de convergence des solutions, des territoires et des décideurs francophones de l’innovation</h1>
         </section>`;
   }
 }
