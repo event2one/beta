@@ -22,7 +22,7 @@ class ContactList extends HTMLElement {
      return  formatedData.map(item => {
        return  `<li class="splide__slide">
           <img src=${item.photo}></img>
-          <div>
+          <div class="card">
             <h3>
               ${item.prenom} ${item.nom}
             </h3>
