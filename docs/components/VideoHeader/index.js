@@ -3,8 +3,8 @@ class VideoHeader extends HTMLElement {
     super();
 
     this.innerHTML = `
-        <section style="height: 70vh;">
-            <video loop="" muted="" autoplay="" style="width: 100%;height: 100vh;object-fit: cover;">
+        <section style="height: 70vh; text-align: center">
+            <video loop="" muted="" autoplay="" style="width: 100%;height: 70vh;object-fit: cover;">
 
                 <source src="//www.mlg-consulting.com/manager_cc/docs/archives/french_village_video_cover_2018_1.mp4"
                     type="video/mp4">
