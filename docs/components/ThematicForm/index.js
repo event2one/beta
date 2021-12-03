@@ -3,17 +3,14 @@ class ThematicForm extends HTMLElement {
     constructor() {
         super();
 
-	var thematic = JSON.parse(this.attributes.thematicData.value);
-        var name = thematic.description;
-	//var userName = '****';
-        //this.innerHTML = `Hello ${userName}...`
-	
-	
+	var cycleLangList = JSON.parse(this.attributes.cycleLangList.value);
+       
+ 
         this.innerHTML = `<div>
                               <h4 class="mb-4">Choix de mes collectifs technologiques</h4>
                               <p>Si ma solution s'inscrit dans une thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
                               <div class="row" id="thematicCheckbox"></div>
-                              <div id="trad"></div>${name}
+                              <div id="trad"></div>${JSON.stringify(cycleLangList)}
                           </div>`
 
         this.fetchThematicForm();
@@ -44,20 +41,7 @@ class ThematicForm extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}&filter=cycle_lang_type='collectif_technologique' AND `)
             .then(res => res.json())
             .then(thematicForm => {
-            const gt = {
-	    "name":"test",
-	    "description":"test description",
-	    "id":500,
-	    "months": ["January","February","March"],
-	    "content":"<i>Hello world</i>",
-	    "gt_translate_keys": ["name", "description", {"key": "months", "format": "list"}, {"key": "content", "format": "html"}],
-	    "user": {
-	        "login":"test",
-	        "bio":"test user",
-	        "gt_translate_keys": [{"key": "bio", "format": "text"}]
-	    }
-	}
-	
+ 
 	//document.getElementById("trad").innerHTML = JSON.stringify(gt);
          
         //document.getElementById("gt").innerHTML = JSON.stringify(thematicForm);
