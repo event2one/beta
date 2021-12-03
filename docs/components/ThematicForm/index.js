@@ -37,6 +37,7 @@ class ThematicForm extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}&filter=cycle_lang_type='collectif_technologique' AND `)
             .then(res => res.json())
             .then(thematicForm => {
+            const trad = JSON.stringify(thematicForm);
                 this.displayThematicForm({ thematicCheckboxs: thematicForm });
             })
     }
