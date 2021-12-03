@@ -3,11 +3,16 @@ class ThematicForm extends HTMLElement {
     constructor() {
         super();
 
+	var userDetails = JSON.parse(this.attributes.thematicData.value);
+        var userName = userDetails.description;
+        //this.innerHTML = `Hello ${userName}...`
+	
+	
         this.innerHTML = `<div>
                               <h4 class="mb-4">Choix de mes collectifs technologiques</h4>
                               <p>Si ma solution s'inscrit dans une thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
                               <div class="row" id="thematicCheckbox"></div>
-                              <div id="trad"></div>
+                              <div id="trad"></div>${userName}
                           </div>`
 
         this.fetchThematicForm();
@@ -52,9 +57,9 @@ class ThematicForm extends HTMLElement {
 	    }
 	}
 	
-document.getElementById("trad").innerHTML = JSON.stringify(gt);
+	//document.getElementById("trad").innerHTML = JSON.stringify(gt);
          
-            //document.getElementById("gt").innerHTML = JSON.stringify(thematicForm);
+        //document.getElementById("gt").innerHTML = JSON.stringify(thematicForm);
                 this.displayThematicForm({ thematicCheckboxs: thematicForm });
             })
     }
