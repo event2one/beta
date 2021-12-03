@@ -7,6 +7,7 @@ class ThematicForm extends HTMLElement {
                               <h4 class="mb-4">Choix de mes collectifs technologiques</h4>
                               <p>Si ma solution s'inscrit dans une thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
                               <div class="row" id="thematicCheckbox"></div>
+                              <div id="trad"></div>
                           </div>`
 
         this.fetchThematicForm();
@@ -37,7 +38,8 @@ class ThematicForm extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}&filter=cycle_lang_type='collectif_technologique' AND `)
             .then(res => res.json())
             .then(thematicForm => {
-            const trad = JSON.stringify(thematicForm);
+         
+            document.getElementById("trad").innerHTML = JSON.stringify(thematicForm);
                 this.displayThematicForm({ thematicCheckboxs: thematicForm });
             })
     }
