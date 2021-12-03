@@ -50,7 +50,7 @@ class ThematicForm extends HTMLElement {
 		
 		//const thematicList = this.attributes.cycleLangList.value ? this.attributes.cycleLangList.value : thematicForm
 		
-		ocnsole.log('kkkkkkkkkkkk',this.attributes.cycleLangList.value);
+		console.log('kkkkkkkkkkkk',this.attributes.cycleLangList.value);
                 this.displayThematicForm({ thematicCheckboxs: thematicForm  });
             })
     }
