@@ -3,9 +3,9 @@ class ThematicForm extends HTMLElement {
     constructor() {
         super();
 
-	//var userDetails = JSON.parse(this.attributes.thematicData.value);
-        //var userName = userDetails.description;
-	    var userName = '****';
+	var userDetails = JSON.parse(this.attributes.thematicData.value);
+        var userName = userDetails.description;
+	//var userName = '****';
         //this.innerHTML = `Hello ${userName}...`
 	
 	
