@@ -4,6 +4,8 @@ class ThematicForm extends HTMLElement {
         super();
 
 	var cycleLangList = JSON.parse(this.attributes.cycleLangList.value);
+	    
+	   console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',cycleLangList);
        
  
         this.innerHTML = `<div>
