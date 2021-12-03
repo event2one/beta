@@ -10,7 +10,7 @@ class ThematicForm extends HTMLElement {
                               <h4 class="mb-4">Choix de mes collectifs technologiques</h4>
                               <p>Si ma solution s'inscrit dans une thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
                               <div class="row" id="thematicCheckbox"></div>
-                              <div id="trad"></div>${JSON.stringify(cycleLangList)}
+                              <div id="trad"></div> <!-- ${JSON.stringify(cycleLangList)}-->
                           </div>`
 
         this.fetchThematicForm();
