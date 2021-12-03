@@ -45,6 +45,9 @@ class ThematicForm extends HTMLElement {
 	//document.getElementById("trad").innerHTML = JSON.stringify(gt);
          
         //document.getElementById("gt").innerHTML = JSON.stringify(thematicForm);
+		
+		const thematicList = this.attributes.cycleLangList.value ? this.attributes.cycleLangList.value : thematicForm
+		
                 this.displayThematicForm({ thematicCheckboxs: thematicForm });
             })
     }
