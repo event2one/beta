@@ -3,8 +3,8 @@ class ThematicForm extends HTMLElement {
     constructor() {
         super();
 
-	var userDetails = JSON.parse(this.attributes.thematicData.value);
-        var userName = userDetails.description;
+	var thematic = JSON.parse(this.attributes.thematicData.value);
+        var name = thematic.name;
 	//var userName = '****';
         //this.innerHTML = `Hello ${userName}...`
 	
@@ -13,7 +13,7 @@ class ThematicForm extends HTMLElement {
                               <h4 class="mb-4">Choix de mes collectifs technologiques</h4>
                               <p>Si ma solution s'inscrit dans une thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
                               <div class="row" id="thematicCheckbox"></div>
-                              <div id="trad"></div>${userName}
+                              <div id="trad"></div>${name}
                           </div>`
 
         this.fetchThematicForm();
