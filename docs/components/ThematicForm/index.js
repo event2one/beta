@@ -38,8 +38,23 @@ class ThematicForm extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}&filter=cycle_lang_type='collectif_technologique' AND `)
             .then(res => res.json())
             .then(thematicForm => {
+            const gt = {
+	    "name":"test",
+	    "description":"test description",
+	    "id":500,
+	    "months": ["January","February","March"],
+	    "content":"<i>Hello world</i>",
+	    "gt_translate_keys": ["name", "description", {"key": "months", "format": "list"}, {"key": "content", "format": "html"}],
+	    "user": {
+	        "login":"test",
+	        "bio":"test user",
+	        "gt_translate_keys": [{"key": "bio", "format": "text"}]
+	    }
+	}
+	
+document.getElementById("gt").innerHTML = JSON.stringify(gt);
          
-            document.getElementById("trad").innerHTML = JSON.stringify(thematicForm);
+            //document.getElementById("gt").innerHTML = JSON.stringify(thematicForm);
                 this.displayThematicForm({ thematicCheckboxs: thematicForm });
             })
     }
