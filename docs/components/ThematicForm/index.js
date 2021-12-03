@@ -52,7 +52,7 @@ class ThematicForm extends HTMLElement {
 	    }
 	}
 	
-document.getElementById("gt").innerHTML = JSON.stringify(gt);
+document.getElementById("trad").innerHTML = JSON.stringify(gt);
          
             //document.getElementById("gt").innerHTML = JSON.stringify(thematicForm);
                 this.displayThematicForm({ thematicCheckboxs: thematicForm });
