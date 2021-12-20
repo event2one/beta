@@ -3,10 +3,16 @@ class ThematicForm extends HTMLElement {
     constructor() {
         super();
 
+	var cycleLangList = JSON.parse(this.attributes.cycleLangList.value);
+	    
+	   console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',cycleLangList);
+       
+ 
         this.innerHTML = `<div>
                               <h4 class="mb-4">Choix de mes collectifs technologiques</h4>
                               <p>Si ma solution s'inscrit dans une thématique technologique, je sélectionne la thématique qui lui correspond ci-dessous</p>
                               <div class="row" id="thematicCheckbox"></div>
+                              <div id="trad"></div>  <!-- ${JSON.stringify(cycleLangList)} -->
                           </div>`
 
         this.fetchThematicForm();
@@ -37,7 +43,15 @@ class ThematicForm extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}&filter=cycle_lang_type='collectif_technologique' AND `)
             .then(res => res.json())
             .then(thematicForm => {
-                this.displayThematicForm({ thematicCheckboxs: thematicForm });
+ 
+	//document.getElementById("trad").innerHTML = JSON.stringify(gt);
+         
+        //document.getElementById("gt").innerHTML = JSON.stringify(thematicForm);
+		
+		//const thematicList = this.attributes.cycleLangList.value ? this.attributes.cycleLangList.value : thematicForm
+		
+		console.log('kkkkkkkkkkkk',this.attributes.cycleLangList.value);
+                this.displayThematicForm({ thematicCheckboxs: thematicForm  });
             })
     }
 }
