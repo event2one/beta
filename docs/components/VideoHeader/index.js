@@ -4,7 +4,7 @@ class VideoHeader extends HTMLElement {
 
     this.innerHTML = `
     <style>
-        @media all and (max-device-width: 480px) {
+        @media all and (max-device-width: 780px) {
             h1 #video-header-title {
                 font-size: 6vw;
                 background-color: blue;
