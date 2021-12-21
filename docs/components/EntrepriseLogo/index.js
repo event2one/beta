@@ -10,10 +10,10 @@ class EntrepriseLogo extends HTMLElement {
                               body {
                                   background: #f7f8fa;
                               }
-
-                              .entreprisesList {
-                                display: flex;
-                                flex-direction: row;
+                              .partenairesList {
+                                  display: flex;
+                                  flex-wrap: wrap;
+                                  justify-content: center;
                               }
   
                               * {
@@ -23,7 +23,7 @@ class EntrepriseLogo extends HTMLElement {
   
                           <section>
                               <h2 class="text-center">Entreprises partenaires</h2>
-                                          <div class="entreprisesList container">
+                                          <div class="partenairesList container">
                                           </div>
                           </section>`;
   
@@ -32,9 +32,9 @@ class EntrepriseLogo extends HTMLElement {
   
     displayInfoContacts = ({ infoContact }) => {
       const content = `
-                  <div style="width: 20vw">
+                  <div class="shadow" style="width:20vw; text-align: center; background-color: white; border-radius: 10px; margin: 10px; min-height: 10vh;">
                       <a href="${infoContact.web}" target="_blank" >
-                          <img src="${infoContact.logos.medium}" style="width:100%; "/>
+                          <img src="${infoContact.logos.medium}" style="max-width:60%; margin: 10px;"/>
                       </a>
                   </div>              
                           `;
