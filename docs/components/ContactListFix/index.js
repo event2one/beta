@@ -12,30 +12,13 @@ class ContactListFix extends HTMLElement {
                                 background: #f7f8fa;
                             }
 
-                            .splide__slide {
-                                width: 192px;
-                                margin: 10px;
-                                flex-direction: column;
-                                display: flex;
-                                justify-content: space-around;
-                                background: #fff;
-                                padding: 10px;
-                                box-shadow: 0 0 20px rgba(75, 75, 75, 0.1);
-                                border-radius: .5rem;
-                                align-items: center;
-                            }
-
-                            .splide__list {
-                                height: 300px;
-                            }
-
                             * {
                                 font-size: 30px;
                             }
                         </style>
 
                         <section>
-                            <h2 class="text-center">Les partenaires et solutions</h2>
+                            <h2 class="text-center">Les partenaires et solutions - Contact List</h2>
                                         <ul class="partenairesList">
                                         </ul>
                         </section>`;

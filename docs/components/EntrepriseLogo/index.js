@@ -35,7 +35,7 @@ class EntrepriseLogo extends HTMLElement {
                         </style>
 
                         <section>
-                            <h2 class="text-center">Les partenaires et solutions</h2>
+                            <h2 class="text-center">Entreprises partenaires</h2>
                                         <ul class="partenairesList">
                                         </ul>
                         </section>`;
@@ -63,6 +63,7 @@ class EntrepriseLogo extends HTMLElement {
             .then(res => res.json())
             .then(contactEvent => {
                 this.researchInfoContact({ infoContactEvents: contactEvent });
+                console.log(contactEvent)
             })
     }
 
@@ -85,6 +86,7 @@ class EntrepriseLogo extends HTMLElement {
             .then(res => res.json())
             .then(infoContactList => {
                 this.displayInfoContacts({ infoContact: infoContactList });
+                console.log(infoContactList)
             })
     }
 }
