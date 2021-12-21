@@ -9,6 +9,7 @@ class EntrepriseLogo extends HTMLElement {
       this.currentStatutList = this.statutList.filter(statut => statut === this.statut)
       console.log(this.currentStatutList)
       this.id_event = this.getAttribute("id_event");
+      this.id_conf_event = this.getAttribute("id_conf_event");
   
       this.innerHTML = `
         
@@ -48,7 +49,7 @@ class EntrepriseLogo extends HTMLElement {
     };
   
     fetchContactList = async () => {
-      const req = `getContactConferencierList&filter=%20and%20id_event=1656`;
+      const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event}&id_conf_event=${this.id_conf_event}`;
   
       await fetch(
         `https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`
