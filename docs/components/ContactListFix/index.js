@@ -10,6 +10,10 @@ class ContactListFix extends HTMLElement {
                             body {
                                 background: #f7f8fa;
                             }
+                            .partenairesList {
+                                display: flex;
+                                flex-wrap: wrap;
+                            }
 
                             * {
                                 font-size: 30px;
@@ -18,7 +22,7 @@ class ContactListFix extends HTMLElement {
 
                         <section>
                             <h2 class="text-center">Les partenaires et solutions - Contact List</h2>
-                                        <div class="partenairesList">
+                                        <div class="partenairesList container">
                                         </div>
                         </section>`;
 
@@ -27,9 +31,9 @@ class ContactListFix extends HTMLElement {
 
   displayInfoContacts = ({ infoContact }) => {
     const content = `
-                <div style="width: 20vw">
+                <div style="width:20vw; ">
                     <a href="${infoContact.web}" target="_blank" >
-                        <img src="${infoContact.logos.medium}" style="width:100%"/>
+                        <img src="${infoContact.logos.medium}" style="width:50%; background-color: blue; margin: 10px;"/>
                     </a>
                 </div>              
                         `;

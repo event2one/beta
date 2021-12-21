@@ -10,6 +10,11 @@ class EntrepriseLogo extends HTMLElement {
                               body {
                                   background: #f7f8fa;
                               }
+
+                              .entreprisesList {
+                                display: flex;
+                                flex-direction: row;
+                              }
   
                               * {
                                   font-size: 30px;
@@ -18,7 +23,7 @@ class EntrepriseLogo extends HTMLElement {
   
                           <section>
                               <h2 class="text-center">Entreprises partenaires</h2>
-                                          <div class="partenairesList">
+                                          <div class="entreprisesList container">
                                           </div>
                           </section>`;
   
@@ -29,7 +34,7 @@ class EntrepriseLogo extends HTMLElement {
       const content = `
                   <div style="width: 20vw">
                       <a href="${infoContact.web}" target="_blank" >
-                          <img src="${infoContact.logos.medium}" style="width:100%"/>
+                          <img src="${infoContact.logos.medium}" style="width:100%; "/>
                       </a>
                   </div>              
                           `;
@@ -40,7 +45,7 @@ class EntrepriseLogo extends HTMLElement {
     };
   
     fetchContactList = async () => {
-      const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event} LIMIT 20`;
+      const req = `getContactConferencierList&filter=%20and%20id_event=1656 LIMIT 20`;
   
       await fetch(
         `https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`
