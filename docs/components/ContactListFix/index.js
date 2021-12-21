@@ -1,11 +1,10 @@
 class ContactListFix extends HTMLElement {
+  constructor() {
+    super();
 
-    constructor() {
-        super();
+    this.id_event = this.getAttribute("id_event");
 
-        this.id_event = this.getAttribute('id_event');
-
-        this.innerHTML = `
+    this.innerHTML = `
       
                         <style>
                             body {
@@ -19,57 +18,69 @@ class ContactListFix extends HTMLElement {
 
                         <section>
                             <h2 class="text-center">Les partenaires et solutions - Contact List</h2>
-                                        <ul class="partenairesList">
-                                        </ul>
+                                        <div class="partenairesList">
+                                        </div>
                         </section>`;
 
-        this.fetchContactList();
-    }
+    this.fetchContactList();
+  }
 
-    displayInfoContacts = ({ infoContact }) => {
+  displayInfoContacts = ({ infoContact }) => {
+    const content = `
+                <div style="width: 20vw">
+                    <a href="${infoContact.web}" target="_blank" >
+                        <img src="${infoContact.logos.medium}" style="width:100%"/>
+                    </a>
+                </div>              
+                        `;
 
-        const content = `<li class="splide__slide">
-                                <a href="${infoContact.web}" target="_blank" style="display: block">
-                                        <img src="${infoContact.logos.medium}" style="width:100%"/>
-                                </a>
-                        </li>`;
+    document
+      .querySelector(".partenairesList")
+      .insertAdjacentHTML("afterbegin", content);
+  };
 
-        document.querySelector(".partenairesList").insertAdjacentHTML('afterbegin', content);
+  fetchContactList = async () => {
+    const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event} LIMIT 20`;
 
-    }
+    await fetch(
+      `https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`
+    )
+      .then((res) => res.json())
+      .then((contactEvent) => {
+        this.researchInfoContact({ infoContactEvents: contactEvent });
+      });
+  };
 
-    fetchContactList = async () => {
+  researchInfoContact = ({ infoContactEvents }) => {
+    let uniqueIdInfoContactEvents = [
+      ...new Set(
+        infoContactEvents.map(
+          (infoConctactEvent) => infoConctactEvent.id_contact
+        )
+      ),
+    ];
 
-        const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event} LIMIT 20`;
+    //console.log(uniqueIdInfoContactEvents);
 
-        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
-            .then(res => res.json())
-            .then(contactEvent => {
-                this.researchInfoContact({ infoContactEvents: contactEvent });
-            })
-    }
+    uniqueIdInfoContactEvents
+      .filter((uniqueIdInfoContactEvent) => uniqueIdInfoContactEvent != "")
+      .map((uniqueIdInfoContactEvent, index) =>
+        this.fetchInfoContact({ uniqueIdInfoContactEvent, index })
+      )
+      .join("");
+  };
 
-    researchInfoContact = ({ infoContactEvents }) => {
+  fetchInfoContact = async ({ uniqueIdInfoContactEvent }) => {
+    const req_id_contact = `getContact&id_contact=${uniqueIdInfoContactEvent}`;
 
-        let uniqueIdInfoContactEvents = [...new Set(infoContactEvents.map(infoConctactEvent => infoConctactEvent.id_contact))];
-
-        //console.log(uniqueIdInfoContactEvents);
-
-        uniqueIdInfoContactEvents.filter(uniqueIdInfoContactEvent => uniqueIdInfoContactEvent != '').map((uniqueIdInfoContactEvent, index) => this.fetchInfoContact({ uniqueIdInfoContactEvent, index })).join('');
-
-    }
-
-    fetchInfoContact = async ({ uniqueIdInfoContactEvent }) => {
-
-
-        const req_id_contact = `getContact&id_contact=${uniqueIdInfoContactEvent}`;
-
-        await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`)
-            .then(res => res.json())
-            .then(infoContactList => {
-                this.displayInfoContacts({ infoContact: infoContactList });
-            })
-    }
+    await fetch(
+      `https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req_id_contact}`
+    )
+      .then((res) => res.json())
+      .then((infoContactList) => {
+        this.displayInfoContacts({ infoContact: infoContactList });
+      });
+  };
 }
 
-customElements.define('contact-list-fix', ContactListFix);
+customElements.define("contact-list-fix", ContactListFix);
