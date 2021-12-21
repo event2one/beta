@@ -44,7 +44,7 @@ class ContactListFix extends HTMLElement {
   };
 
   fetchContactList = async () => {
-    const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event} LIMIT 20`;
+    const req = `getContactConferencierList&filter=%20and%20id_event=1656 LIMIT 20`;
 
     await fetch(
       `https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`
@@ -83,6 +83,7 @@ class ContactListFix extends HTMLElement {
       .then((res) => res.json())
       .then((infoContactList) => {
         this.displayInfoContacts({ infoContact: infoContactList });
+        console.log(infoContactList)
       });
   };
 }

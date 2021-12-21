@@ -32,7 +32,7 @@ class EntrepriseLogo extends HTMLElement {
   
     displayInfoContacts = ({ infoContact }) => {
       const content = `
-                  <div class="shadow" style="width:20vw; text-align: center; background-color: white; border-radius: 10px; margin: 10px; min-height: 10vh;">
+                  <div class="shadow" style="width:15vw; text-align: center; background-color: white; border-radius: 10px; margin: 10px; min-height: 10vh;">
                       <a href="${infoContact.web}" target="_blank" >
                           <img src="${infoContact.logos.medium}" style="max-width:60%; margin: 10px;"/>
                       </a>
