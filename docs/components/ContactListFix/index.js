@@ -10,19 +10,21 @@ class ContactListFix extends HTMLElement {
                             body {
                                 background: #f7f8fa;
                             }
-                            .partenairesList {
+                            .ContactListFix {
                                 display: flex;
                                 flex-wrap: wrap;
+                                justify-content: center;
                             }
 
-                            * {
-                                font-size: 30px;
+                            h2 {
+                              font-size: 30px;
                             }
+
                         </style>
 
                         <section>
-                            <h2 class="text-center">Les partenaires et solutions - Contact List</h2>
-                                        <div class="partenairesList container">
+                            <h2 class="text-center">Les partenaires</h2>
+                                        <div class="ContactListFix">
                                         </div>
                         </section>`;
 
@@ -31,15 +33,18 @@ class ContactListFix extends HTMLElement {
 
   displayInfoContacts = ({ infoContact }) => {
     const content = `
-                <div style="width:20vw; ">
-                    <a href="${infoContact.web}" target="_blank" >
-                        <img src="${infoContact.logos.medium}" style="width:50%; background-color: blue; margin: 10px;"/>
-                    </a>
-                </div>              
+                    <div class="card shadow m-2" style="width: 18rem; ">
+                      <img class="card-img-top" src="${infoContact.photos.medium}" style="max-height: 15rem" alt="Image de profil">
+                      <div class="card-body">
+                        <h5 class="card-title">${infoContact.prenom} ${infoContact.nom}</h5>
+                        <p class="card-text">${infoContact.societe} - ${infoContact.fonction}</p>
+                      </div>
+                    </div> 
+                                      
                         `;
 
     document
-      .querySelector(".partenairesList")
+      .querySelector(".ContactListFix")
       .insertAdjacentHTML("afterbegin", content);
   };
 
@@ -83,7 +88,7 @@ class ContactListFix extends HTMLElement {
       .then((res) => res.json())
       .then((infoContactList) => {
         this.displayInfoContacts({ infoContact: infoContactList });
-        console.log(infoContactList)
+        console.log(infoContactList);
       });
   };
 }

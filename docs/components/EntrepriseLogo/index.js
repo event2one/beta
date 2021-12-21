@@ -2,6 +2,12 @@ class EntrepriseLogo extends HTMLElement {
     constructor() {
       super();
   
+      this.statut = this.getAttribute("statut");
+      
+      this.statutList = ["candidat-pitch","offreur_de_solution","charge_organisation","chroniqueur_tv","referent-lieu","curateur","demande_accreditation_presse","edito","intervenant","jury","partenaire_media","participant","pack","tete_affiche"]
+
+      this.currentStatutList = this.statutList.filter(statut => statut === this.statut)
+      console.log(this.currentStatutList)
       this.id_event = this.getAttribute("id_event");
   
       this.innerHTML = `
@@ -10,20 +16,17 @@ class EntrepriseLogo extends HTMLElement {
                               body {
                                   background: #f7f8fa;
                               }
-                              .partenairesList {
+                              .entreprisesList {
                                   display: flex;
                                   flex-wrap: wrap;
                                   justify-content: center;
                               }
   
-                              * {
-                                  font-size: 30px;
-                              }
                           </style>
   
                           <section>
                               <h2 class="text-center">Entreprises partenaires</h2>
-                                          <div class="partenairesList container">
+                                          <div class="entreprisesList">
                                           </div>
                           </section>`;
   
@@ -40,19 +43,20 @@ class EntrepriseLogo extends HTMLElement {
                           `;
   
       document
-        .querySelector(".partenairesList")
+        .querySelector(".entreprisesList")
         .insertAdjacentHTML("afterbegin", content);
     };
   
     fetchContactList = async () => {
-      const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event} LIMIT 20`;
+      const req = `getContactConferencierList&filter=%20and%20id_event=1656`;
   
       await fetch(
         `https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`
       )
         .then((res) => res.json())
         .then((contactEvent) => {
-          this.researchInfoContact({ infoContactEvents: contactEvent });
+          const filteredContactEvent = contactEvent.filter(contact => this.currentStatutList.includes(contact.conferencier_statut));
+          this.researchInfoContact({ infoContactEvents: filteredContactEvent });
         });
     };
   
