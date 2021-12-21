@@ -4,29 +4,13 @@ class EntrepriseLogo extends HTMLElement {
         super();
 
         this.id_event = this.getAttribute('id_event');
+        console.log(this.id_event)
 
         this.innerHTML = `
       
                         <style>
                             body {
                                 background: #f7f8fa;
-                            }
-
-                            .splide__slide {
-                                width: 192px;
-                                margin: 10px;
-                                flex-direction: column;
-                                display: flex;
-                                justify-content: space-around;
-                                background: #fff;
-                                padding: 10px;
-                                box-shadow: 0 0 20px rgba(75, 75, 75, 0.1);
-                                border-radius: .5rem;
-                                align-items: center;
-                            }
-
-                            .splide__list {
-                                height: 300px;
                             }
 
                             * {
@@ -62,6 +46,7 @@ class EntrepriseLogo extends HTMLElement {
         await fetch(`https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`)
             .then(res => res.json())
             .then(contactEvent => {
+                console.log(contactEvent);
                 this.researchInfoContact({ infoContactEvents: contactEvent });
                 console.log(contactEvent)
             })
