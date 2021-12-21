@@ -1,4 +1,4 @@
-class ContactListFix extends HTMLElement {
+class EntrepriseLogo extends HTMLElement {
     constructor() {
       super();
   
@@ -83,5 +83,5 @@ class ContactListFix extends HTMLElement {
     };
   }
   
-  customElements.define("contact-list-fix", ContactListFix);
+  customElements.define("entreprise-logo", EntrepriseLogo);
   
