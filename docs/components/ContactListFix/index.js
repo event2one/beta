@@ -22,7 +22,7 @@ class ContactListFix extends HTMLElement {
 
                         </style>
 
-                        <section>
+                        <section class="container">
                             <h2 class="text-center">Les partenaires</h2>
                                         <div class="ContactListFix">
                                         </div>
