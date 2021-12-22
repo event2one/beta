@@ -4,7 +4,8 @@ class EntrepriseLogo extends HTMLElement {
 
     
     //Gère le filtre des status
-    this.statut = this.getAttribute("statut");
+    this.statut = this.getAttribute("statut").split(',');
+    
     this.statutList = [
       "candidat-pitch",
       "offreur_de_solution",
@@ -22,7 +23,7 @@ class EntrepriseLogo extends HTMLElement {
       "tete_affiche",
     ];
     this.currentStatutList = this.statutList.filter(
-      (statut) => statut === this.statut
+      (statut) => this.statut.includes(statut)
     );
 
     //Gère le nombre de cards display
