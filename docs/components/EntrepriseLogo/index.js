@@ -3,8 +3,8 @@ class EntrepriseLogo extends HTMLElement {
     super();
 
     //Gère le filtre des status
-    this.statut = this.getAttribute("statut").split(",");
-
+    this.statut = this.getAttribute("statut");
+    this.statut && this.statut.split(",")
     this.statutList = [
       "candidat-pitch",
       "offreur_de_solution",

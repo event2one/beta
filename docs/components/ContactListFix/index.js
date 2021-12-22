@@ -4,7 +4,8 @@ class ContactListFix extends HTMLElement {
 
     this.showFlag = this.getAttribute("showFlag");
 
-    this.statut = this.getAttribute("statut").split(",");
+    this.statut = this.getAttribute("statut");
+    this.statut && this.statut.split(",")
     this.statutList = [
       "candidat-pitch",
       "offreur_de_solution",
