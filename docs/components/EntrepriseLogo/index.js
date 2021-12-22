@@ -7,8 +7,9 @@ class EntrepriseLogo extends HTMLElement {
       this.statutList = ["candidat-pitch","offreur_de_solution","charge_organisation","chroniqueur_tv","referent-lieu","curateur","demande_accreditation_presse","edito","intervenant","jury","partenaire_media","participant","pack","tete_affiche"]
 
       this.currentStatutList = this.statutList.filter(statut => statut === this.statut)
-      console.log(this.currentStatutList)
+
       this.id_event = this.getAttribute("id_event");
+      
       this.id_conf_event = this.getAttribute("id_conf_event");
   
       this.innerHTML = `

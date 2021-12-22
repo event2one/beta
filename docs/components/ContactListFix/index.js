@@ -3,6 +3,7 @@ class ContactListFix extends HTMLElement {
     super();
 
     this.id_event = this.getAttribute("id_event");
+    this.id_conf_event = this.getAttribute("id_conf_event");
 
     this.innerHTML = `
       
