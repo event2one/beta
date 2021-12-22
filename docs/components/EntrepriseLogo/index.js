@@ -49,7 +49,7 @@ class EntrepriseLogo extends HTMLElement {
     };
   
     fetchContactList = async () => {
-      const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event}&id_conf_event=${this.id_conf_event}`;
+      const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event} AND id_conf_event=${this.id_conf_event}`;
   
       await fetch(
         `https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`
