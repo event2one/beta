@@ -2,10 +2,9 @@ class ContactListFix extends HTMLElement {
   constructor() {
     super();
 
-    this.showFlag = this.getAttribute("showFlag")
+    this.showFlag = this.getAttribute("showFlag");
 
-    this.statut = this.getAttribute("statut").split(',');
-    // console.log(this.statut)
+    this.statut = this.getAttribute("statut").split(",");
     this.statutList = [
       "candidat-pitch",
       "offreur_de_solution",
@@ -23,14 +22,19 @@ class ContactListFix extends HTMLElement {
       "tete_affiche",
     ];
 
-    this.currentStatutList = this.statutList.filter(
-      (statut) => this.statut.includes(statut)
+    this.currentStatutList = this.statutList.filter((statut) =>
+      this.statut.includes(statut)
     );
 
-    
     //Gère le nombre de cards display
-    this.displayNumber = this.getAttribute("displayNumber")
-    this.displayNumberList = { 1: "40vw", 2: "30vw", 3: "20vw", 4: "15vw", 5: "12vw" };
+    this.displayNumber = this.getAttribute("displayNumber");
+    this.displayNumberList = {
+      1: "40vw",
+      2: "30vw",
+      3: "20vw",
+      4: "15vw",
+      5: "12vw",
+    };
 
     //Gère les params des appels API
     this.id_event = this.getAttribute("id_event");
@@ -65,12 +69,26 @@ class ContactListFix extends HTMLElement {
 
   displayInfoContacts = ({ infoContact }) => {
     const content = `
-                    <div class="card shadow m-2" style="width: ${this.displayNumber ? this.displayNumberList[parseInt(this.displayNumber)] : "12vw"}; ">
-                      <img class="card-img-top" src="${infoContact.photos.medium}" style="max-height: 15rem" alt="Image de profil">
+                    <div class="card shadow m-2" style="width: ${
+                      this.displayNumber
+                        ? this.displayNumberList[parseInt(this.displayNumber)]
+                        : "12vw"
+                    }; ">
+                      <img class="card-img-top" src="${
+                        infoContact.photos.medium
+                      }" style="max-height: 15rem" alt="Image de profil">
                       <div class="card-body">
-                        <h5 class="card-title">${infoContact.prenom} ${infoContact.nom}</h5>
-                        ${this.showFlag === "true" ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">` : ""}
-                        <p class="card-text">${infoContact.societe} - ${infoContact.fonction}</p>
+                        <h5 class="card-title">${infoContact.prenom} ${
+      infoContact.nom
+    }</h5>
+                        ${
+                          this.showFlag === "true"
+                            ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">`
+                            : ""
+                        }
+                        <p class="card-text">${infoContact.societe} - ${
+      infoContact.fonction
+    }</p>
                         
                       </div>
                     </div> 
@@ -83,7 +101,7 @@ class ContactListFix extends HTMLElement {
   };
 
   fetchContactList = async () => {
-    const req = `getContactConferencierList&filter=%20and%20id_event=1656 AND id_conf_event=174361`;
+    const req = `getContactConferencierList&filter=%20and%20id_event=${this.id_event} AND id_conf_event=${this.id_conf_event}`;
 
     await fetch(
       `https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`
@@ -93,7 +111,8 @@ class ContactListFix extends HTMLElement {
         const filteredContactEvent = contactEvent.filter((contact) =>
           this.currentStatutList.includes(contact.conferencier_statut)
         );
-        filteredContactEvent.length && this.researchInfoContact({ infoContactEvents: filteredContactEvent });
+        filteredContactEvent.length &&
+          this.researchInfoContact({ infoContactEvents: filteredContactEvent });
       });
   };
 
@@ -105,8 +124,6 @@ class ContactListFix extends HTMLElement {
         )
       ),
     ];
-
-    //console.log(uniqueIdInfoContactEvents);
 
     uniqueIdInfoContactEvents
       .filter((uniqueIdInfoContactEvent) => uniqueIdInfoContactEvent != "")
