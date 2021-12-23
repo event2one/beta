@@ -97,8 +97,8 @@ class ContactListFix extends HTMLElement {
                           <div class="card-body">
                             <h5 class="card-title">${infoContact.prenom} ${infoContact.nom}</h5>
                                     ${this.showFlag === "true"  ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">` : ""}
-                              <p class="card-text">${infoContact.societe} - ${infoContact.fonction
-                  }</p>
+                              <p class="card-text">${infoContact.societe} - ${infoContact.fonction}</p>
+                              <p class="card-text">${infoContact.edito_court}</p>
                                     
                         </div>
                       </div>
