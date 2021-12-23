@@ -36,7 +36,7 @@ class ContactListFix extends HTMLElement {
 
     
     this.currentStatutList = this.statutList.filter((statut) =>
-      console.log(this.statut.includes(statut))
+      this.statut.includes(statut)
     );
 
     console.log(this.currentStatutList)
