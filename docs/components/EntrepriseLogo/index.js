@@ -66,7 +66,7 @@ class EntrepriseLogo extends HTMLElement {
     const content = `
                   <div class="shadow" style="width:${
                     this.displayNumber
-                      ? this.displayNumberList[paseInt(this.displayNumber)]
+                      ? this.displayNumberList[parseInt(this.displayNumber)]
                       : "12vw"
                   }; text-align: center; background-color: white; border-radius: 10px; margin: 10px; min-height: 10vh;">
                       <a href="${infoContact.web}" target="_blank" >

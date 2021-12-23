@@ -2,10 +2,17 @@ class ContactListFix extends HTMLElement {
   constructor() {
     super();
 
+    //Gère le mode d'affichage
+    this.displayMode = this.getAttribute("displayMode");
+    this.horizontalStyle = ""
+    if(this.displayMode === "horizontal") {
+      this.horizontalStyle = `style="display: flex; flex: 1 1 auto; height: 20vh; overflow: hidden;"`
+    }
+
     this.showFlag = this.getAttribute("showFlag");
 
     this.statut = this.getAttribute("statut");
-    this.statut && this.statut.split(",")
+    this.statut && this.statut.split(",");
     this.statutList = [
       "candidat-pitch",
       "offreur_de_solution",
@@ -75,23 +82,26 @@ class ContactListFix extends HTMLElement {
                         ? this.displayNumberList[parseInt(this.displayNumber)]
                         : "12vw"
                     }; ">
-                      <img class="card-img-top" src="${
-                        infoContact.photos.medium
-                      }" style="max-height: 15rem" alt="Image de profil">
-                      <div class="card-body">
-                        <h5 class="card-title">${infoContact.prenom} ${
+                    <div ${this.horizontalStyle}>
+                    <img class="card-img-top" src="${
+                      infoContact.photos.medium
+                    }" style="max-height: 15rem;"  alt="Image de profil">
+                    <div class="card-body">
+                      <h5 class="card-title">${infoContact.prenom} ${
       infoContact.nom
     }</h5>
-                        ${
-                          this.showFlag === "true"
-                            ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">`
-                            : ""
-                        }
-                        <p class="card-text">${infoContact.societe} - ${
+                      ${
+                        this.showFlag === "true"
+                          ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">`
+                          : ""
+                      }
+                      <p class="card-text">${infoContact.societe} - ${
       infoContact.fonction
     }</p>
-                        
-                      </div>
+                      
+                    </div>
+                    </div>
+                      
                     </div> 
                                       
                         `;
