@@ -40,7 +40,7 @@ class ContactListFix extends HTMLElement {
     this.displayNumber = this.getAttribute("displayNumber");
     this.displayNumberList = {
       1: "12",
-      2: "6",
+      2: "5",
       3: "4",
       4: "3",
       5: "2",
@@ -58,7 +58,6 @@ class ContactListFix extends HTMLElement {
                             }
                             .ContactListFix {
                                 display: flex;
-                                flex-wrap: wrap;
                                 justify-content: center;
                             }
 
