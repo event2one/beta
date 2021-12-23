@@ -40,10 +40,11 @@ class ContactListFix extends HTMLElement {
     this.displayNumber = this.getAttribute("displayNumber");
     this.displayNumberList = {
       1: "12",
-      2: "5",
+      2: "6",
       3: "4",
       4: "3",
       5: "2",
+      6: "2",
     };
 
     //Gère les params des appels API
@@ -78,7 +79,7 @@ class ContactListFix extends HTMLElement {
 
   displayInfoContacts = ({ infoContact }) => {
     const content = `
-    <div class="col-md-${this.displayNumber ? this.displayNumberList[parseInt(this.displayNumber)] : "3"}">
+    <div class="col-md-${this.displayNumber.length > 0 ? this.displayNumberList[parseInt(this.displayNumber)] : "3"}">
     <div class="card shadow">
                     <div ${this.horizontalStyle}>
                     <img class="card-img-top" src="${
