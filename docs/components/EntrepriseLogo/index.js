@@ -2,6 +2,7 @@ class EntrepriseLogo extends HTMLElement {
   constructor() {
     super();
 
+    this.title = this.getAttribute("title")
     //Gère le filtre des status
     this.statut = this.getAttribute("statut");
     this.statut && this.statut.split(",")
@@ -54,7 +55,7 @@ class EntrepriseLogo extends HTMLElement {
                           </style>
   
                           <section>
-                              <h2 class="text-center">Entreprises partenaires</h2>
+                              <h2 class="text-center">${this.title}</h2>
                                           <div class="entreprisesList">
                                           </div>
                           </section>`;

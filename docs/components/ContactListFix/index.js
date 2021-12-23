@@ -1,6 +1,8 @@
 class ContactListFix extends HTMLElement {
   constructor() {
     super();
+    //Titre
+    this.title = this.getAttribute("title")
 
     //Gère le mode d'affichage
     this.displayMode = this.getAttribute("displayMode");
@@ -67,7 +69,7 @@ class ContactListFix extends HTMLElement {
                         </style>
 
                         <section class="container">
-                            <h2 class="text-center">Les partenaires</h2>
+                            <h2 class="text-center">${this.title}</h2>
                                         <div class="ContactListFix">
                                         </div>
                         </section>`;
