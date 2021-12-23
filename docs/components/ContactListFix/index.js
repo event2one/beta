@@ -2,13 +2,13 @@ class ContactListFix extends HTMLElement {
   constructor() {
     super();
     //Titre
-    this.title = this.getAttribute("title")
+    this.title = this.getAttribute("title");
 
     //Gère le mode d'affichage
     this.displayMode = this.getAttribute("displayMode");
-    this.horizontalStyle = ""
-    if(this.displayMode === "horizontal") {
-      this.horizontalStyle = `style="display: flex; flex: 1 1 auto; height: 20vh; overflow: hidden;"`
+    this.horizontalStyle = "";
+    if (this.displayMode === "horizontal") {
+      this.horizontalStyle = `style="display: flex; flex: 1 1 auto; height: 20vh; overflow: hidden;"`;
     }
 
     this.showFlag = this.getAttribute("showFlag");
@@ -69,7 +69,9 @@ class ContactListFix extends HTMLElement {
                         </style>
 
                         <section class="container">
-                            <h2 class="text-center">${this.title.length > 0 ? this.title : ""}</h2>
+                            <h2 class="text-center">${
+                              this.title.length > 0 ? this.title : ""
+                            }</h2>
                                         <div class="ContactListFix row">
                                         </div>
                         </section>`;
@@ -79,30 +81,22 @@ class ContactListFix extends HTMLElement {
 
   displayInfoContacts = ({ infoContact }) => {
     const content = `
-    <div class="col-md-${this.displayNumber.length > 0 ? this.displayNumberList[parseInt(this.displayNumber)] : "3"}">
-    <div class="card shadow">
-                    <div ${this.horizontalStyle}>
-                    <img class="card-img-top" src="${
-                      infoContact.photos.medium
-                    }" style="max-height: 15rem;"  alt="Image de profil">
-                    <div class="card-body">
-                      <h5 class="card-title">${infoContact.prenom} ${
-      infoContact.nom
-    }</h5>
-                      ${
-                        this.showFlag === "true"
-                          ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">`
-                          : ""
-                      }
-                      <p class="card-text">${infoContact.societe} - ${
-      infoContact.fonction
-    }</p>
-                      
-                    </div>
-                    </div>
-                      
+                    <div class="card shadow col-md-${
+                      this.displayNumber.length > 0
+                        ? this.displayNumberList[parseInt(this.displayNumber)]
+                        : "3"
+                    }">
+                      <div ${this.horizontalStyle}>
+                        <img class="card-img-top" src="${infoContact.photos.medium}" style="max-height: 15rem;"  alt="Image de profil">
+                          <div class="card-body">
+                            <h5 class="card-title">${infoContact.prenom} ${infoContact.nom}</h5>
+                                    ${this.showFlag === "true"  ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">` : ""}
+                              <p class="card-text">${infoContact.societe} - ${infoContact.fonction
+                  }</p>
+                                    
+                        </div>
+                      </div>
                     </div> 
-    </div>
                     
                                       
                         `;
