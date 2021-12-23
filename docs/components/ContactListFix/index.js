@@ -122,6 +122,7 @@ class ContactListFix extends HTMLElement {
         const filteredContactEvent = contactEvent.filter((contact) =>
           this.currentStatutList.includes(contact.conferencier_statut)
         );
+        console.log(filteredContactEvent)
         filteredContactEvent.length &&
           this.researchInfoContact({ infoContactEvents: filteredContactEvent });
       });
