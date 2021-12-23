@@ -55,6 +55,7 @@ class ContactListFix extends HTMLElement {
     //Gère les params des appels API
     this.id_event = this.getAttribute("id_event");
     this.id_conf_event = this.getAttribute("id_conf_event");
+    console.log(id_conf_event)
 
     this.innerHTML = `
       
