@@ -14,8 +14,9 @@ class ContactListFix extends HTMLElement {
     this.showFlag = this.getAttribute("showFlag");
 
     this.statut = this.getAttribute("statut");
-    console.log(this.statut)
+    console.log( this.getAttribute("statut"))
     this.statut && this.statut.split(",");
+    console.log(this.statut)
     this.statutList = [
       "candidat-pitch",
       "offreur_de_solution",
@@ -33,9 +34,12 @@ class ContactListFix extends HTMLElement {
       "tete_affiche",
     ];
 
+    
     this.currentStatutList = this.statutList.filter((statut) =>
       this.statut.includes(statut)
     );
+
+    console.log(this.currentStatutList)
 
     //Gère le nombre de cards display
     this.displayNumber = this.getAttribute("displayNumber");
