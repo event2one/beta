@@ -7,14 +7,11 @@ class ContactListFix extends HTMLElement {
     //Gère le mode d'affichage
     this.displayMode = this.getAttribute("displayMode");
     this.horizontalStyle = "";
-    if (this.displayMode === "horizontal") {
-      this.horizontalStyle = `style="display: flex; flex: 1 1 auto; overflow: hidden;"`;
-    }
+    
 
     this.showFlag = this.getAttribute("showFlag");
 
     this.statut = this.getAttribute("statut");
-    console.log(this.getAttribute("statut"));
     this.statut && this.statut.split(",");
     console.log(this.statut);
     this.statutList = [
@@ -54,7 +51,6 @@ class ContactListFix extends HTMLElement {
     //Gère les params des appels API
     this.id_event = this.getAttribute("id_event");
     this.id_conf_event = this.getAttribute("id_conf_event");
-    console.log(this.id_conf_event);
 
     this.innerHTML = `
       
@@ -89,6 +85,10 @@ class ContactListFix extends HTMLElement {
   }
 
   displayInfoContacts = ({ infoContact }) => {
+    if (this.displayMode === "horizontal") {
+      this.horizontalStyle = `style="display: flex; flex: 1 1 auto;height: 20vh; overflow: hidden;"`;
+    }
+
     const content = `
                     <div class="card shadow col-md-${
                       this.displayNumber.length > 0
@@ -162,6 +162,7 @@ class ContactListFix extends HTMLElement {
   };
 
   fetchInfoContact = async ({ uniqueIdInfoContactEvent }) => {
+    console.log(uniqueIdInfoContactEvent)
     const req_id_contact = `getContact&id_contact=${uniqueIdInfoContactEvent}`;
 
     await fetch(
