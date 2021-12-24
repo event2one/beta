@@ -20,6 +20,7 @@ class EntrepriseLogo extends HTMLElement {
       "jury",
       "partenaire_media",
       "participant",
+      "president_forum",
       "pack",
       "tete_affiche",
     ];

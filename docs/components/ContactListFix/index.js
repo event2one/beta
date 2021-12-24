@@ -26,6 +26,9 @@ class ContactListFix extends HTMLElement {
       "jury",
       "partenaire_media",
       "president_collectif",
+      "president_forum",
+      "president_programme",
+      "president_jury",
       "participant",
       "pack",
       "tete_affiche",
@@ -94,7 +97,7 @@ class ContactListFix extends HTMLElement {
         this.horizontalStyle = `style="display: flex; flex: 1 1 auto; height: 20vh; overflow: hidden;"`;
 
       } else {
-        this.horizontalStyle = `style="display: flex; flex: 1 1 auto; overflow: hidden;"`;
+        this.horizontalStyle = `style="display: flex; flex: 1 1 auto; overflow: hidden; align-items: center;"`;
       }
     }
 
@@ -107,7 +110,7 @@ class ContactListFix extends HTMLElement {
                       <div ${this.horizontalStyle}>
                         <img class="card-img-top" src="${
                           infoContact.photos.medium
-                        }" style="max-height: 15rem; width: 7vw"  alt="Image de profil">
+                        }" style="max-height: 15rem; width: 15vw"  alt="Image de profil">
                           <div class="card-body">
                             <h5 class="card-title">${infoContact.prenom} ${infoContact.nom}</h5>
                                     ${this.showFlag === "true"  ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">`: ""}
@@ -136,6 +139,7 @@ class ContactListFix extends HTMLElement {
     )
       .then((res) => res.json())
       .then((contactEvent) => {
+
         const filteredContactEvent = contactEvent.filter((contact) =>
           this.currentStatutList.includes(contact.conferencier_statut)
         );
