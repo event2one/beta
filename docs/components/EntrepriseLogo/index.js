@@ -10,6 +10,7 @@ class EntrepriseLogo extends HTMLElement {
       "candidat-pitch",
       "offreur_de_solution",
       "charge_organisation",
+      "president_collectif",
       "chroniqueur_tv",
       "referent-lieu",
       "curateur",

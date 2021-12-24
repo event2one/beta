@@ -25,6 +25,7 @@ class ContactListFix extends HTMLElement {
       "intervenant",
       "jury",
       "partenaire_media",
+      "president_collectif",
       "participant",
       "pack",
       "tete_affiche",
