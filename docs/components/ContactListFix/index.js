@@ -106,7 +106,7 @@ class ContactListFix extends HTMLElement {
                       <div ${this.horizontalStyle}>
                         <img class="card-img-top" src="${
                           infoContact.photos.medium
-                        }" style="max-height: 15rem;"  alt="Image de profil">
+                        }" style="max-height: 15rem; width: 7vw"  alt="Image de profil">
                           <div class="card-body">
                             <h5 class="card-title">${infoContact.prenom} ${infoContact.nom}</h5>
                                     ${this.showFlag === "true"  ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">`: ""}
