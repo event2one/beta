@@ -140,11 +140,12 @@ class ContactListFix extends HTMLElement {
         );
         console.log(filteredContactEvent);
         filteredContactEvent.length && this.displayInfoTitle();
-        filteredContactEvent.length && this.researchInfoContact({ infoContactEvents: filteredContactEvent })
+        filteredContactEvent.length && this.researchInfoContact({ infoContactEvents: filteredContactEvent, numberUser: filteredContactEvent.length })
       });
   };
 
-  researchInfoContact = ({ infoContactEvents }) => {
+  researchInfoContact = ({ infoContactEvents, numberUser }) => {
+    console.log(numberUser)
     let uniqueIdInfoContactEvents = [
       ...new Set(
         infoContactEvents.map(
