@@ -86,7 +86,7 @@ class ContactListFix extends HTMLElement {
 
   displayInfoContacts = ({ infoContact }) => {
     if (this.displayMode === "horizontal") {
-      this.horizontalStyle = `style="display: flex; flex: 1 1 auto;height: 20vh; overflow: hidden;"`;
+      this.horizontalStyle = `style="display: flex; flex: 1 1 auto; overflow: hidden;"`;
     }
 
     const content = `
