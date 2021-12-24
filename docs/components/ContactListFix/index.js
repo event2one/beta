@@ -55,7 +55,6 @@ class ContactListFix extends HTMLElement {
     this.id_event = this.getAttribute("id_event");
     this.id_conf_event = this.getAttribute("id_conf_event");
     console.log(this.id_conf_event);
-    console.log(content.length)
 
     this.innerHTML = `
       
@@ -74,15 +73,19 @@ class ContactListFix extends HTMLElement {
 
                         </style>
 
-                        <section class="container">
-                          ${
-                            content.length > 0 ? `<h2 class="text-center"> ${this.title.length > 0 ? this.title : ""}</h2>` : ("")
-                          }  
+                        <section class="contact-list-fix__container container">
                                         <div class="ContactListFix row">
                                         </div>
                         </section>`;
 
     this.fetchContactList();
+  }
+
+  displayInfoTitle = () => {
+    const content = `<h2 class="text-center"> ${this.title.length > 0 ? this.title : "titre"}</h2>`
+    document
+      .querySelector(".contact-list-fix__container")
+      .insertAdjacentHTML("afterbegin", content);
   }
 
   displayInfoContacts = ({ infoContact }) => {
@@ -136,8 +139,8 @@ class ContactListFix extends HTMLElement {
           this.currentStatutList.includes(contact.conferencier_statut)
         );
         console.log(filteredContactEvent);
-        filteredContactEvent.length &&
-          this.researchInfoContact({ infoContactEvents: filteredContactEvent });
+        filteredContactEvent.length && displayInfoTitle();
+        filteredContactEvent.length && this.researchInfoContact({ infoContactEvents: filteredContactEvent })
       });
   };
 
