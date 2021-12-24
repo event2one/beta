@@ -139,7 +139,7 @@ class ContactListFix extends HTMLElement {
           this.currentStatutList.includes(contact.conferencier_statut)
         );
         console.log(filteredContactEvent);
-        filteredContactEvent.length && displayInfoTitle();
+        filteredContactEvent.length && this.displayInfoTitle();
         filteredContactEvent.length && this.researchInfoContact({ infoContactEvents: filteredContactEvent })
       });
   };
