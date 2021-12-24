@@ -8,7 +8,7 @@ class ContactListFix extends HTMLElement {
     this.displayMode = this.getAttribute("displayMode");
     this.horizontalStyle = "";
     if (this.displayMode === "horizontal") {
-      this.horizontalStyle = `style="display: flex; flex: 1 1 auto; height: 20vh; overflow: hidden;"`;
+      this.horizontalStyle = `style="display: flex; flex: 1 1 auto; overflow: hidden;"`;
     }
 
     this.showFlag = this.getAttribute("showFlag");
