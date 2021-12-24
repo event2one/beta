@@ -14,9 +14,9 @@ class ContactListFix extends HTMLElement {
     this.showFlag = this.getAttribute("showFlag");
 
     this.statut = this.getAttribute("statut");
-    console.log( this.getAttribute("statut"))
+    console.log(this.getAttribute("statut"));
     this.statut && this.statut.split(",");
-    console.log(this.statut)
+    console.log(this.statut);
     this.statutList = [
       "candidat-pitch",
       "offreur_de_solution",
@@ -34,12 +34,11 @@ class ContactListFix extends HTMLElement {
       "tete_affiche",
     ];
 
-    
     this.currentStatutList = this.statutList.filter((statut) =>
       this.statut.includes(statut)
     );
 
-    console.log(this.currentStatutList)
+    console.log(this.currentStatutList);
 
     //Gère le nombre de cards display
     this.displayNumber = this.getAttribute("displayNumber");
@@ -55,7 +54,8 @@ class ContactListFix extends HTMLElement {
     //Gère les params des appels API
     this.id_event = this.getAttribute("id_event");
     this.id_conf_event = this.getAttribute("id_conf_event");
-    console.log(this.id_conf_event)
+    console.log(this.id_conf_event);
+    console.log(content.length)
 
     this.innerHTML = `
       
@@ -75,9 +75,9 @@ class ContactListFix extends HTMLElement {
                         </style>
 
                         <section class="container">
-                            <h2 class="text-center">${
-                              this.title.length > 0 ? this.title : ""
-                            }</h2>
+                          ${
+                            content.length > 0 ? `<h2 class="text-center"> ${this.title.length > 0 ? this.title : ""}</h2>` : ("")
+                          }  
                                         <div class="ContactListFix row">
                                         </div>
                         </section>`;
@@ -93,12 +93,24 @@ class ContactListFix extends HTMLElement {
                         : "3"
                     }">
                       <div ${this.horizontalStyle}>
-                        <img class="card-img-top" src="${infoContact.photos.medium}" style="max-height: 15rem;"  alt="Image de profil">
+                        <img class="card-img-top" src="${
+                          infoContact.photos.medium
+                        }" style="max-height: 15rem;"  alt="Image de profil">
                           <div class="card-body">
-                            <h5 class="card-title">${infoContact.prenom} ${infoContact.nom}</h5>
-                                    ${this.showFlag === "true"  ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">` : ""}
-                              <p class="card-text">${infoContact.societe} - ${infoContact.fonction}</p>
-                              <p class="card-text">${infoContact.edito_court}</p>
+                            <h5 class="card-title">${infoContact.prenom} ${
+      infoContact.nom
+    }</h5>
+                                    ${
+                                      this.showFlag === "true"
+                                        ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">`
+                                        : ""
+                                    }
+                              <p class="card-text">${infoContact.societe} - ${
+      infoContact.fonction
+    }</p>
+                              <p class="card-text">${
+                                infoContact.edito_court
+                              }</p>
                                     
                         </div>
                       </div>
@@ -123,7 +135,7 @@ class ContactListFix extends HTMLElement {
         const filteredContactEvent = contactEvent.filter((contact) =>
           this.currentStatutList.includes(contact.conferencier_statut)
         );
-        console.log(filteredContactEvent)
+        console.log(filteredContactEvent);
         filteredContactEvent.length &&
           this.researchInfoContact({ infoContactEvents: filteredContactEvent });
       });
