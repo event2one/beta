@@ -7,7 +7,6 @@ class ContactListFix extends HTMLElement {
     //Gère le mode d'affichage
     this.displayMode = this.getAttribute("displayMode");
     this.horizontalStyle = "";
-    
 
     this.showFlag = this.getAttribute("showFlag");
 
@@ -64,7 +63,7 @@ class ContactListFix extends HTMLElement {
                             }
 
                             h2 {
-                              font-size: 30px;
+                              text-align: left;
                             }
 
                         </style>
@@ -77,17 +76,25 @@ class ContactListFix extends HTMLElement {
     this.fetchContactList();
   }
 
-  displayInfoTitle = () => {
-    const content = `<h2 class="text-center"> ${this.title.length > 0 ? this.title : "titre"}</h2>`
+  displayInfoTitle = (numberUser) => {
+    console.log(numberUser)
+    const content = `<h2 class="text-center bg_color_1 p-1"> ${
+      this.title.length > 0 ? this.title : "titre"
+    }</h2>`;
     document
       .querySelector(".contact-list-fix__container")
       .insertAdjacentHTML("afterbegin", content);
-  }
+  };
 
   displayInfoContacts = ({ infoContact, numberUser }) => {
-    console.log(numberUser)
+    console.log(numberUser);
     if (this.displayMode === "horizontal") {
-      this.horizontalStyle = `style="display: flex; flex: 1 1 auto; overflow: hidden;"`;
+      if(numberUser > 1) {
+        this.horizontalStyle = `style="display: flex; flex: 1 1 auto; height: 20vh; overflow: hidden;"`;
+
+      } else {
+        this.horizontalStyle = `style="display: flex; flex: 1 1 auto; overflow: hidden;"`;
+      }
     }
 
     const content = `
@@ -101,17 +108,9 @@ class ContactListFix extends HTMLElement {
                           infoContact.photos.medium
                         }" style="max-height: 15rem;"  alt="Image de profil">
                           <div class="card-body">
-                            <h5 class="card-title">${infoContact.prenom} ${
-      infoContact.nom
-    }</h5>
-                                    ${
-                                      this.showFlag === "true"
-                                        ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">`
-                                        : ""
-                                    }
-                              <p class="card-text">${infoContact.societe} - ${
-      infoContact.fonction
-    }</p>
+                            <h5 class="card-title">${infoContact.prenom} ${infoContact.nom}</h5>
+                                    ${this.showFlag === "true"  ? `<img src=${infoContact.flag} style="max-width: 2vw; float: right" alt="Flag">`: ""}
+                              <p class="card-text">${infoContact.societe} - ${infoContact.fonction}</p>
                               <p class="card-text">${
                                 infoContact.edito_court
                               }</p>
@@ -140,8 +139,12 @@ class ContactListFix extends HTMLElement {
           this.currentStatutList.includes(contact.conferencier_statut)
         );
         console.log(filteredContactEvent);
-        filteredContactEvent.length && this.displayInfoTitle();
-        filteredContactEvent.length && this.researchInfoContact({ infoContactEvents: filteredContactEvent, numberUser: filteredContactEvent.length })
+        filteredContactEvent.length && this.displayInfoTitle(filteredContactEvent.length);
+        filteredContactEvent.length &&
+          this.researchInfoContact({
+            infoContactEvents: filteredContactEvent,
+            numberUser: filteredContactEvent.length,
+          });
       });
   };
 
@@ -163,7 +166,7 @@ class ContactListFix extends HTMLElement {
   };
 
   fetchInfoContact = async ({ uniqueIdInfoContactEvent, numberUser }) => {
-    console.log(uniqueIdInfoContactEvent)
+    console.log(uniqueIdInfoContactEvent);
     const req_id_contact = `getContact&id_contact=${uniqueIdInfoContactEvent}`;
 
     await fetch(
@@ -171,7 +174,10 @@ class ContactListFix extends HTMLElement {
     )
       .then((res) => res.json())
       .then((infoContactList) => {
-        this.displayInfoContacts({ infoContact: infoContactList, numberUser: numberUser });
+        this.displayInfoContacts({
+          infoContact: infoContactList,
+          numberUser: numberUser,
+        });
       });
   };
 }
