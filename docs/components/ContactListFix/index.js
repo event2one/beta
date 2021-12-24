@@ -84,7 +84,8 @@ class ContactListFix extends HTMLElement {
       .insertAdjacentHTML("afterbegin", content);
   }
 
-  displayInfoContacts = ({ infoContact }) => {
+  displayInfoContacts = ({ infoContact, numberUser }) => {
+    console.log(numberUser)
     if (this.displayMode === "horizontal") {
       this.horizontalStyle = `style="display: flex; flex: 1 1 auto; overflow: hidden;"`;
     }
@@ -94,7 +95,7 @@ class ContactListFix extends HTMLElement {
                       this.displayNumber.length > 0
                         ? this.displayNumberList[parseInt(this.displayNumber)]
                         : "3"
-                    }">
+                    }" style="width: 100%">
                       <div ${this.horizontalStyle}>
                         <img class="card-img-top" src="${
                           infoContact.photos.medium
@@ -145,7 +146,6 @@ class ContactListFix extends HTMLElement {
   };
 
   researchInfoContact = ({ infoContactEvents, numberUser }) => {
-    console.log(numberUser)
     let uniqueIdInfoContactEvents = [
       ...new Set(
         infoContactEvents.map(
@@ -157,12 +157,12 @@ class ContactListFix extends HTMLElement {
     uniqueIdInfoContactEvents
       .filter((uniqueIdInfoContactEvent) => uniqueIdInfoContactEvent != "")
       .map((uniqueIdInfoContactEvent, index) =>
-        this.fetchInfoContact({ uniqueIdInfoContactEvent, index })
+        this.fetchInfoContact({ uniqueIdInfoContactEvent, index, numberUser })
       )
       .join("");
   };
 
-  fetchInfoContact = async ({ uniqueIdInfoContactEvent }) => {
+  fetchInfoContact = async ({ uniqueIdInfoContactEvent, numberUser }) => {
     console.log(uniqueIdInfoContactEvent)
     const req_id_contact = `getContact&id_contact=${uniqueIdInfoContactEvent}`;
 
@@ -171,7 +171,7 @@ class ContactListFix extends HTMLElement {
     )
       .then((res) => res.json())
       .then((infoContactList) => {
-        this.displayInfoContacts({ infoContact: infoContactList });
+        this.displayInfoContacts({ infoContact: infoContactList, numberUser: numberUser });
       });
   };
 }
