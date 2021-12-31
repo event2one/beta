@@ -30,12 +30,11 @@ class EntrepriseLogo extends HTMLElement {
 
     //Gère le nombre de cards display
     this.displayNumber = this.getAttribute("displayNumber");
-    this.displayNumberList = {
-      1: "40vw",
-      2: "30vw",
-      3: "20vw",
-      4: "15vw",
-      5: "12vw",
+    const displayNumberList = {
+      1: "12",
+      2: "4",
+      3: "3",
+      5: "2",
     };
 
     //Gère les params des appels API
@@ -67,11 +66,7 @@ class EntrepriseLogo extends HTMLElement {
 
   displayInfoContacts = ({ infoContact }) => {
     const content = `
-                  <div class="shadow" style="width:${
-                    this.displayNumber
-                      ? this.displayNumberList[parseInt(this.displayNumber)]
-                      : "12vw"
-                  }; text-align: center; background-color: white; border-radius: 10px; margin: 10px; min-height: 10vh;">
+                  <div class="shadow col-md-${this.displayNumber ? this.displayNumberList[parseInt(this.displayNumber)] : "2"} m-3" text-align: center; background-color: white; border-radius: 10px; margin: 10px; min-height: 10vh; align-items: center; justify-content: center">
                       <a href="${infoContact.web}" target="_blank" >
                           <img src="${
                             infoContact.logos.medium
