@@ -2,6 +2,8 @@ class PartenairesListDetails extends HTMLElement {
   constructor() {
     super();
 
+    this.statut = this.getAttribute("statut");
+
     this.id_event = this.getAttribute("id_event");
 
     this.innerHTML = `
@@ -21,7 +23,7 @@ class PartenairesListDetails extends HTMLElement {
   }
 
   displayInfoContacts = ({ partenaire }) => {
-    const content = `<div class="card mb-3 shadow" style="max-width: 100%; max-height: 20vh; height: 20vh; overflow: hidden;">
+    const content = `<div class="card mb-3 shadow" style="max-width: 100%; overflow: hidden;">
                         <div class="row no-gutters">
                         <div class="col-md-4 d-flex justify-content-center align-items-center">
                             <img src="${partenaire?.logos?.large}" class="card-img" alt="entreprise logo" style="width: 70%; height: 70%; object-fit: contain;">
@@ -42,7 +44,7 @@ class PartenairesListDetails extends HTMLElement {
   };
 
   fetchContactList = async () => {
-    const req = `getPartenaires&params=AND id_event=1656 AND cf.statut in('partenaire_officiel','jury') LIMIT 20`;
+    const req = `getPartenaires&params=AND id_event=${this.id_event} AND cf.statut in(${this.statut}) GROUP BY societe`;
 
     await fetch(
       `https://www.mlg-consulting.com/smart_territory/form/api.php?action=${req}`
