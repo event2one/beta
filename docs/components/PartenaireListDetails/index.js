@@ -27,13 +27,19 @@ class PartenairesListDetails extends HTMLElement {
     const content = `<div class="card mb-3 shadow" style="max-width: 100%; overflow: hidden;">
                         <div class="row no-gutters">
                         <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            <img src="${partenaire?.logos?.large}" class="card-img" alt="entreprise logo" style="width: 70%; height: 70%; object-fit: contain;">
+                            <img src="${
+                              partenaire?.logos?.large
+                            }" class="card-img" alt="entreprise logo" style="width: 70%; height: 70%; object-fit: contain;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                            <h5 class="card-title">${partenaire?.contact?.societe}</h5>
-                            <p class="card-text">${partenaire?.contact?.edito_long}</p>
-                            <a href="${partenaire?.contact?.web}">${partenaire?.contact?.web}</a>
+                            <h5 class="card-title">${partenaire?.contact?.societe.toUpperCase()}</h5>
+                            <p class="card-text">${
+                              partenaire?.contact?.edito_long
+                            }</p>
+                            <a href="${partenaire?.contact?.web}">${
+      partenaire?.contact?.web
+    }</a>
                             </div>
                         </div>
                         </div>
@@ -52,10 +58,9 @@ class PartenairesListDetails extends HTMLElement {
     )
       .then((res) => res.json())
       .then((partenaireList) => {
-        console.log(partenaireList),
-          partenaireList.map((partenaire) =>
-            this.displayInfoContacts({partenaire})
-          );
+        partenaireList
+          .sort()
+          .map((partenaire) => this.displayInfoContacts({ partenaire }));
         this.displayInfoContacts;
       });
   };
