@@ -5,6 +5,7 @@ class PartenairesListDetails extends HTMLElement {
     this.statut = this.getAttribute("statut");
 
     this.id_event = this.getAttribute("id_event");
+    this.title = this.getAttribute("title");
 
     this.innerHTML = `
       
@@ -15,7 +16,7 @@ class PartenairesListDetails extends HTMLElement {
                         </style>
 
                         <section class="container">
-                        <h1>PartenairesListDetails</h1>
+                        <h1>${this.title}</h1>
                             <div class="partenaireListDetails"></div>
                         </section>`;
 
